@@ -1,0 +1,26 @@
+# Obsidian 내부 설정 (기기마다 다름)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
+.obsidian/hotkeys.json
+
+# 캐시
+.obsidian/cache
+.trash/
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 임시 파일
+*.tmp
+*.bak
+
+# Claude Code 세션 (기기별 데이터)
+.claude/sessions/
+.claude/*.json
+
+# Windows 예약 파일명 문제
+**/nul
+**/NUL

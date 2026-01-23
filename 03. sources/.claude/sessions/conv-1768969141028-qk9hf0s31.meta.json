@@ -1,0 +1,23 @@
+{
+  "id": "conv-1768969141028-qk9hf0s31",
+  "title": "Summarize user intent for title",
+  "titleGenerationStatus": "success",
+  "createdAt": 1768969141028,
+  "updatedAt": 1768970121472,
+  "lastResponseAt": 1768970070752,
+  "sessionId": "4bfaff7a-bd0c-411a-bbee-92797513acda",
+  "sdkSessionId": "4bfaff7a-bd0c-411a-bbee-92797513acda",
+  "currentNote": "knowledge/architectures/Three-Layer Memory Architecture.md",
+  "enabledMcpServers": [
+    "basic-memory"
+  ],
+  "usage": {
+    "model": "claude-opus-4-5-20251101",
+    "inputTokens": 10,
+    "cacheCreationInputTokens": 25541,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 25551,
+    "percentage": 13
+  }
+}

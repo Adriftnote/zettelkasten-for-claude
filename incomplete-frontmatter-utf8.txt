@@ -1,0 +1,86 @@
+불완전한 frontmatter를 가진 파일: 28개
+
+  00. inbox\task-20260121-005_claude-code-env-analysis.md
+    누락 필드: title, type
+
+  knowledge-base\inbox\task-20260122-001-session-handoff.md
+    누락 필드: title, type, tags
+
+  knowledge-base\notes\Engram과 지식 구조 - KGGen 비교.md
+    누락 필드: type
+
+  knowledge-base\notes\Fast-Slow 프랙탈 - 도메인을 관통하는 구조.md
+    누락 필드: type
+
+  knowledge-base\notes\KGGen 이해 - 명사 통합과 동사 관계.md
+    누락 필드: type
+
+  knowledge-base\notes\시스템1-2와 기억 재구성.md
+    누락 필드: type
+
+  knowledge-base\notes\심볼릭 AI vs 커넥셔니스트 AI 역사.md
+    누락 필드: type
+
+  knowledge-base\notes\지식 저장의 원리 - 카너먼 Loftus KGGen.md
+    누락 필드: type
+
+  knowledge-base\reports\Document Processing with ReAct Paradigm - Token Optimization.md
+    누락 필드: tags
+
+  knowledge-base\reports\Jarvis Conversational Knowledge Graph Construction Plan.md
+    누락 필드: tags
+
+  knowledge-base\reports\KGGen - Knowledge Graph Generation Framework.md
+    누락 필드: type
+
+  knowledge-base\reports\Memory Visualization Materials.md
+    누락 필드: tags
+
+  knowledge-base\templates\research-note-template.md
+    누락 필드: title, type, tags
+
+  knowledge-base\work-cases\task-20260121-005_claude-code-env-analysis.md
+    누락 필드: title, type
+
+  knowledge-base\.claude\commands\json-canvas.md
+    누락 필드: title, type, tags
+
+  knowledge-base\.claude\commands\obsidian-bases.md
+    누락 필드: title, type, tags
+
+  knowledge-base\.claude\commands\obsidian-markdown.md
+    누락 필드: title, type, tags
+
+  02. knowledge\architectures\agent-architecture-guide.md
+    누락 필드: title, type, tags
+
+  02. knowledge\automation-and-workflow\GitHub Knowledge Base Automation Guide.md
+    누락 필드: tags
+
+  02. knowledge\patterns\context-engineering-guide.md
+    누락 필드: title, type, tags
+
+  02. knowledge\patterns\Known Edit Bug Response Pattern.md
+    누락 필드: tags
+
+  02. knowledge\setup-and-guides\Basic Memory Setup Complete.md
+    누락 필드: tags
+
+  02. knowledge\setup-and-guides\basic-memory-relation-customization.md
+    누락 필드: type
+
+  02. knowledge\setup-and-guides\Claude File Perception.md
+    누락 필드: tags
+
+  02. knowledge\setup-and-guides\Claude Memory Tools.md
+    누락 필드: tags
+
+  02. knowledge\setup-and-guides\Claude Workspace Guide.md
+    누락 필드: tags
+
+  02. knowledge\setup-and-guides\claude-file-perception.md
+    누락 필드: title, type, tags
+
+  02. knowledge\setup-and-guides\claude-memory-tools.md
+    누락 필드: title, type, tags
+

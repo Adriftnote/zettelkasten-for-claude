@@ -1,0 +1,26 @@
+{
+  "id": "conv-1769039271333-dvsejjxct",
+  "title": "Evaluate Obsidian vault folder separation strategy",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769039271334,
+  "updatedAt": 1769045298214,
+  "lastResponseAt": 1769045298214,
+  "sessionId": "4e109c9f-6fc2-46e3-a2c5-34b6e34a9db3",
+  "sdkSessionId": "4e109c9f-6fc2-46e3-a2c5-34b6e34a9db3",
+  "usage": {
+    "model": "claude-opus-4-5-20251101",
+    "inputTokens": 31,
+    "cacheCreationInputTokens": 381576,
+    "cacheReadInputTokens": 1620831,
+    "contextWindow": 200000,
+    "contextTokens": 2002438,
+    "percentage": 100
+  },
+  "toolDiffData": {
+    "toolu_01KsyiuQgCgoHsJxonHkQakf": {
+      "filePath": "C:\\claude-workspace\\working\\from-obsidian\\knowledge-base\\inbox\\task-20260122-001-session-handoff.md",
+      "originalContent": "",
+      "newContent": "---\ntask_id: task-20260122-001\nsource: obsidian\ntarget: obsidian\ncreated_at: 2026-01-22T09:45:00+09:00\nstatus: handoff\n---\n\n# 세션 인수인계: Basic Memory Observation 작업 및 프로젝트 분리\n\n## 작업 요청\n\n이전 세션에서 진행한 Basic Memory 관련 작업을 이어받아 완료해주세요.\n\n## 완료된 작업\n\n### 1. Observation 일괄 추가 ✅\n- 94개 마크다운 파일에 Basic Memory observation 문법 추가\n- Sonnet 모델로 10개 병렬 에이전트 실행\n- `basic-memory reset --reindex`로 전체 재인덱싱 완료\n- 현재 상태: Entities 279개, Observations 743개, Relations 761개\n\n### 2. Basic Memory 구조 학습 ✅\n- **build_context**: SQLite에 저장된 observations/relations를 조합해 AI에게 맥락 주입\n- **노트 계층 구조**:\n  ```\n  MOC (00.index.md) - 폴더 전체 목차\n      ↓\n  README.md - 시리즈/폴더별 상세 가이드\n      ↓\n  허브노트 - 주제 중심 + 깊은 내용 + Observations\n      ↓\n  원자적 노트 - 단일 개념, 재사용 가능\n  ```\n\n### 3. 허브노트 실습 ✅\n- `Character Encoding - BOM, UTF, and History.md`에 Observations 섹션 추가\n- 7개 observation 추가 (fact, tech, cause, pattern, tip 카테고리)\n\n## 진행 중인 작업\n\n### 4. 프로젝트 분리 🔄\n\n**목적**: 원자적 노트만의 통계 분석 (허브노트 후보 발견)\n\n**문제**: Basic Memory는 중첩 경로 프로젝트 불가\n```\nError: path is nested within existing project 'obsidian-kb'\nProjects cannot share directory trees.\n```\n\n**해결 방안**: 상위 폴더를 새 vault로 구성\n```\nC:\\claude-workspace\\working\\from-obsidian\\  ← 새 Obsidian vault (구성 완료)\n├── .obsidian\\                              ← 새로 생성됨\n├── knowledge-base\\                         ← Basic Memory: obsidian-kb (기존)\n└── atomic-concepts\\                        ← Basic Memory: atomic-concepts (등록 필요)\n```\n\n**남은 작업**:\n1. `atomic-concepts` 폴더에 원자적 노트 복사/이동\n2. Basic Memory 프로젝트 등록:\n   ```bash\n   basic-memory project add atomic-concepts \"C:\\claude-workspace\\working\\from-obsidian\\atomic-concepts\"\n   ```\n3. 통계 확인:\n   ```bash\n   basic-memory project info atomic-concepts\n   ```\n\n## 핵심 인사이트\n\n| 인사이트 | 설명 |\n|----------|------|\n| **Observation = AI용 TL;DR** | build_context 시 핵심만 추출되어 토큰 절약 |\n| **허브노트 = 연결 많음 + Observations** | WikiLinks 풍부 + 핵심 요약 있어야 의미 |\n| **프로젝트 분리 필요** | 인덱스와 원자적 노트 섞이면 \"Most Connected\" 통계 왜곡 |\n\n## 관련 명령어\n\n```bash\n# 프로젝트 목록 확인\nbasic-memory project list\n\n# 프로젝트 통계\nbasic-memory project info obsidian-kb\n\n# DB 재인덱싱 (파일 변경 감지 안 될 때)\necho y | basic-memory reset --reindex\n\n# 검색 테스트\nbasic-memory tool search-notes --project obsidian-kb \"CORS\"\n```\n\n## 맥락\n\n- [[knowledge/architectures/Knowledge Refinement Pipeline Plan]]\n- [[knowledge/setup-and-guides/Basic Memory MCP Complete Guide]]\n- [[knowledge/programming-basics/Character Encoding - BOM, UTF, and History]]\n"
+    }
+  }
+}

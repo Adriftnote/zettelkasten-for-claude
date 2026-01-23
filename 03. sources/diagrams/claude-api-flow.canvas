@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# **Claude API 통신 흐름**","x":-722,"y":-480,"width":634,"height":123},
+		{"id":"user","type":"text","text":"## 👤 사용자\n\n메시지 입력","x":-360,"y":-120,"width":410,"height":120,"color":"1"},
+		{"id":"api","type":"text","text":"## 🌐 Anthropic API\n\n`api.anthropic.com`\n\n- 인증 확인\n- 요청 검증\n- 모델에 전달","x":550,"y":-140,"width":200,"height":160,"color":"6"},
+		{"id":"model","type":"text","text":"## 🧠 Claude 모델\n\n- Opus 4.5\n- Sonnet 4\n- Haiku\n\n응답 생성","x":930,"y":-140,"width":180,"height":160,"color":"3"},
+		{"id":"response","type":"text","text":"## 📥 응답 구조\n\n```json\n{\n  \"content\": [\n    {\"type\": \"text\", \"text\": \"...\"}\n  ],\n  \"stop_reason\": \"end_turn\",\n  \"usage\": {\n    \"input_tokens\": 100,\n    \"output_tokens\": 50\n  }\n}\n```","x":550,"y":160,"width":300,"height":380,"color":"5"},
+		{"id":"claude-code","type":"text","text":"## 💻 Claude Code\n\n- 사용자 입력 받음\n- JSON으로 변환\n- API 호출\n- 결과 표시","x":150,"y":-120,"width":200,"height":140,"color":"4"},
+		{"id":"request","type":"text","text":"## 📤 요청 구조\n\n```json\n{\n  \"model\": \"claude-opus-4-5\",\n  \"messages\": [\n    {\"role\": \"user\", \"content\": \"...\"}\n  ],\n  \"tools\": [...],\n  \"max_tokens\": 4096\n}\n```","x":-50,"y":160,"width":400,"height":300,"color":"5"},
+		{"id":"tool-use","type":"text","text":"## 🔧 Tool Use\n\n```json\n{\n  \"type\": \"tool_use\",\n  \"id\": \"toolu_xxx\",\n  \"name\": \"Read\",\n  \"input\": {\n    \"file_path\": \"/path/file\"\n  }\n}\n```\n\n→ Claude Code가 실행\n→ 결과를 다시 API로 전송","x":900,"y":151,"width":300,"height":300,"color":"2"},
+		{"id":"flow-summary","type":"text","text":"## ⚡ 핵심 흐름\n\n1️⃣ 사용자 입력\n2️⃣ JSON 변환\n3️⃣ API 전송\n4️⃣ 모델 처리\n5️⃣ 응답 반환\n6️⃣ Tool 필요시 → 실행 → 재전송","x":-713,"y":-144,"width":220,"height":250,"color":"1"}
+	],
+	"edges":[
+		{"id":"edge-api-model","fromNode":"api","fromSide":"right","toNode":"model","toSide":"left","label":"처리"},
+		{"id":"edge-model-api","fromNode":"model","fromSide":"bottom","toNode":"tool-use","toSide":"top","label":"Tool 호출"},
+		{"id":"edge-response","fromNode":"api","fromSide":"bottom","toNode":"response","toSide":"top"},
+		{"id":"edge-user-code","fromNode":"user","fromSide":"right","toNode":"claude-code","toSide":"left","label":"입력"},
+		{"id":"edge-code-api","fromNode":"claude-code","fromSide":"right","toNode":"api","toSide":"left","label":"JSON 요청"},
+		{"id":"edge-tool-back","fromNode":"tool-use","fromSide":"left","toNode":"claude-code","toSide":"bottom","label":"실행 결과"},
+		{"id":"edge-request","fromNode":"claude-code","fromSide":"bottom","toNode":"request","toSide":"top"}
+	]
+}

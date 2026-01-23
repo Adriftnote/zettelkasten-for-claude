@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# MCP 서버 연결 구조","x":-158,"y":-300,"width":758,"height":97},
+		{"id":"claude-code","type":"text","text":"## 💻 Claude Code\n\n**MCP 클라이언트 역할**\n\n- MCP 서버들 관리\n- Tool 목록 수집\n- 요청 라우팅\n- 결과 수신","x":-322,"y":-61,"width":356,"height":235,"color":"4"},
+		{"id":"config","type":"text","text":"## ⚙️ 설정 파일\n\n`~/.claude/settings.json`\n\n```json\n{\n  \"mcpServers\": {\n    \"memory\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@anthropic/mcp-memory\"]\n    },\n    \"sqlite\": {\n      \"command\": \"uvx\",\n      \"args\": [\"mcp-server-sqlite\", \"--db\", \"path.db\"]\n    }\n  }\n}\n```","x":-310,"y":311,"width":350,"height":489,"color":"2"},
+		{"id":"mcp-protocol","type":"text","text":"## 📡 MCP 프로토콜\n\n**JSON-RPC 2.0**\n\n통신 방식:\n- `stdio` (stdin/stdout)\n- `HTTP/SSE`\n\n메시지 타입:\n- `initialize`\n- `tools/list`\n- `tools/call`","x":210,"y":-120,"width":324,"height":359,"color":"6"},
+		{"id":"mcp-server-1","type":"text","text":"## 🔌 MCP Server 1\n\n**Memory**\n\nTools:\n- `create_entities`\n- `search_nodes`\n- `read_graph`","x":858,"y":-167,"width":282,"height":237,"color":"3"},
+		{"id":"external-1","type":"text","text":"## 💾 External\n\nKnowledge Graph\n(JSON 파일)","x":1274,"y":-170,"width":329,"height":143,"color":"5"},
+		{"id":"external-2","type":"text","text":"## 💾 External\n\nSQLite DB\n(.db 파일)","x":1274,"y":145,"width":339,"height":127,"color":"5"},
+		{"id":"mcp-server-2","type":"text","text":"## 🔌 MCP Server 2\n\n**SQLite**\n\nTools:\n- `read_query`\n- `write_query`\n- `list_tables`","x":859,"y":136,"width":285,"height":241,"color":"3"},
+		{"id":"mcp-server-3","type":"text","text":"## 🔌 MCP Server 3\n\n**n8n**\n\nTools:\n- `list_workflows`\n- `execute_workflow`\n- `get_execution`","x":851,"y":444,"width":298,"height":244,"color":"3"},
+		{"id":"external-3","type":"text","text":"## 🌐 External\n\nn8n API\n(localhost:5678)","x":1274,"y":493,"width":333,"height":147,"color":"5"},
+		{"id":"error-cases","type":"text","text":"## ⚠️ 흔한 오류\n\n**연결 실패**\n- 서버 프로세스 안 뜸\n- 경로/명령어 오류\n\n**타임아웃**\n- 서버 응답 지연\n- 네트워크 문제\n\n**Tool 오류**\n- 잘못된 파라미터\n- 권한 문제","x":196,"y":414,"width":260,"height":404,"color":"1"}
+	],
+	"edges":[
+		{"id":"edge-code-protocol","fromNode":"claude-code","fromSide":"right","toNode":"mcp-protocol","toSide":"left","label":"JSON-RPC"},
+		{"id":"edge-protocol-server1","fromNode":"mcp-protocol","fromSide":"right","toNode":"mcp-server-1","toSide":"left","label":"stdio"},
+		{"id":"edge-protocol-server2","fromNode":"mcp-protocol","fromSide":"right","toNode":"mcp-server-2","toSide":"left","label":"stdio"},
+		{"id":"edge-protocol-server3","fromNode":"mcp-protocol","fromSide":"right","toNode":"mcp-server-3","toSide":"left","label":"stdio"},
+		{"id":"edge-server1-ext","fromNode":"mcp-server-1","fromSide":"right","toNode":"external-1","toSide":"left"},
+		{"id":"edge-server2-ext","fromNode":"mcp-server-2","fromSide":"right","toNode":"external-2","toSide":"left"},
+		{"id":"edge-server3-ext","fromNode":"mcp-server-3","fromSide":"right","toNode":"external-3","toSide":"left"},
+		{"id":"edge-code-config","fromNode":"claude-code","fromSide":"bottom","toNode":"config","toSide":"top","label":"설정 로드"}
+	]
+}

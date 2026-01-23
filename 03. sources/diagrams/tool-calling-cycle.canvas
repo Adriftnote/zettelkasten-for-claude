@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# Tool Calling 사이클 (상세)","x":350,"y":-350,"width":350,"height":60},
+		{"id":"step3","type":"text","text":"## 3️⃣ Claude 판단\n\n모델이 분석:\n- \"파일을 읽어야 함\"\n- \"Read 도구 사용\"\n- \"경로 추론\"\n\n→ `tool_use` 응답 생성","x":580,"y":-222,"width":372,"height":261,"color":"3"},
+		{"id":"step1","type":"text","text":"## 1️⃣ 사용자 요청\n\n\"파일 읽어줘\"\n\n→ Claude Code가 수신","x":-376,"y":-188,"width":451,"height":156,"color":"1"},
+		{"id":"step4","type":"text","text":"## 4️⃣ Tool Use 응답\n\n```json\n{\n  \"type\": \"tool_use\",\n  \"id\": \"toolu_01ABC\",\n  \"name\": \"Read\",\n  \"input\": {\n    \"file_path\": \"/path/to/file.txt\"\n  }\n}\n```\n\n`stop_reason: \"tool_use\"`","x":1309,"y":-284,"width":280,"height":381,"color":"6"},
+		{"id":"step5","type":"text","text":"## 5️⃣ Claude Code 실행\n\n1. 응답 파싱\n2. Tool 이름 확인\n3. 파라미터 추출\n4. **실제 파일 읽기 실행**\n5. 결과 수집","x":1348,"y":254,"width":321,"height":249,"color":"4"},
+		{"id":"step6","type":"text","text":"## 6️⃣ Tool Result 전송\n\n```json\n{\n  \"role\": \"user\",\n  \"content\": [\n    {\n      \"type\": \"tool_result\",\n      \"tool_use_id\": \"toolu_01ABC\",\n      \"content\": \"파일 내용...\"\n    }\n  ]\n}\n```","x":625,"y":250,"width":387,"height":346,"color":"2"},
+		{"id":"step2","type":"text","text":"## 2️⃣ API 요청\n\n```json\n{\n  \"messages\": [...],\n  \"tools\": [\n    {\n      \"name\": \"Read\",\n      \"description\": \"...\",\n      \"input_schema\": {...}\n    }\n  ]\n}\n```","x":155,"y":-214,"width":280,"height":220,"color":"4"},
+		{"id":"error-handling","type":"text","text":"## ⚠️ 오류 처리\n\n**Tool 실행 실패 시:**\n```json\n{\n  \"type\": \"tool_result\",\n  \"tool_use_id\": \"toolu_01ABC\",\n  \"is_error\": true,\n  \"content\": \"Error: File not found\"\n}\n```\n\n→ Claude가 오류 인지\n→ 다른 방법 시도 또는 사용자에게 알림","x":-938,"y":238,"width":508,"height":354,"color":"1"},
+		{"id":"step7","type":"text","text":"## 7️⃣ 최종 응답\n\nClaude가 결과 분석 후\n사용자에게 답변 생성\n\n`stop_reason: \"end_turn\"`\n\n→ 사이클 완료","x":-311,"y":279,"width":286,"height":275,"color":"1"},
+		{"id":"parallel-tools","type":"text","text":"## ⚡ 병렬 Tool 호출\n\n한 응답에 여러 tool_use:\n```json\n\"content\": [\n  {\"type\": \"tool_use\", \"name\": \"Read\", ...},\n  {\"type\": \"tool_use\", \"name\": \"Grep\", ...}\n]\n```\n\n→ Claude Code가 동시 실행\n→ 효율성 증가","x":57,"y":492,"width":491,"height":302,"color":"3"},
+		{"id":"loop-note","type":"text","text":"## 🔄 반복 가능\n\n한 턴에 여러 Tool 호출 가능\n\n예:\n1. Read → 파일 읽기\n2. Edit → 파일 수정\n3. Bash → 테스트 실행\n\n각 Tool마다 4→5→6 반복","x":127,"y":83,"width":250,"height":291,"color":"5"}
+	],
+	"edges":[
+		{"id":"edge-1-2","fromNode":"step1","fromSide":"right","toNode":"step2","toSide":"left"},
+		{"id":"edge-2-3","fromNode":"step2","fromSide":"right","toNode":"step3","toSide":"left","label":"API 호출"},
+		{"id":"edge-3-4","fromNode":"step3","fromSide":"right","toNode":"step4","toSide":"left","label":"응답"},
+		{"id":"edge-4-5","fromNode":"step4","fromSide":"bottom","toNode":"step5","toSide":"top","label":"파싱"},
+		{"id":"edge-5-6","fromNode":"step5","fromSide":"left","toNode":"step6","toSide":"right","label":"실행 완료"},
+		{"id":"edge-6-7","fromNode":"step6","fromSide":"left","toNode":"step7","toSide":"right","label":"API 재호출"},
+		{"id":"edge-7-1","fromNode":"step7","fromSide":"top","toNode":"step1","toSide":"bottom","label":"사용자에게 표시"},
+		{"id":"edge-loop","fromNode":"step6","fromSide":"top","toNode":"step3","toSide":"bottom","label":"추가 Tool 필요시"}
+	]
+}

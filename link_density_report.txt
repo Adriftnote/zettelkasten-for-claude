@@ -1,0 +1,87 @@
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\01. concepts
+DEBUG: Found 88 files with avg 6.2 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\02. knowledge\architectures
+DEBUG: Found 18 files with avg 4.3 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\02. knowledge\patterns
+DEBUG: Found 22 files with avg 1.6 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\02. knowledge\gotchas
+DEBUG: Found 46 files with avg 1.7 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\02. knowledge\setup-and-guides
+DEBUG: Found 9 files with avg 4.8 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\02. knowledge\programming-basics
+DEBUG: Found 6 files with avg 12.3 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\02. knowledge\automation-and-workflow
+DEBUG: Found 1 files with avg 0.0 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\02. knowledge\guides
+DEBUG: Found 2 files with avg 4.0 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\knowledge-base\reports
+DEBUG: Found 6 files with avg 1.2 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\knowledge-base\reviews
+DEBUG: Found 8 files with avg 10.0 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\knowledge-base\notes
+DEBUG: Found 6 files with avg 3.7 links
+DEBUG: Checking C:\claude-workspace\working\from-obsidian\knowledge-base\work-cases
+DEBUG: Found 5 files with avg 3.0 links
+# 폴더별 링크 밀도 분석
+
+## 통계
+| 폴더 | 파일 수 | 평균 링크 | 중앙값 | 최대 | 최소 | 상태 |
+|------|---------|----------|--------|------|------|------|
+| 02. knowledge/programming-basics | 6 | 12.3 | 10.0 | 25 | 4 | ✅ |
+| knowledge-base/reviews | 8 | 10.0 | 4.0 | 57 | 0 | ✅ |
+| 01. concepts | 88 | 6.2 | 5.0 | 66 | 2 | ✅ |
+| 02. knowledge/setup-and-guides | 9 | 4.8 | 0.0 | 27 | 0 | ⚠️ |
+| 02. knowledge/architectures | 18 | 4.3 | 0.5 | 30 | 0 | ⚠️ |
+| 02. knowledge/guides | 2 | 4.0 | 4.0 | 5 | 3 | ⚠️ |
+| knowledge-base/notes | 6 | 3.7 | 4.0 | 5 | 2 | ⚠️ |
+| knowledge-base/work-cases | 5 | 3.0 | 0.0 | 13 | 0 | ⚠️ |
+| 02. knowledge/gotchas | 46 | 1.7 | 0.0 | 60 | 0 | ⚠️ |
+| 02. knowledge/patterns | 22 | 1.6 | 0.0 | 35 | 0 | ⚠️ |
+| knowledge-base/reports | 6 | 1.2 | 0.0 | 7 | 0 | ⚠️ |
+| 02. knowledge/automation-and-workflow | 1 | 0.0 | 0.0 | 0 | 0 | ⚠️ |
+
+## 링크 부족 폴더 (평균 <5)
+- **02. knowledge/automation-and-workflow**: 평균 0.0개 → 목표 6개 (6.0개 추가 필요)
+  - 파일 수: 1, 중앙값: 0.0
+- **knowledge-base/reports**: 평균 1.2개 → 목표 6개 (4.8개 추가 필요)
+  - 파일 수: 6, 중앙값: 0.0
+- **02. knowledge/patterns**: 평균 1.6개 → 목표 6개 (4.4개 추가 필요)
+  - 파일 수: 22, 중앙값: 0.0
+- **02. knowledge/gotchas**: 평균 1.7개 → 목표 6개 (4.3개 추가 필요)
+  - 파일 수: 46, 중앙값: 0.0
+- **knowledge-base/work-cases**: 평균 3.0개 → 목표 6개 (3.0개 추가 필요)
+  - 파일 수: 5, 중앙값: 0.0
+- **knowledge-base/notes**: 평균 3.7개 → 목표 6개 (2.3개 추가 필요)
+  - 파일 수: 6, 중앙값: 4.0
+- **02. knowledge/guides**: 평균 4.0개 → 목표 6개 (2.0개 추가 필요)
+  - 파일 수: 2, 중앙값: 4.0
+- **02. knowledge/architectures**: 평균 4.3개 → 목표 6개 (1.7개 추가 필요)
+  - 파일 수: 18, 중앙값: 0.5
+- **02. knowledge/setup-and-guides**: 평균 4.8개 → 목표 6개 (1.2개 추가 필요)
+  - 파일 수: 9, 중앙값: 0.0
+
+## 우수 사례 (평균 ≥8)
+- **02. knowledge/programming-basics**: 평균 12.3개
+  - 가장 많은 링크: 25개
+  - 중앙값: 10.0개
+  - 상위 3개 파일:
+    - Character Encoding - BOM, UTF, and History.md: 25개
+    - glossary.md: 21개
+    - README.md: 16개
+- **knowledge-base/reviews**: 평균 10.0개
+  - 가장 많은 링크: 57개
+  - 중앙값: 4.0개
+  - 상위 3개 파일:
+    - basic-memory-comprehensive-guide.md: 57개
+    - basic-memory-mcp-tools-test-report.md: 9개
+    - AgeMem-paper-review.md: 6개
+
+## 적정 수준 (평균 5-8)
+- **01. concepts**: 평균 6.2개 ✅
+
+## 전체 통계
+- 전체 파일 수: 217
+- 전체 링크 수: 989
+- 파일당 평균 링크: 4.6개
+- 폴더 평균의 평균: 4.4개
+- 폴더 평균의 중앙값: 3.8개
