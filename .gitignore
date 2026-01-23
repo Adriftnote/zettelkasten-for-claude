@@ -1,8 +1,8 @@
-# Obsidian 내부 설정 (기기마다 다름)
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/plugins/*/data.json
-.obsidian/hotkeys.json
+# Obsidian 내부 설정 (기기마다 다름) - 모든 하위 폴더 포함
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
+**/.obsidian/plugins/*/data.json
+**/.obsidian/hotkeys.json
 
 # 캐시
 .obsidian/cache
