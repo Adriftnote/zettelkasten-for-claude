@@ -9,11 +9,11 @@ permalink: 03.-sources/reports/react-document-processing
 
 **ReAct = Reasoning + Acting**
 
-| 단계 | 역할 | 처리 주체 |
-|------|------|-----------|
-| Thought | 계획 수립, 분석 | Claude (직접) |
-| Action | 도구 호출 | MCP 서버 (외부) |
-| Observation | 결과 수신 | MCP 서버 (외부) |
+| 단계          | 역할        | 처리 주체       |
+| ----------- | --------- | ----------- |
+| Thought     | 계획 수립, 분석 | Claude (직접) |
+| Action      | 도구 호출     | MCP 서버 (외부) |
+| Observation | 결과 수신     | MCP 서버 (외부) |
 
 **목표**: Thought만 Claude가 직접 처리, Action+Observation은 MCP로 위임 → 토큰 90% 절감
 
