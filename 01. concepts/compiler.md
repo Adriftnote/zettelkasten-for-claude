@@ -37,11 +37,28 @@ gcc hello.c -o hello.exe
 # 결과: 실행 가능한 hello.exe 생성
 ```
 
+## 🆚 파서 vs 컴파일러
+
+| 도구 | 역할 | 출력 |
+|------|------|------|
+| **[[parser\|파서]]** | 텍스트 분석 | 데이터 구조 (RAM) |
+| **컴파일러** | 코드 번역 | 기계어 (CPU 실행) |
+
+```
+파서: JSON 텍스트 → 프로그램 객체 (메모리)
+컴파일러: 소스코드 → 기계어 (01010101...)
+```
+
+> [!note] 컴파일러 내부에도 파서가 있음!
+> 컴파일러는 먼저 소스코드를 **파싱**해서 AST(추상 구문 트리)로 만든 후, 이를 기계어로 변환합니다.
+
 ## Relations
 
 - similar_to [[interpreter]]
+- different_from [[parser]]
 - consumes [[source-code]]
 - produces [[binary]]
+- produces [[machine-language]]
 
 ---
 

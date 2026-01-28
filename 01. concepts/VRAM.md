@@ -91,6 +91,8 @@ VRAM은 GPU가 빠르게 접근할 수 있는 전용 메모리입니다. 일반 
 - uses [[Cache]]
 - used_by [[Attention]]
 - optimizes [[kv-cache-optimization]]
+- part_of [[gpu]] - GPU 전용 메모리
+- enables [[gpu-and-human-intuition]] - AI 직관 구현
 
 ---
 

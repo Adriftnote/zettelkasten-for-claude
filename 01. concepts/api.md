@@ -44,8 +44,25 @@ print(weather['temperature'])
 - **라이브러리 API**: 함수 호출 (Python `open()`)
 - **OS API**: 운영체제 기능 (Windows API)
 
+## 🔗 추상화와의 관계
+
+API는 [[abstraction|추상화]]의 **결과물**입니다.
+
+| 구분 | 추상화 | API |
+|------|--------|-----|
+| 정의 | 복잡한 것을 단순하게 표현하는 **원칙** | 외부에 노출된 **인터페이스** |
+| 성격 | 설계 철학, 과정 | 구체적인 계약, 산출물 |
+| 비유 | 자동차 내부 엔진을 숨기는 **행위** | 운전대, 페달 같은 **조작 장치** |
+
+> [!tip] 핵심
+> **추상화** = "무엇을 숨기고 무엇을 보여줄지" 결정하는 **과정**
+> **API** = 추상화를 통해 "보여주기로 한 것"의 **명세**
+
+좋은 추상화가 좋은 API를 만듭니다.
+
 ## Relations
 
+- result_of [[abstraction]]
 - provides_interface [[library]]
 - provides_interface [[framework]]
 - part_of [[sdk]]
