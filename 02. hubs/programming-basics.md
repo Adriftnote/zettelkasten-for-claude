@@ -74,6 +74,10 @@ permalink: hubs/programming-basics-1
 - organizes [[api]]
 - organizes [[Inversion of Control (제어의 역전)]]
 
+### 새로 추가된 개념
+- organizes [[transpilation]] - 고급 언어 → 고급 언어 변환 (TypeScript → JavaScript)
+
 ### 다른 허브와의 연결
+- connects_to [[programming-languages]] (언어별 비교: Java vs JavaScript vs TypeScript)
 - connects_to [[web-fundamentals]] (JavaScript는 인터프리터 언어)
 - connects_to [[encoding-systems]] (소스 코드도 텍스트 파일, 인코딩 필요)

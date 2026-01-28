@@ -147,10 +147,34 @@ LLM + 임베딩
 → 밀도 높은 그래프
 ```
 
+## 🔗 [[Category Theory (카테고리 이론)|카테고리 이론]]과의 관계
+
+> [!info] 수학적 기초
+> 지식 그래프의 구조는 **카테고리 이론**과 깊은 대응 관계를 가집니다.
+
+| 지식 그래프 | 카테고리 이론 |
+|------------|--------------|
+| Node (엔티티) | Object (대상) |
+| Edge (관계) | Morphism (화살표) |
+| Path (경로 추론) | Composition (합성) |
+
+```
+지식 그래프:
+  서울 ──수도──▶ 한국 ──위치──▶ 아시아
+      └── 추론: "서울은 아시아에 있다"
+
+카테고리 이론:
+  A ──f──▶ B ──g──▶ C
+      └── g∘f (합성) ──┘
+```
+
+이 대응을 통해 **Categorical Database Theory**, **Ologs** 같은 분야가 발전했습니다.
+
 ## Relations
 
 - part_of [[Triple (트리플)]]
 - used_by [[Entity Resolution (엔티티 해결)]]
+- mathematically_related [[Category Theory (카테고리 이론)]]
 
 ## 📚 더 알아보기
 
