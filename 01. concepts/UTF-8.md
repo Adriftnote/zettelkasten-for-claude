@@ -1,6 +1,6 @@
 ---
 title: UTF-8
-type: note
+type: concept
 permalink: knowledge/concepts/utf-8
 tags:
 - utf-8

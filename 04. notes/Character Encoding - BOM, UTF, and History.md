@@ -1,38 +1,56 @@
 ---
 title: Character Encoding - BOM, UTF, and History
 type: note
-permalink: notes/character-encoding-bom-utf-and-history
 tags:
 - encoding
 - utf
 - bom
-- character-encoding
-- unicode
-- bit
-- byte
 - history
-- powershell
-hub: encoding-systems
+- derived
+permalink: notes/character-encoding-bom-utf-and-history
+source_facts:
+- BOM 개념
+- UTF 인코딩 방식
+- 8비트 바이트 역사
+- PowerShell 인코딩 문제
 ---
 
 # Character Encoding - BOM, UTF, and History
 
-## 학습 질문 목록
+문자 인코딩의 핵심: **기술 표준은 "기술적 완벽함"보다 "역사적 우연 + 시장 지배력 + 적당한 실용성"으로 결정된다.**
 
-이 문서는 다음 질문들에 대한 답변을 정리한 것입니다:
+## 도출 근거
 
-1. **BOM이란 무엇인가?** ([[03. sources/work-cases/powershell-korean-encoding-fix]]에서 출발)
-2. **마커(marker)라는게 무엇인가?**
-3. **BOM을 무조건 쓰면 좋은 것 같은데 일반적으로 안 쓰는 이유는?**
-4. **UTF란 무엇인가? 왜 PowerShell에만 이런 문제가 있나?**
-5. **UTF 뒤 숫자(8, 16, 32)는 무슨 의미인가?**
-6. **바이트(byte)와 비트(bit)는 다른 건가?**
-7. **비트 8개를 묶은 것이 왜 8개가 된 건가?**
-8. **10비트/12비트가 더 나았을 거라는 주장은 무엇인가?**
+다음 facts의 조합에서 도출됨:
+
+1. **8비트 바이트는 IBM System/360(1964)이 시장 장악하면서 표준화됨** - 기술적 최적이 아닌 시장 지배력
+2. **10비트(10진수 직접 표현), 12비트(약수 많음)도 장점이 있었다** - 하지만 2의 제곱 아니라 실패
+3. **UTF-8은 BOM이 불필요하지만 PowerShell 5.x에서는 필요하다** - Windows 하위호환성(CP949) 때문
+4. **PowerShell 7+는 기본 UTF-8로 문제 해결** - 시대가 바뀌면 표준도 변화
+
+→ 따라서: **"적당히 좋고 + IBM이 밀어서 + 확장성 좋아서"** 8비트가 이겼다
+→ 핵심 교훈: 기술 표준 = 역사적 우연 + 시장 지배력 + 실용성
+
+## Observations
+
+- [fact] BOM은 파일 앞 3바이트(EF BB BF)로 인코딩을 알려주는 마커다 #bom
+- [fact] 1 byte = 8 bits, 이건 IBM System/360(1964)이 시장 장악하면서 표준화됨 #history
+- [fact] UTF 뒤 숫자(8/16/32)는 데이터를 쪼개는 비트 단위를 의미한다 #utf
+- [fact] UTF-8은 바이트 순서가 고정이라 BOM 불필요, UTF-16/32는 Endian 구분 위해 BOM 필수 #encoding
+- [fact] PowerShell 5.x BOM 문제는 Windows 하위호환성(CP949) 때문에 발생 #powershell
+- [fact] PowerShell 7+는 기본 UTF-8이라 BOM 문제 없음 #powershell
+- [decision] IBM이 8비트 채택 → 시장 80% 장악 → 산업 표준 #history
+- [decision] 10비트/12비트는 2의 제곱이 아니라 탈락 #history
+- [example] 'A'=65=01000001(8비트), '가'=U+AC00=EA B0 80(UTF-8 3바이트) #encoding
+- [example] "Hello 안녕": UTF-8=11바이트, UTF-16=14바이트, UTF-32=28바이트 #comparison
+- [method] Unix/Linux 환경에서는 BOM 절대 안 씀 (Shebang 인식 오류) #best-practice
+- [reference] powershell-korean-encoding-fix - 이 노트의 시작점 #source
 
 ---
 
-## [[BOM (Byte Order Mark)]]
+## 상세 내용
+
+### [[BOM (Byte Order Mark)]]
 
 ### 개념
 
@@ -391,15 +409,13 @@ PowerShell 5.x의 설계 실수:
 
 ## Relations
 
-- hub [[encoding-systems]] - 이 노트가 속한 허브
-- triggered_by [[03. sources/work-cases/powershell-korean-encoding-fix]] - 학습의 시작점
+- derived_from [[encoding-systems]] (인코딩 시스템 허브에서 도출)
+- derived_from [[03. sources/work-cases/powershell-korean-encoding-fix]] (실무 문제에서 학습 시작)
+- mentions [[BOM (Byte Order Mark)]], [[Unicode]], [[UTF-8]], [[UTF-16]], [[UTF-32]]
+- mentions [[Bit]], [[Byte]], [[Endianness]], [[CP949]], [[ASCII]]
+- connects_to [[컴퓨팅 역사의 선구자들]] (IBM System/360 역사적 맥락)
 
-## Observations
+---
 
-- [fact] BOM은 파일 앞 3바이트(EF BB BF)로 인코딩을 알려주는 마커 #bom #encoding
-- [fact] 8비트 바이트는 IBM System/360(1964)이 시장 장악하면서 표준화됨 #history #byte
-- [fact] UTF 뒤 숫자(8/16/32)는 데이터를 쪼개는 비트 단위를 의미 #utf #encoding
-- [tech] UTF-8은 바이트 순서가 고정이라 BOM 불필요, UTF-16/32는 Endian 구분 위해 BOM 필수 #utf #bom
-- [cause] PowerShell 5.x BOM 문제는 Windows 하위호환성(CP949) 때문에 발생 #powershell #windows
-- [pattern] 기술 표준은 기술적 완벽함보다 역사적 우연 + 시장 지배력 + 실용성으로 결정됨 #history #standard
-- [tip] PowerShell 7+는 기본 UTF-8이라 BOM 문제 없음 #powershell #solution
+**도출일**: 2026-01-22
+**출처**: PowerShell 인코딩 문제 해결 과정에서 BOM/UTF/역사 학습

@@ -7,21 +7,100 @@ tags:
 - java
 - javascript
 - typescript
+- derived
 - faq
 - beginner
 hub: programming-languages
 permalink: notes/java-javascript-typescript-comparison
 created: 2026-01-27
+source_facts:
+  - "Java와 JavaScript는 이름만 비슷하고 완전히 다른 언어"
+  - "TypeScript는 JavaScript의 확장판이지, Java의 변형이 아님"
+  - "웹 브라우저는 JavaScript만 실행 가능하므로 TypeScript로 작성해도 JS로 변환됨"
+  - "TypeScript의 타입 정보는 컴파일 후 사라지지만, Java의 타입 정보는 런타임에 유지됨"
 ---
 
 # Java vs JavaScript vs TypeScript - 완전 다른 언어들
+
+**핵심 도출**: 이름이 비슷한 세 언어는 설계 목적, 실행 방식, 타입 시스템이 완전히 다르며, 각각의 생태계와 제약에 따라 용도가 결정된다.
 
 > 이름이 비슷해서 헷갈리는 언어들을 명확하게 정리한 노트입니다.
 > 실제 대화에서 나온 질문들을 기반으로 작성되었습니다.
 
 ---
 
-## 🤔 자주 하는 질문들
+## 도출 근거
+
+### 이름 유사성과 실제 차이의 괴리
+
+**사실들:**
+- Java는 Sun Microsystems가 1995년에 만들었고, JavaScript는 같은 해 Netscape가 만듦
+- 두 언어는 서로 다른 용도와 완전히 다른 설계 철학을 가짐
+- JavaScript 이름은 마케팅 목적으로 Java의 인기에 편승하기 위해 붙여짐
+
+**따라서:** Java와 JavaScript는 "햄"과 "햄스터"만큼 다르며, 이름 유사성은 순전히 역사적 마케팅 결과일 뿐이다.
+
+### TypeScript와 Java의 표면적 유사성
+
+**사실들:**
+- TypeScript와 Java 모두 정적 타입 시스템을 제공
+- 둘 다 컴파일 단계가 존재함
+- interface, generics 등 비슷한 개념을 사용
+
+**하지만:**
+- TypeScript의 타입은 컴파일 후 사라짐 (JavaScript로 변환되므로)
+- Java의 타입은 런타임에도 유지됨 (JVM이 알아야 하므로)
+- TypeScript는 JavaScript의 상위집합이지, Java의 변형이 아님
+
+**따라서:** TypeScript가 Java와 문법적으로 비슷해 보이지만, 본질은 JavaScript의 타입 안전성을 강화한 도구일 뿐이다.
+
+### 웹 플랫폼의 제약이 만든 필연
+
+**사실들:**
+- 웹 브라우저는 JavaScript만 실행 가능
+- 200만 개 이상의 npm 패키지가 JavaScript 생태계에 축적됨
+- Java나 Rust 같은 더 엄격한 언어를 웹에서 직접 실행할 수 없음
+
+**따라서:** 웹 개발에서 TypeScript가 선택되는 이유는 더 나은 언어라기보다, JavaScript가 필수이면서도 그 자유로움을 제어하기 위한 합리적 타협이다.
+
+---
+
+## Observations
+
+### 🔍 Facts
+- Java와 JavaScript는 1995년에 동시에 탄생했지만 완전히 다른 목적을 가짐
+- JavaScript의 원래 이름은 "LiveScript"였고, 마케팅상 "JavaScript"로 변경됨
+- 웹 브라우저는 보안 샌드박스 때문에 JavaScript만 실행 가능하도록 설계됨
+- TypeScript 타입은 컴파일 시점에만 존재하고 런타임에 사라짐
+
+### 📋 Methods
+- **타입 선언 방식의 차이**: Java는 변수 선언 시 타입 명시, TypeScript도 동일, JavaScript는 런타임 결정
+- **컴파일 흐름**: Java는 .java → 바이트코드 → JVM 실행 / TypeScript는 .ts → JavaScript → 브라우저/Node.js 실행
+- **에러 감지 시점**: JavaScript는 런타임, TypeScript와 Java는 개발 단계에서 감지
+
+### 💡 Decisions
+- 웹 개발자는 TypeScript를 선택하여 JavaScript의 자유도를 제약하고 안정성을 높임
+- 기업 백엔드는 Java를 선택하여 규모, 보안, 인력 풀을 우선시
+- 안드로이드 개발은 Java/Kotlin만 가능하므로 플랫폼이 선택을 강제
+
+### 📌 Examples
+- JavaScript 문제: `let age = 25; age = "스물다섯";` 컴파일 오류 없이 실행 됨
+- TypeScript 해결: `let age: number = 25; age = "스물다섯";` 개발 단계에서 빨간 줄 표시
+- Java의 엄격함: 클래스 구조, 접근 제어자, 예외 처리 강제
+
+### 📚 References
+- GitHub Blog: "Why AI is pushing developers toward typed languages" (2025)
+- LLM 연구 결과: AI가 생성한 컴파일 오류의 94%가 타입 체크 실패
+- npm 통계: 200만+ 패키지가 JavaScript 생태계에 축적
+
+### ❓ Questions
+- 왜 브라우저는 JavaScript만 실행할까? → 보안과 표준화 때문에
+- TypeScript가 Java를 대체할 수 있을까? → 웹에서만 가능, 안드로이드는 불가능
+- 왜 모든 언어가 정적 타입을 채택하지 않을까? → 개발 속도와 유연성의 트레이드오프
+
+---
+
+## 자주 하는 질문들
 
 ### Q1: "Java랑 JavaScript 같은 거야?"
 
@@ -125,7 +204,9 @@ age = "스물다섯";   // ❌ 에러! number에 string 안 됨
 
 ---
 
-## 📊 엄격함 스펙트럼
+## 상세 비교
+
+### 📊 엄격함 스펙트럼
 
 ```
 자유로움 ←─────────────────────────────→ 엄격함
@@ -144,23 +225,23 @@ JavaScript   TypeScript   Java   Rust
 
 ---
 
-## 🔄 실행 흐름 비교
+### 🔄 실행 흐름 비교
 
-### Java (컴파일 → JVM)
+#### Java (컴파일 → JVM)
 ```
 .java → [javac] → .class (바이트코드) → [JVM] → 실행
                     ↑
                 타입 정보 유지됨
 ```
 
-### TypeScript (트랜스파일 → JavaScript)
+#### TypeScript (트랜스파일 → JavaScript)
 ```
 .ts → [tsc] → .js (JavaScript) → [Node.js/브라우저] → 실행
                  ↑
              타입 정보 사라짐!
 ```
 
-### JavaScript (인터프리터)
+#### JavaScript (인터프리터)
 ```
 .js → [Node.js/브라우저] → 실행
         ↑
@@ -169,7 +250,7 @@ JavaScript   TypeScript   Java   Rust
 
 ---
 
-## 🎯 언제 뭘 쓰나?
+### 🎯 언제 뭘 쓰나?
 
 | 만들 것 | 추천 언어 | 이유 |
 |---------|----------|------|
@@ -182,7 +263,7 @@ JavaScript   TypeScript   Java   Rust
 
 ---
 
-## 💡 한 줄 요약
+### 💡 한 줄 요약
 
 | 질문 | 답변 |
 |------|------|
@@ -207,5 +288,11 @@ JavaScript   TypeScript   Java   Rust
 
 - hub [[programming-languages]] - 이 노트가 속한 허브
 - explains [[typescript]], [[javascript]], [[java]] - 세 언어 비교
+- derived_from [[JavaScript의 동적 타입 문제]], [[Java의 정적 타입 시스템]], [[웹 플랫폼의 제약]] - 여러 사실을 조합한 도출
 - relates_to [[transpilation]] - TypeScript의 변환 방식
 - connects_to [[compiler]], [[interpreter]] - 실행 방식 차이
+
+---
+
+**도출일**: 2026-01-27
+**출처**: Obsidian 노트 (사용자의 실제 질문 기반) + GitHub Blog (AI와 타입 언어 2025 연구)

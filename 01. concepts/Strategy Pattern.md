@@ -202,8 +202,8 @@ command.undo()
 
 ## Relations
 
-- achieves [[Open-Closed Principle (OCP)]] - 새 전략 추가 시 OCP 준수
-- implements [[Dependency Inversion Principle (DIP)]] - 추상화에 의존
-- similar_to [[Command Pattern]] - 둘 다 행동을 캡슐화하지만 목적이 다름
-- alternative_to [[Template Method Pattern]] - 상속 대신 합성 사용
-- part_of [[GoF 디자인 패턴]] - 행동 패턴 중 하나
+- achieves [[Open-Closed Principle (OCP)]] (새 전략 추가 시 OCP 준수)
+- implements [[Dependency Inversion Principle (DIP)]] (추상화에 의존)
+- similar_to [[Command Pattern]] (둘 다 행동을 캡슐화하지만 목적이 다름)
+- alternative_to [[Template Method Pattern]] (상속 대신 합성 사용)
+- part_of [[GoF 디자인 패턴]] (행동 패턴 중 하나)

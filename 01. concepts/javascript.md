@@ -7,7 +7,7 @@ tags:
 - web
 - interpreter
 - dynamic-typing
-permalink: knowledge/concepts/javascript
+permalink: knowledge/concepts/javascript-1
 category: Programming Languages
 difficulty: 기초
 created: 2026-01-27
@@ -109,5 +109,5 @@ JavaScript 엔진 (V8)
 - hub [[programming-languages]]
 - extended_by [[typescript]] (TypeScript는 JS의 슈퍼셋)
 - different_from [[java]] (이름만 비슷, 완전 다른 언어)
-- is_a [[interpreter]] 언어
+- is_a [[interpreter]] (인터프리터 언어)
 - runs_on [[runtime]] (브라우저, Node.js)

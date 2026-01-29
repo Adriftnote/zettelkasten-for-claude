@@ -200,12 +200,12 @@ Mozilla, Meta, npm, 1Password, Figma...
 
 ## Relations
 
-- hub [[rust-language]] - Rust 종합 가이드
-- hub [[programming-languages]] - 언어 비교
-- contrasts_with [[c-cpp]] - C/C++와 비교
-- is_a [[compiler]] 언어 - 네이티브 컴파일
-- uses [[ownership]] - 소유권 시스템
-- relates_to [[memory-safety]] - 메모리 안전성
+- hub [[rust-language]] (Rust 종합 가이드)
+- hub [[programming-languages]] (언어 비교)
+- contrasts_with [[c-cpp]] (C/C++와 비교)
+- is_a [[compiler]] (네이티브 컴파일)
+- uses [[ownership]] (소유권 시스템)
+- relates_to [[memory-safety]] (메모리 안전성)
 
 ## 📚 참고 자료
 

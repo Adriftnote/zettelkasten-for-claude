@@ -6,6 +6,7 @@ tags:
 - github-pages
 - blog
 - writing
+permalink: zettelkasten/jekyll-beulrogeu-jageob-noteu
 ---
 
 # Jekyll 블로그 작업 노트

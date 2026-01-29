@@ -187,7 +187,7 @@ def vulnerable_function():
 
 ## Relations
 
-- prevented_by [[Atomic File Modification]] - 파일 Race Condition 방지
-- related_to [[Defensive Coding]] - 동시성 고려한 방어적 코딩
-- causes [[Root Cause vs Trigger]] - 타이밍 의존 버그의 원인
-- related_to 트랜잭션 - DB에서의 동시성 제어
+- prevented_by [[Atomic File Modification]] (파일 Race Condition 방지)
+- related_to [[Defensive Coding]] (동시성 고려한 방어적 코딩)
+- causes [[Root Cause vs Trigger]] (타이밍 의존 버그의 원인)
+- related_to [[트랜잭션]] (DB에서의 동시성 제어)

@@ -7,16 +7,83 @@ tags:
 - fullstack
 - learning
 - comparison
-- faq
+- derived
 hub: rust-language
 permalink: notes/rust-complete-guide
 created: 2026-01-27
+source_facts:
+  - C/C++는 기술적으로 할 수 있는 모든 범위를 커버
+  - Rust는 C/C++와 동일한 기술적 범위를 제공
+  - Rust는 메모리 안전성을 컴파일러가 보장
+  - Rust 개발은 Python 대비 3-25배 시간이 더 걸림
+  - Rust 풀스택 프레임워크(Leptos, Axum)가 실용 수준
+  - AI 코드 생성과 Rust의 타입 시스템이 상호보완 가능
 ---
 
 # Rust 완전 정복 - 기술적 한계부터 풀스택까지 🦀
 
-> AI와 대화하며 Rust에 대해 탐구한 내용을 정리한 노트입니다.
-> 코드를 모르는 사람도 이해할 수 있는 비유와 함께 설명합니다.
+**핵심 도출: Rust는 C/C++ 수준의 범위와 성능을 가지면서 메모리 안전성을 보장하지만, 개발 시간의 기회비용이 치명적이므로 "성능/안전이 필수"인 경우에만 정당화된다.**
+
+---
+
+## 도출 근거
+
+### Facts 조합 → 결론
+
+1. **기술적 범위 면에서**
+   - Fact: C/C++는 운영체제(Windows, Linux), 브라우저(Chrome, Firefox), DB(MySQL), 게임엔진 등 모든 영역을 차지
+   - Fact: Rust는 Linux 커널 지원, Firefox Servo, SurrealDB, Solana 등 동일한 모든 영역에서 동작
+   - **따라서:** Rust와 C/C++의 기술적 범위는 동등하다
+
+2. **안전성 vs 개발 속도**
+   - Fact: Rust는 컴파일러가 메모리 버그를 원천 차단 (하킹 취약점 70% 해결)
+   - Fact: Python 대비 API 서버는 25배(2시간 vs 1일), 파일 스크립트는 10배(30분 vs 3시간) 시간 소요
+   - **따라서:** Rust는 "올바름의 보험료"로 시간을 매각하는 트레이드오프다
+
+3. **풀스택 가능성**
+   - Fact: Leptos(프론트), Axum(백), Tauri(데스크톱) 등 풀스택 프레임워크 생태계 완성
+   - Fact: 사이드 프로젝트 커뮤니티에서 "6개월 걸렸지만 버그가 거의 없음" 후기 존재
+   - **따라서:** Rust 풀스택은 기술적으로 완전 가능하나 개인/소규모팀 기준
+
+4. **AI 시대 적합성**
+   - Fact: LLM이 생성한 코드의 컴파일 오류 94%가 타입 체크 실패
+   - Fact: Rust의 강한 타입 시스템이 AI 실수를 자동 감지
+   - **따라서:** AI + Rust 조합은 생성 코드의 안정성을 크게 향상시킨다
+
+---
+
+## Observations
+
+### fact
+- Rust의 기술적 범위: 커널(Linux), 브라우저(Firefox), DB, 게임엔진, 웹 프론트/백 모두 가능
+- C/C++가 지금 세상을 지배하는 이유: 역사적 선점 + 성숙도 + 자산 축적
+- 메모리 안전 버그가 해킹 취약점의 70%를 차지하는 명확한 통계 사실
+
+### method
+- 소유권(Ownership) 시스템으로 메모리 생명주기를 컴파일 타임에 검증
+- 불변/가변 빌림(Borrow)으로 동시성 데이터 경쟁(Race Condition) 원천 차단
+- Leptos의 서버사이드 렌더링으로 풀스택 일관성 달성
+
+### decision
+- "최고의 언어" 선택이 아니라 "상황별 최적"을 선택해야 함
+- 성능/안전이 생명인 경우(OS, 임베디드, 재무 시스템) → Rust 선택
+- 빠른 프로토타입/MVP → Python 등 동적 언어 선택
+- 팀 규모가 작거나 개인 프로젝트 → Rust 풀스택 고려 가능
+
+### example
+- Rust로 성공한 프로젝트: ripgrep, bat(CLI), Axum(웹), Solana(블록체인)
+- 풀스택 사례: "6개월이 걸렸지만 1ms 응답 + 거의 버그 없음"
+- 실패/포기 사례: "간단한 폼 하나 3일", "CSS 연동 포기", "팀이었으면 불가능"
+
+### reference
+- Rust Book(공식 문서)
+- 2025년 학술 연구: LLM 코드 생성의 94%가 타입 에러
+- Leptos, Axum, Tauri 공식 문서
+
+### question
+- Rust 풀스택이 상용 서비스 수준으로 검증되었는가?
+- 팀 프로젝트에서 개발 생산성 손실을 어느 정도 수용할 수 있는가?
+- AI 코드 생성으로 인한 개발 시간 단축이 Rust의 느린 개발을 상쇄할 수 있는가?
 
 ---
 
@@ -285,9 +352,12 @@ AI + Rust 조합:
 
 ## Relations
 
+- derived_from [[Rust 언어의 기술적 범위와 실제 사용성에 대한 질문들]] - 원본 FAQ 노트
 - hub [[rust-language]] - Rust 종합 허브
 - relates_to [[Java vs JavaScript vs TypeScript - 완전 다른 언어들]] - 언어 비교
 - connects_to [[programming-languages]] - 프로그래밍 언어 허브
+
+---
 
 ## 📚 참고 자료
 
@@ -298,3 +368,8 @@ AI + Rust 조합:
 - [Dioxus](https://dioxuslabs.com/)
 - [Rust in 2026 - Medium](https://medium.com/@blogs-world/rust-in-2026-what-actually-changed-whats-trending-and-what-to-build-next-d70e38a4ad97)
 - [ZenRows - Rust Popularity](https://www.zenrows.com/blog/rust-popularity)
+
+---
+
+**도출일**: 2026-01-27
+**출처**: Obsidian 노트 "Rust 완전 정복 - 기술적 한계부터 풀스택까지" (AI와 대화 기반)

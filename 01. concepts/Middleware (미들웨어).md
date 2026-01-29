@@ -2,13 +2,14 @@
 title: Middleware (미들웨어)
 type: concept
 tags:
-  - web-development
-  - design-patterns
-  - functional-programming
-  - category-theory
+- web-development
+- design-patterns
+- functional-programming
+- category-theory
 category: 소프트웨어 아키텍처
 difficulty: 중급
 created: 2026-01-27
+permalink: 01.-concepts/middleware-mideulweeo
 ---
 
 # Middleware (미들웨어)
@@ -155,10 +156,10 @@ let app = Router::new()
 
 ## Relations
 
-- applied_in [[01-chapter-roadmap|카테고리 이론 학습 로드맵]]
-- mathematically_related [[Category Theory (카테고리 이론)]]
-- structurally_different [[Knowledge Graph (지식 그래프)]]
-- is_instance_of [[Monoid와 비가환 구조|비가환 모노이드]] - 행렬 곱셈과 같은 구조!
+- applied_in [[01-chapter-roadmap|카테고리 이론 학습 로드맵]] (함수 합성 실제 적용)
+- mathematically_related [[Category Theory (카테고리 이론)]] (수학적 기초)
+- structurally_different [[Knowledge Graph (지식 그래프)]] (구조 비교)
+- is_instance_of [[Monoid와 비가환 구조|비가환 모노이드]] (행렬 곱셈과 같은 구조)
 
 ## 📚 더 알아보기
 

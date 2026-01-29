@@ -1,76 +1,57 @@
 ---
 title: 심볼릭 AI vs 커넥셔니스트 AI 역사
-date: 2026-01-20
+type: note
 tags:
-- research
 - AI-history
-permalink: notes/simbolrig-ai-vs-keonegsyeoniseuteu-ai-yeogsa-1
+- symbolic-ai
+- connectionist
+- derived
+permalink: notes/symbolic-vs-connectionist-ai-history
+source_facts:
+- 심볼릭 AI 역사
+- 커넥셔니스트 AI 역사
+- Engram 아키텍처
 ---
 
 # 심볼릭 AI vs 커넥셔니스트 AI 역사
 
-## 맥락
+심볼릭 AI의 패배 원인과 Engram의 "50년 만의 결합"이 가능해진 이유.
 
-**왜 찾았나**: Engram의 "50년 만의 결합"이라는 표현을 이해하려고. AI 역사에서 두 진영이 어떻게 대립했고 왜 심볼릭이 졌는지 알아야 함.
+## 도출 근거
 
+다음 facts의 조합에서 도출됨:
 
-## 사실
+1. **심볼릭 AI는 빠르고 설명 가능했다** - 규칙 테이블 조회, O(1)
+2. **심볼릭 AI는 수작업 확장이 불가능했다** - 모든 규칙을 사람이 입력
+3. **커넥셔니스트 AI는 데이터로 자동 학습한다** - 확장 가능
 
-### 1. 심볼릭 AI (1960-80년대)
-**방식**: 지식을 규칙으로 표현하고 논리로 추론
-```
-IF 고양이 THEN 동물
-IF 동물 THEN 숨을 쉰다
-∴ 고양이는 숨을 쉰다
-```
-- 조회 방식: 정확하고 빠름 (규칙 테이블 검색)
-- 설명 가능: 추론 과정을 명시적으로 보여줌
-- 출처: AI 역사 일반 지식
+→ 따라서: **"조회가 틀린 게 아니라 확장이 안 됐다"**
+→ 해결책: 조회(심볼릭) + 자동 구축(커넥셔니스트) = Engram
 
-### 2. 심볼릭 AI가 진 이유
-**문제**: 확장성 부재
-- 모든 규칙을 **사람이 수작업**으로 입력해야 함
-- 예외가 너무 많음 (예: "박쥐는 동물인데 날개가 있다")
-- 세상의 복잡성을 규칙으로 표현 불가능
-- "조회" 방식 자체가 틀린 게 아님 ← 중요!
-- 출처: [Medium - Engram 50-Year-Old AI Idea](https://medium.com/@ljingshan6/deepseeks-engram-architecture-resurrects-a-50-year-old-ai-idea-and-it-actually-works-02c62a9ac1cb)
+## Observations
 
-### 3. 커넥셔니스트 AI (1980년대 부활, 2010년대 주류)
-**방식**: 신경망이 데이터에서 패턴 학습
-```
-수백만 문장 → 신경망 학습 → "고양이"와 "동물" 연결 발견
-```
-- 확장 가능: 데이터만 더 주면 성능 향상
-- 예외 처리: 데이터에서 자동으로 학습
-- 단점: 매번 신경망 연산 필요 (느림, 비쌈)
-- 출처: 현대 딥러닝 일반 지식
-
-### 4. 50년 전쟁 결과
-1980년대 후반: 심볼릭 AI 몰락 ("AI 겨울")
-2010년대: 커넥셔니스트 AI 승리 (딥러닝 혁명)
-- 출처: AI 역사 일반 지식
-
-### 5. Engram의 결합 (2026)
-**방식**: 두 진영의 장점만 결합
-- 심볼릭의 빠른 조회 (해시 테이블, O(1))
-- 커넥셔니스트의 확장성 (학습으로 자동 구축)
-- 결과: "50년 만의 결합"
-- 출처: [[Engram과 지식 구조 - KGGen 비교]]
-
+- [fact] 심볼릭 AI는 지식을 규칙으로 표현하고 논리로 추론한다 #symbolic
+- [fact] 심볼릭 AI의 조회는 정확하고 빠르다 (규칙 테이블 검색) #symbolic
+- [fact] 심볼릭 AI는 모든 규칙을 사람이 수작업으로 입력해야 한다 #limitation
+- [fact] 세상의 복잡성과 예외를 규칙으로 표현 불가능하다 #limitation
+- [fact] 커넥셔니스트 AI는 신경망이 데이터에서 패턴을 학습한다 #connectionist
+- [fact] 커넥셔니스트는 데이터만 더 주면 성능이 향상된다 #scalability
+- [fact] 커넥셔니스트는 매번 신경망 연산이 필요하다 (느림, 비쌈) #limitation
+- [example] IF 고양이 THEN 동물 → 논리 추론 (심볼릭) #symbolic
+- [example] 수백만 문장 → "고양이-동물" 연결 발견 (커넥셔니스트) #connectionist
+- [example] 박쥐는 동물인데 날개가 있다 - 예외 처리 어려움 #edge-case
+- [decision] 1980년대 후반: 심볼릭 AI 몰락 (AI 겨울) #history
+- [decision] 2010년대: 커넥셔니스트 AI 승리 (딥러닝 혁명) #history
+- [method] Engram: 심볼릭의 빠른 조회 + 커넥셔니스트의 자동 구축 #hybrid
+- [reference] Medium - Engram 50-Year-Old AI Idea #source
 
 ## Relations
 
-- provides_context [[Engram과 지식 구조 - KGGen 비교]]
-- similar_combination [[KGGen 이해 - 명사 통합과 동사 관계]]
+- derived_from [[Engram과 지식 구조 - KGGen 비교]] (Engram 분석에서 역사적 맥락 도출)
+- provides_context [[Engram과 지식 구조 - KGGen 비교]] (이 역사가 Engram 이해의 배경)
+- similar_combination [[KGGen 이해 - 명사 통합과 동사 관계]] (유사한 결합 접근)
 
+---
 
-## 내 해석
-
-> ⚠️ 2026-01-20 시점의 생각
-
-"조회가 틀린 게 아니라 확장이 안 됐다" ← 이게 핵심
-
-심볼릭 AI는 **방법론**이 틀린 게 아니라 **구현 방식**(수작업)이 문제였음.
-Engram은 조회는 유지하되, 학습으로 자동 구축하는 방식으로 해결.
-
-→ 과거의 좋은 아이디어 + 현대 기술 = 혁신
+**도출일**: 2026-01-20
+**출처**: AI 역사 + Engram 아키텍처 분석

@@ -466,8 +466,8 @@ match File::open("file.txt") {
 
 ## Relations
 
-- part_of [[Rust Language Hub]] - Rust의 핵심 개념
-- related_to [[Rust Testing]] - 테스트에서의 panic 활용
-- related_to [[Option]] - Result와 유사한 타입
-- used_in [[Rust Projects]] - 실제 Rust 프로젝트에서 필수 패턴
-- precedes [[Advanced Error Handling with thiserror]] - 고급 에러 처리
+- part_of [[Rust Language Hub]] (Rust의 핵심 개념)
+- related_to [[Rust Testing]] (테스트에서의 panic 활용)
+- related_to [[Option]] (Result와 유사한 타입)
+- used_in [[Rust Projects]] (실제 Rust 프로젝트에서 필수 패턴)
+- precedes [[Advanced Error Handling with thiserror]] (고급 에러 처리)

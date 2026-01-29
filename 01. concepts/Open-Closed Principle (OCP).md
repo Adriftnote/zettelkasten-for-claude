@@ -117,7 +117,7 @@ OCP ←── 달성 수단 ──→ Strategy Pattern
                       LSP (리스코프 치환)
 ```
 
-- **[[Dependency Inversion Principle (DIP)|DIP]]**: 추상화에 의존 → OCP 달성 용이
+- [[Dependency Inversion Principle (DIP)|DIP]]: 추상화에 의존 → OCP 달성 용이
 - **[[Strategy Pattern]]**: OCP를 구현하는 대표적 패턴
 - **LSP**: 하위 클래스가 상위를 대체 가능해야 OCP가 의미 있음
 

@@ -13,12 +13,24 @@ tags:
 - fast-slow
 - basic-memory
 - knowledge-graph
+- derived
 permalink: knowledge/architectures/three-layer-memory-architecture-1
 category: Architecture
 difficulty: 고급
 created: 2026-01-21
 updated: 2026-01-22
 status: draft
+source_facts:
+- AgeMem (STM/LTM 분리, Progressive RL)
+- DeepSeek Engram (Fast/Slow 메모리, O(1) 조회)
+- KGGen (지식 그래프 생성, 트리플 구조)
+- 카너먼 (시스템1/2 이중과정이론)
+- Loftus (구성적 기억, 출처 추적)
+derived_from:
+- AgeMem-paper-review
+- Fast-Slow 프랙탈 - 도메인을 관통하는 구조
+- 지식 저장의 원리 - 카너먼 Loftus KGGen
+- Engram과 지식 구조 - KGGen 비교
 ---
 
 # Three-Layer Memory Architecture
@@ -26,6 +38,31 @@ status: draft
 > ⚠️ **자체 설계 (Synthesis Note)**: 이 아키텍처는 AgeMem, DeepSeek Engram, KGGen 등 최신 연구를 종합하여 **자체 설계**한 프레임워크입니다. 표준화된 명칭이나 공식 사양은 아닙니다.
 
 인간의 기억 시스템을 모방한 **3계층 메모리 관리 아키텍처**입니다.
+
+## 🔬 도출 근거
+
+### 핵심 사실의 조합
+
+**사실 1**: AgeMem 연구에서 에이전트는 STM(단기 작업 이력)과 LTM(장기 지식)을 분리하여 관리할 때 성능이 향상됨을 보였다.
+
+**사실 2**: DeepSeek Engram은 Fast path(O(1) 해시 조회)와 Slow path(신경망 추론)를 구분하여, 자주 쓰는 정보는 빠르게, 새 정보는 정확하게 처리한다.
+
+**사실 3**: KGGen은 지식을 (주체-동사-객체) 트리플로 구조화하면 명시적 관계를 유지할 수 있음을 보였다.
+
+**사실 4**: 카너먼의 시스템1(빠른 직관)과 시스템2(느린 분석)는 모든 도메인에 나타나는 패턴이다.
+
+**사실 5**: Loftus의 기억 연구는 기억이 고정된 것이 아니라 재구성되므로, 출처를 명시적으로 기록해야 정확도가 높아짐을 보였다.
+
+### 따라서
+
+위 연구들의 패턴을 Claude Code 맥락에 적용하면:
+- **Working Memory**: 현재 대화(컨텍스트 윈도우)
+- **STM (Short-Term)**: 최근 작업 이력(orchestration.db)
+- **LTM (Long-Term)**: 추출된 지식(Obsidian/Basic Memory)
+
+이 세 계층을 명확히 분리하고, 자주 참조하는 지식은 Knowledge Cache로 미리 로드하면(Fast path), 컨텍스트를 컴팩트하게 유지하면서도 필요한 정보를 빠르게 찾을 수 있다.
+
+---
 
 ## 📖 개요
 
@@ -880,6 +917,42 @@ const tools = {
 
 ---
 
+## Observations
+
+### Methods
+- [method] Fast-Slow 패턴은 모든 도메인에서 반복되는 구조: AgeMem(STM/LTM), DeepSeek Engram(Quick/Deep), 카너먼(시스템1/2)
+- [method] 지식을 (주체-동사-객체) 트리플로 구조화하면 명시적 관계 추적 가능 (KGGen 방식)
+- [method] Knowledge Cache = "자주 쓰는 정보는 미리 로드, 필요할 때만 LTM 검색" (Engram의 O(1) + Fast path)
+
+### Facts
+- [fact] AgeMem 연구: STM(최근 작업)/LTM(지식) 분리 시 에이전트 성능 향상
+- [fact] DeepSeek Engram: Fast path(해시 O(1)) + Slow path(신경망), 75% 추론/25% 조회 비율
+- [fact] Basic Memory DB: entity(명사), relation(동사), observation(사실)으로 KGGen과 유사하게 구현됨
+- [fact] Loftus 기억 연구: 기억은 고정된 것이 아니라 재구성되므로 출처 명시 필수
+
+### Decisions
+- [decision] Working Memory: 현재 대화 + KV-Cache (VRAM)
+- [decision] STM: orchestration.db에 task 이력 저장 (시간 기반 검색)
+- [decision] LTM: Obsidian/Basic Memory에 구조화된 지식 저장 (그래프 기반 검색)
+- [decision] Knowledge Cache: observation.category='fact'를 세션 시작 시 미리 로드
+
+### Examples
+- [example] Knowledge Cache 쿼리: `SELECT content FROM observation WHERE category='fact' AND created_at > datetime('now', '-7 days')`
+- [example] 3계층 명령어: `/load-cache`(전 세션), `/tasks today`(오늘 작업), `/recall "BM25"`(지식 검색)
+- [example] 트리플 표현: (Fast-Slow) --[is_pattern_in]--> (Engram, KGGen, 카너먼)
+
+### Questions
+- [question] 세션 중 새로운 사실이 발견되면 Knowledge Cache 어떻게 갱신할 것인가? → `/update-cache` 제안
+- [question] 3개 저장소(Working/STM/LTM) 동기화 비용은 얼마나 되는가? → 측정 필요
+- [question] Knowledge Cache의 최적 크기는? → 프로젝트별 프로필 필요
+
+### References
+- [reference] [[Fast-Slow 프랙탈 - 도메인을 관통하는 구조|Fast-Slow 프랙탈]] - 이 아키텍처의 이론적 기반
+- [reference] [[AgeMem-paper-review|AgeMem 논문 리뷰]] - STM/LTM 도구 상세
+- [reference] [[03. sources/reviews/basic-memory-db-schema|Basic Memory DB 스키마]] - LTM 실제 구현
+
+---
+
 ## 📚 참고문헌
 
 ### 학술 논문/연구
@@ -906,3 +979,11 @@ const tools = {
 - **Three-Layer Memory Architecture**: 이 문서 전체
 - **Knowledge Cache**: Engram의 Fast path를 Basic Memory에 적용한 아이디어
 - **Fast-Slow 프랙탈**: 여러 도메인의 Fast/Slow 패턴을 추상화한 메타 개념
+
+---
+
+## 🏷️ Meta
+
+**도출일**: 2026-01-21
+**출처**: AgeMem(STM/LTM 분리), DeepSeek Engram(Fast-Slow 메모리), KGGen(트리플 구조), 카너먼(시스템1/2), Loftus(구성적 기억) 등 다섯 가지 독립적인 연구를 종합하여 Claude Code 맥락에 맞게 재설계한 아키텍처 프레임워크
+**상태**: draft (구현 체크리스트 기반으로 개선 중)

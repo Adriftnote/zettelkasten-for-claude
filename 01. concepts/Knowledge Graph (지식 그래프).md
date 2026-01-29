@@ -172,9 +172,9 @@ LLM + 임베딩
 
 ## Relations
 
-- part_of [[Triple (트리플)]]
-- used_by [[Entity Resolution (엔티티 해결)]]
-- mathematically_related [[Category Theory (카테고리 이론)]]
+- part_of [[Triple (트리플)]] (관계 데이터의 기본 단위)
+- used_by [[Entity Resolution (엔티티 해결)]] (엔티티 통합)
+- mathematically_related [[Category Theory (카테고리 이론)]] (그래프 수학 기초)
 
 ## 📚 더 알아보기
 

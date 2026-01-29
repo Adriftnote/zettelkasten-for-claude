@@ -1,24 +1,41 @@
 ---
 title: Fast-Slow 프랙탈 - 도메인을 관통하는 구조
-date: 2026-01-20
+type: note
 tags:
-- research
 - pattern
 - framework
+- derived
 permalink: notes/fast-slow-peuraegtal-domeineul-gwantonghaneun-gujo-1
+source_facts:
+- 시스템1-2 이중과정이론
+- Engram 아키텍처 분석
+- KGGen 지식 처리 구조
+- 컴퓨터 메모리 계층
 ---
 
 # Fast-Slow 프랙탈 - 도메인을 관통하는 구조
 
-## 맥락
+서로 다른 도메인(인지, AI, 컴퓨터, 생물학)에서 **Fast-Slow 이중 구조**가 반복되며, 이것이 "효율성-정확성 트레이드오프"를 해결하는 보편적 패턴이라는 도출.
 
-**왜 찾았나**: 시스템1/2, KGGen, Engram, Cache/Memory를 비교하다가 같은 구조가 반복된다는 걸 발견. 이게 "이중과정이론"보다 상위 개념이라는 통찰에서 시작.
+## 도출 근거
 
+다음 facts의 조합에서 도출됨:
 
-## 사실
+1. **카너먼 시스템1/2** - 빠른 직관 vs 느린 숙고
+   - 출처: [[시스템1-2와 기억 재구성]]
 
-### 1. 패턴의 발견
-서로 다른 도메인에서 같은 구조가 반복됨:
+2. **Engram 아키텍처** - 해시 조회(O(1)) vs 신경망 추론
+   - 출처: [[Engram과 지식 구조 - KGGen 비교]]
+
+3. **KGGen 구조** - 벡터 유사도(빠름) vs LLM 검증(정확)
+   - 출처: [[KGGen 이해 - 명사 통합과 동사 관계]]
+
+4. **컴퓨터 메모리** - Cache(빠름) vs Main Memory(큼)
+   - 출처: 컴퓨터 구조 기본 원리
+
+→ 따라서: **이 패턴은 특정 도메인의 특수 해법이 아니라, 자원 제약 하에서 효율성과 정확성을 동시에 추구하는 보편적 구조다**
+
+## 도메인별 비교
 
 | 도메인 | Fast (빠름/저렴) | Slow (느림/정확) |
 |--------|-----------------|-----------------|
@@ -28,53 +45,26 @@ permalink: notes/fast-slow-peuraegtal-domeineul-gwantonghaneun-gujo-1
 | 컴퓨터 | Cache | Main Memory |
 | 3계층 메모리 | Knowledge Cache | LTM 검색 |
 
-- 출처: 대화 중 도출
+## Observations
 
-### 2. 프랙탈 구조
-**전통적 프랙탈**: 같은 패턴, 스케일만 다름 (나무 가지)
-**도메인 프랙탈**: 같은 패턴, 구현 레벨만 다름 (생물학 → 소프트웨어 → 하드웨어)
-- 출처: 대화 중 도출
-
-### 3. 공통 메커니즘
-```
-1. Fast 먼저 시도 (빠름, 저렴, 불확실)
-2. Threshold 기반 판단
-3. 신뢰도 낮으면 → Slow로 전환 (느림, 비쌈, 정확)
-```
-- 출처: 대화 중 도출
-
+- [fact] 이중과정이론(카너먼)은 이 프랙탈의 한 인스턴스일 뿐, 패턴 자체가 더 근본적 #meta
+- [fact] 전통적 프랙탈은 스케일만 다르고, 도메인 프랙탈은 구현 레벨(생물학→소프트웨어→하드웨어)만 다름 #definition
+- [method] Fast → Threshold 판단 → (신뢰도 낮으면) Slow 전환의 공통 메커니즘 #mechanism
+- [example] 조직 구조: 현장 판단(Fast) vs 본사 검토(Slow) #application
+- [example] 경제: 직관적 소비(Fast) vs 분석적 투자(Slow) #application
+- [example] 면역: 선천 면역(Fast) vs 적응 면역(Slow) #application
+- [question] 왜 반복되나? → 물리적 제약(에너지/시간/자원 유한) + 최적화 압력 #why
+- [question] 실패 케이스? → 시스템1 오류, 정적 지식 구식화, Threshold 오설정 #limitation
 
 ## Relations
 
-- instance_of [[시스템1-2와 기억 재구성]]
-- instance_of [[Engram과 지식 구조 - KGGen 비교]]
-- instance_of [[KGGen 이해 - 명사 통합과 동사 관계]]
-- provides_context [[심볼릭 AI vs 커넥셔니스트 AI 역사]]
-- implements [[Three-Layer Memory Architecture]]
+- derived_from [[시스템1-2와 기억 재구성]] (이중과정 구조)
+- derived_from [[Engram과 지식 구조 - KGGen 비교]] (AI 아키텍처 사례)
+- derived_from [[KGGen 이해 - 명사 통합과 동사 관계]] (지식 처리 사례)
+- provides_context [[심볼릭 AI vs 커넥셔니스트 AI 역사]] (역사적 배경)
+- implements [[Three-Layer Memory Architecture]] (구현 사례)
 
+---
 
-## 내 해석
-
-> ⚠️ 2026-01-20 시점의 생각
-
-### 핵심 통찰
-"효율성과 정확성의 트레이드오프를 해결하는 보편적 구조"
-
-### 왜 이 패턴이 반복될까?
-- 물리적 제약: 에너지, 시간, 자원은 유한
-- 최적화 압력: 빠름과 정확함을 동시에 가질 수 없음
-- 해결책: 2단계로 분리 → 대부분은 빠르게, 필요할 때만 정확하게
-
-### 이 패턴이 실패하는 경우
-- 시스템1이 틀릴 때 (Loftus의 기억 재구성)
-- 정적 지식이 구식일 때 (Engram의 한계)
-- Threshold 설정이 잘못됐을 때
-
-### 더 확장 가능한 곳?
-- 조직 구조: 현장 판단 vs 본사 검토
-- 경제: 직관적 소비 vs 분석적 투자
-- 면역: 선천 면역 (빠름) vs 적응 면역 (느림)
-
-### 메타 관점
-이중과정이론(카너먼)은 이 프랙탈의 **한 인스턴스**일 뿐.
-패턴 자체가 더 근본적인 구조.
+**도출일**: 2026-01-20
+**출처**: 시스템1/2, KGGen, Engram, Cache/Memory 비교에서 공통 패턴 추출

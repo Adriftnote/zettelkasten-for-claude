@@ -10,7 +10,27 @@ tags:
 - lazy-loading
 - clean-architecture
 - history
-extraction_status: pending
+- derived
+source_facts:
+- Phase 1-5: Claude Code 한계 → Tool-Hub 진화 (5단계 타임라인)
+- MCP CLI 특성: 동적 도구 fetch vs 캐싱 트레이드오프
+- LazyToolLoader 버그 발견: 등록 시점의 Client가 실행 시점에 죽어있음
+- 다형성 설계: 서버 타입 추상화로 사용자 인터페이스 단순화
+- Tool-Hub + Chainer 통합: 자동 체이닝과 Bash 이스케이핑 문제 해결
+---
+
+## 도출 근거
+
+이 문서의 observations는 아래 근거들로부터 도출되었습니다:
+
+| 근거 | 내용 |
+|------|------|
+| **Phase 1 (1.1-1.3)** | Claude Code defer_loading 미지원 발견, Memory + mcp-cli 초기 대안 제안 |
+| **Phase 2 (2.1-2.6)** | mcp-cli 특성 분석, LazyToolLoader 패턴으로 버그 해결, 캐싱으로 성능 개선 |
+| **Phase 3 (3.1-3.3)** | @wong2 vs thedotmack 설계 비교, 다형성과 클린 아키텍처 학습 |
+| **Phase 4 (4.1-4.3)** | 3가지 학습 종합하여 Tool-Hub Progressive Disclosure 설계 |
+| **Phase 5 (5.1-5.3)** | MCP 직접 연결 불가 문제, Tool-Chainer 흡수 계획, toolhub_execute 통합 |
+
 ---
 
 # Tool-Hub 탄생 배경: Claude Code 한계에서 Progressive Disclosure까지
@@ -657,15 +677,69 @@ toolhub_execute("TikTok 데이터 → Excel")
 
 ## Observations
 
-- [architecture] Tool-Hub는 Claude Code의 defer_loading 미지원 한계에서 탄생 #tool-hub #origin #claude-code
-- [pattern] LazyToolLoader 패턴으로 "Client not initialized" 버그 해결 (등록 시점 ≠ 실행 시점) #lazy-loading #bug-fix
-- [idea] MCP CLI는 "tool freshness" 철학으로 매번 fetch → 캐시 없음이 의도된 설계 #mcp-cli #design-philosophy
-- [idea] ToolCache의 핵심: 등록 시점에 필요한 건 "도구 목록"이지 "연결"이 아님 → 분리 가능 #cache #separation
-- [pattern] 서버 타입 다형성: 같은 CLI 인터페이스로 uvx/Python venv/Node.js 서버를 투명하게 호출 #polymorphism #abstraction
-- [decision] @wong2(절차적) vs thedotmack(다형성) 설계 비교 후 다형성 선택 #design-philosophy #polymorphism
-- [architecture] Memory 검색 + mcp-cli 실행 + 클린 아키텍처 조합으로 Progressive Disclosure 구현 #integration #clean-architecture
-- [fact] 5단계 진화 (Phase 1: 한계 발견 → Phase 2: LazyToolLoader → Phase 3: 클린 아키텍처 → Phase 4: Tool-Hub → Phase 5: Chainer 흡수) #evolution #timeline
-- [problem] Tool-Hub와 Tool-Chainer가 따로 놀아서 여러 도구 연결이 수동이었음 #integration #problem
-- [decision] Tool-Hub가 Chainer 흡수 → toolhub_execute로 자동 체이닝 + Bash 이스케이핑 문제 해결 #chainer #automation
-- [tech] Tool-Chainer의 핵심: CHAIN_RESULT 플레이스홀더로 이전 결과 자동 전달 + JSONPath 필터링 #chain-result #jsonpath
-- [problem] 두 프로젝트 모두 의존성 주입 부재, 인프라 로직 혼재 → 통합 시 클린 아키텍처 적용 필요 #refactoring #clean-architecture
+### fact (사실, 정의, 데이터)
+
+- [fact] Tool-Hub는 Claude Code의 defer_loading 미지원 한계에서 탄생함 (GitHub Issue #7336) #tool-hub #origin #claude-code
+- [fact] 5단계 진화 타임라인: Phase 1(한계 발견) → Phase 2(LazyToolLoader) → Phase 3(클린 아키텍처) → Phase 4(Tool-Hub) → Phase 5(Chainer 흡수) #evolution #timeline
+- [fact] Tool-Hub 토큰 절감: 89,000 → 4,000 (95.5% 감소) #performance-metrics
+- [fact] MCP CLI의 "tool freshness" 철학: 매번 fetch하는 이유는 서버 도구 변경 자동 반영 #mcp-cli #design-philosophy
+
+### method (방법론, 절차, 기법)
+
+- [method] LazyToolLoader 패턴: 등록 시점(캐시)과 실행 시점(새 연결) 분리로 "Client not initialized" 버그 해결 #lazy-loading #bug-fix
+- [method] ToolCache 구현: 디스크 캐시로 도구 목록 제공하여 매번 서버 연결 불필요 #cache #optimization
+- [method] 서버 타입 다형성: 같은 CLI 인터페이스로 uvx/Python venv/Node.js 서버를 투명하게 호출 #polymorphism #abstraction
+- [method] Memory 검색 + mcp-cli 실행 + 클린 아키텍처 조합으로 Progressive Disclosure 구현 #integration #clean-architecture
+- [method] Tool-Chainer의 자동 체이닝: CHAIN_RESULT 플레이스홀더로 이전 결과 전달 + JSONPath 필터링 #chain-result #jsonpath
+
+### decision (의사결정, 선택, 트레이드오프)
+
+- [decision] @wong2(절차적 설계)가 아닌 thedotmack(다형성 설계) CLI 선택 #design-philosophy #polymorphism
+- [decision] Tool-Hub가 Tool-Chainer 로직 흡수 → toolhub_execute로 자동 체이닝 구현 #chainer #automation #integration
+- [decision] Bash mcp-cli 호출 대신 toolhub_execute로 JSON 파라미터 사용하여 이스케이핑 문제 해결 #parameter-safety #automation
+
+### question (질문, 미해결, 탐구 필요)
+
+- [question] Claude Code에서 defer_loading 지원 예정은? (GitHub Issue #7336 OPEN 상태) #future-work
+- [question] Tool-Hub와 Tool-Chainer 통합 후 성능 영향은 얼마나? (자동 체이닝 오버헤드 측정 필요) #performance-measurement
+- [question] 의존성 주입과 클린 아키텍처 적용 후 테스트 커버리지는 몇 %까지 가능? #testing #refactoring
+
+### reference (참조, 출처, 관련 문서)
+
+- [reference] Anthropic Cookbook의 Tool Search 패턴 (1.1절에서 분석) #anthropic-cookbook
+- [reference] thedotmack/mcp-client-cli GitHub 리포지토리 (2.1-2.6절에서 분석) #mcp-cli #github
+- [reference] 클린 아키텍처 4계층 구조 (3.3절에서 적용) #clean-architecture #layering
+- [reference] Knowledge Graph의 관계 타입 (OUTPUTS_TO, REQUIRES, WORKS_WITH, BENEFITS_FROM) #tool-hub #knowledge-graph
+
+### example (예시, 사례, 적용)
+
+- [example] 초기 대안: `mcp__memory__search_nodes("sqlite query")` → 스키마 반환 → `npx @wong2/mcp-cli call-tool` 호출 #memory-pattern #mcp-cli
+- [example] 다형성 설계 적용: `mcp-cli markitdown convert_to_markdown --file doc.pdf` (마크다운), `mcp-cli sqlite_tiktok list_tables` (sqlite), `mcp-cli n8n create_workflow --name test` (n8n) 동일 인터페이스 #polymorphism #use-cases
+- [example] LazyToolLoader 코드: action 내부에서 새 MCPClient 인스턴스 생성 (실행 시점에 연결) #code-pattern #lazy-loading
+
+---
+
+## Relations
+
+### derived_from (이 문서의 도출 근거)
+
+- Phase 1: Claude Code의 한계 (1.1-1.3)
+- Phase 2: thedotmack/mcp-client-cli 버그 발견과 LazyToolLoader 패턴 (2.1-2.6)
+- Phase 3: 클린 아키텍처 분석 (3.1-3.3)
+- Phase 4: Tool-Hub 설계 (4.1-4.3)
+- Phase 5: Tool-Chainer 흡수 (5.1-5.3)
+
+### related_to (관련 문서)
+
+- [[MCP Tool Search Implementation Limitations]]
+- [[MCP CLI Dynamic Tool Fetching]]
+- [[MCP CLI LazyToolLoader Pattern]]
+- [[MCP-CLI Command Conventions]]
+- [[MCP CLI Polymorphism Pattern Clean Architecture]]
+- [[Tool-Hub & Tool-Chainer Architecture Analysis]]
+- [[Tool-Hub Integration Plan Chainer Absorption]]
+
+### parent (상위 주제)
+
+- [[Tool-Hub Architecture]]
+- [[Claude Code 한계와 우회 전략]]

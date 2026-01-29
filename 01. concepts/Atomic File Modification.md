@@ -201,7 +201,7 @@ def atomic_write(filepath, content):
 
 ## Relations
 
-- prevents [[Race Condition]] - 동시 접근 시 데이터 손상 방지
-- related_to [[Defensive Coding]] - 안정적인 파일 처리
-- used_with 트랜잭션 - DB에서의 원자성 개념
-- related_to [[graceful-degradation]] - 실패 시에도 안전한 상태 유지
+- prevents [[Race Condition]] (동시 접근 시 데이터 손상 방지)
+- related_to [[Defensive Coding]] (안정적인 파일 처리)
+- used_with [[트랜잭션]] (DB에서의 원자성 개념)
+- related_to [[graceful-degradation]] (실패 시에도 안전한 상태 유지)

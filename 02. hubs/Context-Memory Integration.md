@@ -1,6 +1,6 @@
 ---
 title: Context-Memory Integration
-type: note
+type: hub
 permalink: 02.-hubs/context-memory-integration
 tags:
 - hub
@@ -19,37 +19,10 @@ tags:
 
 ## Observations
 
-### 핵심 인사이트
-- [insight] Context Engineering과 Memory Architecture는 **동일한 문제의 양면** - 토큰 최적화 vs 정보 저장/검색
-- [insight] **Fast-Slow 프랙탈**이 통합의 열쇠 - 인간 사고(시스템1/2), AI 메모리, 컴퓨터 캐시 모두 같은 구조
-- [insight] Context 문제마다 대응하는 Memory 해결책이 있다 - Poisoning→격리, Distraction→분리, Lost-in-Middle→캐시
-
-### 진입점
-- [entry] [[03. sources/notes/Fast-Slow 프랙탈 - 도메인을 관통하는 구조|Fast-Slow 프랙탈]] - 이 허브의 이론적 기반
-
-### 인덱싱 (루만식)
-
-**Context 문제 → Memory 해결책**
-- [index:1] Context 문제 유형 (컨텍스트 품질을 저해하는 문제들)
-  - [index:1a] [[context-poisoning]] → STM 격리 + 세션 재시작
-  - [index:1b] [[context-distraction]] → LTM 분리 (불필요한 건 저장)
-  - [index:1c] [[context-confusion]] → Task 기반 STM 분리
-  - [index:1d] [[context-clash]] → 명시적 충돌 해결
-  - [index:1e] [[lost-in-middle]] → Knowledge Cache (핵심만 유지)
-    - [index:1e1] [[anchored-iterative-summarization]] → 앵커 기반 요약 (해결책)
-
-**Memory 계층**
-- [index:2] 3계층 메모리 구조 (AI 메모리의 물리적 계층)
-  - [index:2a] Working Memory (컨텍스트 윈도우, VRAM)
-    - [index:2a1] Knowledge Cache - Fast Path, 핵심 트리플만
-  - [index:2b] STM (단기기억, SQLite orchestration.db)
-  - [index:2c] LTM (장기기억, Obsidian/Basic Memory)
-
-**패턴 매핑**
-- [index:3] Context-Memory 패턴 매핑 (동일 패턴의 다른 이름)
-  - [index:3a] [[progressive-disclosure]] = Memory 계층 로딩 (Cache → STM → LTM)
-  - [index:3b] [[four-bucket-optimization]] = Memory 관리 전략 (Write/Select/Compress/Isolate)
-  - [index:3c] [[observation-masking]] = Memory 압축
+- [insight] Context Engineering과 Memory Architecture는 동일한 문제의 양면 - 토큰 최적화 vs 정보 저장/검색 #context-engineering #memory
+- [insight] Fast-Slow 프랙탈이 통합의 열쇠 - 인간 사고(시스템1/2), AI 메모리, 컴퓨터 캐시 모두 같은 구조 #fast-slow #architecture
+- [insight] Context 문제마다 대응하는 Memory 해결책이 있다 - Poisoning→격리, Distraction→분리, Lost-in-Middle→캐시 #pattern-matching
+- [path] Context 문제 정의 → Memory 계층 매핑 → Fast-Slow 프랙탈 이해 → 통합 솔루션 #learning
 
 ---
 
@@ -78,24 +51,24 @@ tags:
 
 ## Relations
 
-### 이 허브가 관리하는 노트들
-- organizes [[context-poisoning]]
-- organizes [[context-distraction]]
-- organizes [[context-confusion]]
-- organizes [[context-clash]]
-- organizes [[lost-in-middle]]
-- organizes [[progressive-disclosure]]
-- organizes [[four-bucket-optimization]]
-- organizes [[observation-masking]]
-- organizes [[anchored-iterative-summarization]]
-
-### 다른 허브와의 연결
-- connects_to [[context-engineering]] (Context 문제 정의)
-- connects_to [[memory-systems]] (Memory 계층 구조)
-- connects_to [[optimization-patterns]] (최적화 전략)
-- connects_to [[architectures]] (시스템 아키텍처)
-
-### 참조 소스
-- references [[03. sources/architectures/Three-Layer Memory Architecture]]
-- references [[03. sources/notes/Fast-Slow 프랙탈 - 도메인을 관통하는 구조]]
-- references [[03. sources/reviews/AgeMem-paper-review]]
+- organizes [[context-poisoning]] (1a. 오류 축적/강화 문제와 STM 격리 해결책
+- organizes [[context-distraction]] (1b. 무관한 정보 분산 문제와 LTM 분리 해결책
+- organizes [[context-confusion]] (1c. 여러 작업 혼동 문제와 Task 기반 STM 해결책
+- organizes [[context-clash]] (1d. 상충 정보 문제와 명시적 충돌 해결
+- organizes [[lost-in-middle]] (1e. 중간 정보 회수율 저하와 Knowledge Cache 해결책
+  - part_of [[anchored-iterative-summarization]] (1e1. 앵커 기반 요약 기법 (해결책)
+- organizes [[three-layer-memory-architecture]] (2. AI 메모리의 물리적 계층
+  - part_of [[working-memory]] (2a. 컨텍스트 윈도우, VRAM
+    - part_of [[knowledge-cache]] (2a1. Fast Path, 핵심 트리플만
+  - part_of [[short-term-memory]] (2b. 단기기억, SQLite orchestration.db
+  - part_of [[long-term-memory]] (2c. 장기기억, Obsidian/Basic Memory
+- organizes [[progressive-disclosure]] (3a. Memory 계층 로딩 패턴 (Cache → STM → LTM)
+- organizes [[four-bucket-optimization]] (3b. Memory 관리 전략 (Write/Select/Compress/Isolate)
+- organizes [[observation-masking]] (3c. Memory 압축 기법
+- connects_to [[context-engineering]] (Context 문제 정의와 최적화 기법)
+- connects_to [[memory-systems]] (Memory 계층 구조와 관리 전략)
+- connects_to [[optimization-patterns]] (최적화 전략과 패턴)
+- connects_to [[architectures]] (시스템 아키텍처 설계)
+- references [[03. sources/architectures/Three-Layer Memory Architecture]] (3계층 메모리 아키텍처)
+- references [[03. sources/notes/Fast-Slow 프랙탈 - 도메인을 관통하는 구조]] (Fast-Slow 프랙탈 이론)
+- references [[03. sources/reviews/AgeMem-paper-review]] (Age Memory 논문 리뷰)

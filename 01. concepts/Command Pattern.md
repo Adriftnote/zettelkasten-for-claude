@@ -192,8 +192,8 @@ tools.forEach(tool => {
 
 ## Relations
 
-- achieves [[Open-Closed Principle (OCP)]] - 새 커맨드 추가 시 기존 코드 수정 불필요
-- similar_to [[Strategy Pattern]] - 둘 다 행동을 캡슐화하지만 목적이 다름
-- part_of [[GoF 디자인 패턴]] - 행동 패턴 중 하나
-- used_with [[Memento Pattern]] - Undo 구현에 함께 사용
-- related_to [[Inversion of Control (제어의 역전)]] - 실행 제어를 Invoker에 위임
+- achieves [[Open-Closed Principle (OCP)]] (새 커맨드 추가 시 기존 코드 수정 불필요)
+- similar_to [[Strategy Pattern]] (둘 다 행동을 캡슐화하지만 목적이 다름)
+- part_of [[GoF 디자인 패턴]] (행동 패턴 중 하나)
+- used_with [[Memento Pattern]] (Undo 구현에 함께 사용)
+- related_to [[Inversion of Control (제어의 역전)]] (실행 제어를 Invoker에 위임)

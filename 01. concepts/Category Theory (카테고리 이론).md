@@ -2,13 +2,14 @@
 title: Category Theory (카테고리 이론)
 type: concept
 tags:
-  - mathematics
-  - functional-programming
-  - type-theory
-  - abstract-algebra
+- mathematics
+- functional-programming
+- type-theory
+- abstract-algebra
 category: 수학/컴퓨터과학
 difficulty: 고급
 created: 2026-01-27
+permalink: 01.-concepts/category-theory-kategori-iron
 ---
 
 # Category Theory (카테고리 이론)

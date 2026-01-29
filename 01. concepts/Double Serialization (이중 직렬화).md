@@ -162,6 +162,6 @@ function safeStringify(data) {
 
 ## Relations
 
-- causes [[HTTP Status Codes]] - 400 Bad Request의 흔한 원인
-- related_to [[api]] - API 호출 시 자주 발생
-- prevents [[Defensive Coding]] - 타입 체크로 예방 가능
+- causes [[HTTP Status Codes]] (400 Bad Request의 흔한 원인)
+- related_to [[api]] (API 호출 시 자주 발생)
+- prevents [[Defensive Coding]] (타입 체크로 예방 가능)

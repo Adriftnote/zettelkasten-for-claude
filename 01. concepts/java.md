@@ -124,5 +124,5 @@ TypeScript: .ts   → [tsc]   → .js (JavaScript)   → [Node.js] → 실행
 - hub [[programming-languages]]
 - different_from [[javascript]] (이름만 비슷, 완전 다른 언어)
 - compared_with [[typescript]] (타입 시스템 유사점)
-- is_a [[compiler]] 언어 (바이트코드로 컴파일)
+- is_a [[compiler]] (바이트코드로 컴파일)
 - runs_on [[virtual-machine]] (JVM)

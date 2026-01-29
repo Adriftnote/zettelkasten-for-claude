@@ -174,6 +174,6 @@ v2.0.61의 타임스탬프 로직 수정
 
 ## Relations
 
-- enables [[Defensive Coding]] - 근본 원인 이해로 재발 방지
-- used_in 버그 트래킹 - Issue 분석 시 필수 구분
-- related_to [[graceful-degradation]] - Trigger 대응 vs Root Cause 해결
+- enables [[Defensive Coding]] (근본 원인 이해로 재발 방지)
+- used_in 버그 트래킹 (Issue 분석 시 필수 구분)
+- related_to [[graceful-degradation]] (Trigger 대응 vs Root Cause 해결)

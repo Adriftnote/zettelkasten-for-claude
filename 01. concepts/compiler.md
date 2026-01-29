@@ -37,6 +37,14 @@ gcc hello.c -o hello.exe
 # 결과: 실행 가능한 hello.exe 생성
 ```
 
+## Observations
+
+- [fact] 컴파일러는 소스코드 전체를 한 번에 기계어로 변환한다 #compilation
+- [fact] 컴파일된 실행 파일은 원본 소스코드 없이 독립 실행 가능하다 #binary
+- [method] 소스코드 → 렉싱 → 파싱 → AST → 코드 생성 → 기계어 #process
+- [example] C, C++, Go, Rust는 컴파일 언어다 #languages
+- [decision] GCC는 GNU 프로젝트에서 오픈소스로 개발하기로 결정했다 #open-source
+
 ## 🆚 파서 vs 컴파일러
 
 | 도구 | 역할 | 출력 |
@@ -49,16 +57,16 @@ gcc hello.c -o hello.exe
 컴파일러: 소스코드 → 기계어 (01010101...)
 ```
 
-> [!note] 컴파일러 내부에도 파서가 있음!
+> [!info] 컴파일러 내부에도 파서가 있음!
 > 컴파일러는 먼저 소스코드를 **파싱**해서 AST(추상 구문 트리)로 만든 후, 이를 기계어로 변환합니다.
 
 ## Relations
 
-- similar_to [[interpreter]]
-- different_from [[parser]]
-- consumes [[source-code]]
-- produces [[binary]]
-- produces [[machine-language]]
+- similar_to [[interpreter]] (둘 다 코드를 실행 가능하게 변환)
+- different_from [[parser]] (파서는 분석만, 컴파일러는 번역)
+- consumes [[source-code]] (입력으로 소스코드 받음)
+- produces [[binary]] (실행 파일 생성)
+- produces [[machine-language]] (기계어로 변환)
 
 ---
 

@@ -1,17 +1,18 @@
 ---
 title: 카테고리 이론 학습 로드맵 - 챕터별
 aliases:
-  - Chapter Roadmap
-  - 챕터별 로드맵
+- Chapter Roadmap
+- 챕터별 로드맵
 tags:
-  - category-theory
-  - rust
-  - learning-roadmap
-  - functional-programming
-source: "[[Category Theory for Programmers]]"
+- category-theory
+- rust
+- learning-roadmap
+- functional-programming
+source: '[[Category Theory for Programmers]]'
 status: active
 difficulty: progressive
 created: 2026-01-27
+permalink: 03.-sources/guides/01-chapter-roadmap
 ---
 
 # 카테고리 이론 학습 로드맵: 챕터별

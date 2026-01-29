@@ -144,6 +144,6 @@ callbacks[0]();  // 실행 시점에는 OK
 
 ## Relations
 
-- related_to [[JavaScript (JS)]] - ES6에서 도입된 스코프 개념
-- prevents [[Defensive Coding]] - 선언 전 접근 실수 방지
-- compare_with [[Hoisting]] - 호이스팅은 되지만 초기화 안 됨
+- related_to [[JavaScript (JS)]] (ES6에서 도입된 스코프 개념)
+- prevents [[Defensive Coding]] (선언 전 접근 실수 방지)
+- compare_with [[Hoisting]] (호이스팅은 되지만 초기화 안 됨)
