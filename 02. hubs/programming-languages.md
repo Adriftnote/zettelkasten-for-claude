@@ -31,17 +31,17 @@ created: 2026-01-27
 - [faq] "왜 Java/Rust 대신 TypeScript 써?" → **웹에서는 JS만 실행되기 때문**
 
 ### 언어 분류
-- [index:1] **컴파일 언어** - 미리 기계어로 변환
-  - [index:1a] [[java]] - JVM 바이트코드로 컴파일
-  - [index:1b] C/C++ - 직접 기계어로 컴파일
-  - [index:1c] Go, Rust - 현대적 컴파일 언어
-- [index:2] **인터프리터 언어** - 실행하면서 번역
-  - [index:2a] [[javascript]] - 웹 브라우저의 언어
-  - [index:2b] Python - 데이터 과학, AI의 언어
-  - [index:2c] Ruby, PHP - 웹 백엔드
-- [index:3] **트랜스파일 언어** - 다른 고급 언어로 변환
-  - [index:3a] [[typescript]] - JavaScript + 타입
-  - [index:3b] Babel - 최신 JS → 호환 JS
+- (1) **컴파일 언어** - 미리 기계어로 변환 #컴파일-언어
+  - (1a) Java - JVM 바이트코드로 컴파일
+  - (1b) C/C++ - 직접 기계어로 컴파일
+  - (1c) Go, Rust - 현대적 컴파일 언어
+- (2) **인터프리터 언어** - 실행하면서 번역 #인터프리터-언어
+  - (2a) JavaScript - 웹 브라우저의 언어
+  - (2b) Python - 데이터 과학, AI의 언어
+  - (2c) Ruby, PHP - 웹 백엔드
+- (3) **트랜스파일 언어** - 다른 고급 언어로 변환 #트랜스파일-언어
+  - (3a) TypeScript - JavaScript + 타입
+  - (3b) Babel - 최신 JS → 호환 JS
 
 ## 언어별 용도
 
@@ -98,10 +98,10 @@ JavaScript   TypeScript   Java   Rust
 ## Relations
 
 ### 관리하는 개념들
-- organizes [[typescript]]
-- organizes [[javascript]]
-- organizes [[java]]
-- organizes [[rust]] - 시스템 프로그래밍, 메모리 안전
+- organizes [[typescript]] (타입 시스템을 추가한 JavaScript)
+- organizes [[javascript]] (웹 브라우저의 언어)
+- organizes [[java]] (JVM 기반 컴파일 언어)
+- organizes [[rust]] (시스템 프로그래밍, 메모리 안전)
 - organizes [[transpilation]]
 
 ### 학습 노트
@@ -109,6 +109,6 @@ JavaScript   TypeScript   Java   Rust
 - explains [[Rust 완전 정복 - 기술적 한계부터 풀스택까지]]
 
 ### 다른 허브와의 연결
-- extends [[programming-basics]] - 언어별 상세 비교 추가
-- connects_to [[rust-language]] - Rust 심화 가이드
-- connects_to [[mcp-tool-patterns]] - TypeScript로 MCP 서버 개발
+- extends [[programming-basics]] (언어별 상세 비교 추가)
+- connects_to [[rust-language]] (Rust 심화 가이드)
+- connects_to [[mcp-tool-patterns]] (TypeScript로 MCP 서버 개발)
