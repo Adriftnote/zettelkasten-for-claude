@@ -18,14 +18,10 @@ permalink: hubs/encoding-systems-1
 
 ## Observations
 
-- [insight] UTF-8이 웹의 표준이 된 이유: 영어는 1바이트, 다른 언어는 필요할 때만 더 쓴다 #encoding #utf8
-- [insight] ASCII는 영어만 생각한 시대의 산물 (7비트, 128자) #ascii #history
-- [insight] Unicode는 전세계 문자를 하나의 번호 체계로 해결 - 정의만 제공 #unicode
-- [insight] UTF-8, UTF-16, UTF-32는 Unicode를 저장하는 방식의 차이 - 구현의 차이 #encoding
-- [path] 기초: Bit(정보 최소 단위) → Byte(데이터 기본 단위) #learning
-- [path] 역사: ASCII(영문 전용) → Unicode(전세계 통합) #learning
-- [path] 구현: UTF-8(웹 표준) → UTF-16(Windows/Java) → UTF-32(고정 길이) #learning
-- [path] 세부: BOM(파일 마커) → Endianness(바이트 순서) #learning
+- [fact] UTF-8이 웹 표준인 이유: 영어는 1바이트, 다른 언어는 필요할 때만 추가 바이트 사용 #utf8
+- [fact] ASCII는 7비트(128자)로 영어만 지원하는 초기 표준 #ascii #history
+- [fact] Unicode는 전세계 문자에 고유 번호(코드 포인트)를 부여하는 정의 체계 #unicode
+- [fact] UTF-8/16/32는 Unicode 코드 포인트를 바이트로 저장하는 구현 방식 #encoding
 
 ## Relations
 

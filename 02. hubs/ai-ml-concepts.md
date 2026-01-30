@@ -16,27 +16,24 @@ permalink: hubs/ai-ml-concepts-1
 
 ## Observations
 
-- [insight] 검색의 본질은 관련성 점수를 매기는 것 #search #bm25 #semantic
-- [insight] 트랜스포머와 현대 AI의 핵심은 Attention - 어디에 집중할까를 학습하는 메커니즘 #attention #ai
-- [insight] 지식 표현의 구조: 개체 → 트리플 → 그래프로 점진적 복잡화 #knowledge-graph
-- [insight] 하이브리드 검색 = BM25 + 시맨틱 검색 결합으로 최고 품질 달성 #hybrid-search
-- [path] 검색 기초: TF-IDF → BM25 → 문맥 검색 → 시맨틱 → 하이브리드 #learning
-- [path] AI 기초: Attention → 임베딩 → 트랜스포머 아키텍처 #learning
-- [path] 지식 표현: 개체 → 트리플 → 그래프 → 엔티티 해결 #learning
+- [fact] 검색의 본질은 관련성 점수를 매기는 것 #search #bm25 #semantic
+- [fact] 트랜스포머와 현대 AI의 핵심은 Attention - 어디에 집중할까를 학습하는 메커니즘 #attention #ai
+- [fact] 지식 표현의 구조: 개체 → 트리플 → 그래프로 점진적 복잡화 #knowledge-graph
+- [fact] 하이브리드 검색 = BM25 + 시맨틱 검색 결합으로 최고 품질 달성 #hybrid-search
 
 ## Relations
 
-- organizes [[TF-IDF]] (1. 단어 빈도 기반 검색의 기초. 용어 빈도와 역문서 빈도의 곱
-  - extends [[BM25]] (1a. TF-IDF를 개선한 확률적 모델. 실무 표준
-  - extends [[Contextual Retrieval]] (1b. 문맥 정보를 추가로 고려
-- organizes [[Attention]] (2. 트랜스포머의 핵심. 입력 요소 간 관련성 학습
-  - part_of [[어텐션 점수 계산]] (2a. Query, Key, Value를 이용한 가중치 생성
-- organizes [[Knowledge Graph (지식 그래프)]] (3. 개체와 관계를 그래프 구조로 표현
-  - part_of [[Triple (트리플)]] (3a. 주어-서술어-목적어 형식의 기본 단위
-  - part_of [[Entity Resolution (엔티티 해결)]] (3b. 동일 개체의 중복 식별 및 통합
-- organizes [[Hybrid Search]] (4. BM25 + 시맨틱 검색의 결합으로 최적 결과 도출
-- organizes [[ReAct Paradigm]] (5. Reasoning + Acting 결합. 생각→행동→관찰 루프
-  - extends [[Agent Architecture]] (5a. 에이전트 아키텍처 설계
+- organizes [[TF-IDF]] (1. 단어 빈도 기반 검색의 기초. 용어 빈도와 역문서 빈도의 곱)
+  - extends [[BM25]] (1a. TF-IDF를 개선한 확률적 모델. 실무 표준)
+  - extends [[Contextual Retrieval]] (1b. 문맥 정보를 추가로 고려)
+- organizes [[Attention]] (2. 트랜스포머의 핵심. 입력 요소 간 관련성 학습)
+  - part_of [[어텐션 점수 계산]] (2a. Query, Key, Value를 이용한 가중치 생성)
+- organizes [[Knowledge Graph (지식 그래프)]] (3. 개체와 관계를 그래프 구조로 표현)
+  - part_of [[Triple (트리플)]] (3a. 주어-서술어-목적어 형식의 기본 단위)
+  - part_of [[Entity Resolution (엔티티 해결)]] (3b. 동일 개체의 중복 식별 및 통합)
+- organizes [[Hybrid Search]] (4. BM25 + 시맨틱 검색의 결합으로 최적 결과 도출)
+- organizes [[ReAct Paradigm]] (5. Reasoning + Acting 결합. 생각→행동→관찰 루프)
+  - extends [[Agent Architecture]] (5a. 에이전트 아키텍처 설계)
 - connects_to [[architectures]] (하이브리드 검색 아키텍처 구현)
 - connects_to [[context-engineering]] (LLM 컨텍스트와 Attention의 관계)
 - connects_to [[encoding-systems]] (텍스트 표현의 기초로 검색 구현)

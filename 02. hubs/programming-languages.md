@@ -19,29 +19,10 @@ created: 2026-01-27
 
 ## Observations
 
-### 핵심 인사이트
-- [insight] **Java와 JavaScript는 완전히 다른 언어**. 이름만 비슷함 (마케팅 때문)
-- [insight] **TypeScript = JavaScript + 타입 시스템**. Java의 친척이 아님
-- [insight] 웹 브라우저는 **JavaScript만 실행** 가능 → 웹 개발에선 JS/TS가 필수
-- [insight] AI 시대에 **타입 언어**가 부상 중 (가드레일 역할)
-
-### 자주 하는 질문들
-- [faq] "Java랑 JavaScript 같은 거야?" → **아니요, 완전 다릅니다**
-- [faq] "TypeScript는 Java에 가까운 거야?" → **아니요, JavaScript의 확장판입니다**
-- [faq] "왜 Java/Rust 대신 TypeScript 써?" → **웹에서는 JS만 실행되기 때문**
-
-### 언어 분류
-- (1) **컴파일 언어** - 미리 기계어로 변환 #컴파일-언어
-  - (1a) Java - JVM 바이트코드로 컴파일
-  - (1b) C/C++ - 직접 기계어로 컴파일
-  - (1c) Go, Rust - 현대적 컴파일 언어
-- (2) **인터프리터 언어** - 실행하면서 번역 #인터프리터-언어
-  - (2a) JavaScript - 웹 브라우저의 언어
-  - (2b) Python - 데이터 과학, AI의 언어
-  - (2c) Ruby, PHP - 웹 백엔드
-- (3) **트랜스파일 언어** - 다른 고급 언어로 변환 #트랜스파일-언어
-  - (3a) TypeScript - JavaScript + 타입
-  - (3b) Babel - 최신 JS → 호환 JS
+- [fact] Java와 JavaScript는 완전히 다른 언어 - 이름만 비슷함 (마케팅 때문) #naming
+- [fact] TypeScript = JavaScript + 타입 시스템 - Java의 친척이 아님 #typescript
+- [fact] 웹 브라우저는 JavaScript만 실행 가능 → 웹 개발에선 JS/TS가 필수 #web
+- [fact] AI 시대에 타입 언어가 부상 중 - LLM 생성 코드의 가드레일 역할 #ai
 
 ## 언어별 용도
 
@@ -97,18 +78,13 @@ JavaScript   TypeScript   Java   Rust
 
 ## Relations
 
-### 관리하는 개념들
-- organizes [[typescript]] (타입 시스템을 추가한 JavaScript)
-- organizes [[javascript]] (웹 브라우저의 언어)
-- organizes [[java]] (JVM 기반 컴파일 언어)
-- organizes [[rust]] (시스템 프로그래밍, 메모리 안전)
-- organizes [[transpilation]]
-
-### 학습 노트
-- explains [[Java vs JavaScript vs TypeScript - 완전 다른 언어들]]
-- explains [[Rust 완전 정복 - 기술적 한계부터 풀스택까지]]
-
-### 다른 허브와의 연결
+- organizes [[typescript]] (1. 타입 시스템을 추가한 JavaScript)
+- organizes [[javascript]] (2. 웹 브라우저의 언어)
+- organizes [[java]] (3. JVM 기반 컴파일 언어)
+- organizes [[rust]] (4. 시스템 프로그래밍, 메모리 안전)
+- organizes [[transpilation]] (5. 고급 언어 → 고급 언어 변환)
+- explains [[Java vs JavaScript vs TypeScript - 완전 다른 언어들]] (혼동 해소 가이드)
+- explains [[Rust 완전 정복 - 기술적 한계부터 풀스택까지]] (Rust 심화)
 - extends [[programming-basics]] (언어별 상세 비교 추가)
 - connects_to [[rust-language]] (Rust 심화 가이드)
 - connects_to [[mcp-tool-patterns]] (TypeScript로 MCP 서버 개발)

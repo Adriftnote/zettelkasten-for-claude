@@ -17,11 +17,9 @@ permalink: hubs/general-cs-1
 
 ## Observations
 
-- [insight] CS의 기초는 추상화다 - 복잡한 것을 단순한 인터페이스로 감추는 것 #abstraction
-- [insight] API 통신 = 주소 + 데이터: Endpoint(WHERE) + Payload(WHAT) #api
-- [insight] 추상화 계층: 각 계층은 하위 복잡성을 숨기고 간단한 인터페이스만 노출 #architecture
-- [tip] API 디버깅 시 항상 Endpoint와 Payload를 분리해서 검토 #debugging
-- [path] 기초 개념 (추상화) → API 구조 (Endpoint) → 데이터 전달 (Payload) → 실전 활용 #learning
+- [fact] CS의 기초는 추상화다 - 복잡한 것을 단순한 인터페이스로 감추는 것 #abstraction
+- [fact] API 통신 = 주소 + 데이터: Endpoint(WHERE) + Payload(WHAT) #api
+- [fact] 추상화 계층: 각 계층은 하위 복잡성을 숨기고 간단한 인터페이스만 노출 #architecture
 
 ## Relations
 

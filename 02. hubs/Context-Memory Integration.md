@@ -19,10 +19,11 @@ tags:
 
 ## Observations
 
-- [insight] Context Engineering과 Memory Architecture는 동일한 문제의 양면 - 토큰 최적화 vs 정보 저장/검색 #context-engineering #memory
-- [insight] Fast-Slow 프랙탈이 통합의 열쇠 - 인간 사고(시스템1/2), AI 메모리, 컴퓨터 캐시 모두 같은 구조 #fast-slow #architecture
-- [insight] Context 문제마다 대응하는 Memory 해결책이 있다 - Poisoning→격리, Distraction→분리, Lost-in-Middle→캐시 #pattern-matching
-- [path] Context 문제 정의 → Memory 계층 매핑 → Fast-Slow 프랙탈 이해 → 통합 솔루션 #learning
+- [fact] Context Engineering과 Memory Architecture는 동일한 문제의 양면 #context-engineering #memory
+- [fact] Fast-Slow 프랙탈이 통합의 열쇠 - 인간 사고, AI 메모리, 컴퓨터 캐시 모두 같은 구조 #fast-slow
+- [fact] 사용자 레벨에서 컨텍스트 조절 가능 (/compact, /clear, build_context) #boundary
+- [fact] 서비스 레벨 KV-Cache는 직접 제어 불가 #limitation
+- [method] 토픽 기반 압축: `/compact Focus on [topic]` - 특정 주제 보존 #compact
 
 ---
 
@@ -51,20 +52,20 @@ tags:
 
 ## Relations
 
-- organizes [[context-poisoning]] (1a. 오류 축적/강화 문제와 STM 격리 해결책
-- organizes [[context-distraction]] (1b. 무관한 정보 분산 문제와 LTM 분리 해결책
-- organizes [[context-confusion]] (1c. 여러 작업 혼동 문제와 Task 기반 STM 해결책
-- organizes [[context-clash]] (1d. 상충 정보 문제와 명시적 충돌 해결
-- organizes [[lost-in-middle]] (1e. 중간 정보 회수율 저하와 Knowledge Cache 해결책
-  - part_of [[anchored-iterative-summarization]] (1e1. 앵커 기반 요약 기법 (해결책)
-- organizes [[three-layer-memory-architecture]] (2. AI 메모리의 물리적 계층
-  - part_of [[working-memory]] (2a. 컨텍스트 윈도우, VRAM
-    - part_of [[knowledge-cache]] (2a1. Fast Path, 핵심 트리플만
-  - part_of [[short-term-memory]] (2b. 단기기억, SQLite orchestration.db
-  - part_of [[long-term-memory]] (2c. 장기기억, Obsidian/Basic Memory
-- organizes [[progressive-disclosure]] (3a. Memory 계층 로딩 패턴 (Cache → STM → LTM)
-- organizes [[four-bucket-optimization]] (3b. Memory 관리 전략 (Write/Select/Compress/Isolate)
-- organizes [[observation-masking]] (3c. Memory 압축 기법
+- organizes [[context-poisoning]] (1a. 오류 축적/강화 문제와 STM 격리 해결책)
+- organizes [[context-distraction]] (1b. 무관한 정보 분산 문제와 LTM 분리 해결책)
+- organizes [[context-confusion]] (1c. 여러 작업 혼동 문제와 Task 기반 STM 해결책)
+- organizes [[context-clash]] (1d. 상충 정보 문제와 명시적 충돌 해결)
+- organizes [[lost-in-middle]] (1e. 중간 정보 회수율 저하와 Knowledge Cache 해결책)
+  - part_of [[anchored-iterative-summarization]] (1e1. 앵커 기반 요약 기법)
+- organizes [[three-layer-memory-architecture]] (2. AI 메모리의 물리적 계층)
+  - part_of [[working-memory]] (2a. 컨텍스트 윈도우, VRAM)
+    - part_of [[knowledge-cache]] (2a1. Fast Path, 핵심 트리플만)
+  - part_of [[short-term-memory]] (2b. 단기기억, SQLite orchestration.db)
+  - part_of [[long-term-memory]] (2c. 장기기억, Obsidian/Basic Memory)
+- organizes [[progressive-disclosure]] (3a. Memory 계층 로딩 패턴)
+- organizes [[four-bucket-optimization]] (3b. Memory 관리 전략)
+- organizes [[observation-masking]] (3c. Memory 압축 기법)
 - connects_to [[context-engineering]] (Context 문제 정의와 최적화 기법)
 - connects_to [[memory-systems]] (Memory 계층 구조와 관리 전략)
 - connects_to [[optimization-patterns]] (최적화 전략과 패턴)

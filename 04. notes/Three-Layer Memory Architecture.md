@@ -1,6 +1,6 @@
 ---
 title: Three-Layer Memory Architecture
-type: synthesis
+type: note
 tags:
 - memory
 - llm
@@ -14,23 +14,13 @@ tags:
 - basic-memory
 - knowledge-graph
 - derived
-permalink: knowledge/architectures/three-layer-memory-architecture-1
-category: Architecture
-difficulty: 고급
-created: 2026-01-21
-updated: 2026-01-22
-status: draft
+permalink: notes/three-layer-memory-architecture
 source_facts:
 - AgeMem (STM/LTM 분리, Progressive RL)
 - DeepSeek Engram (Fast/Slow 메모리, O(1) 조회)
 - KGGen (지식 그래프 생성, 트리플 구조)
 - 카너먼 (시스템1/2 이중과정이론)
 - Loftus (구성적 기억, 출처 추적)
-derived_from:
-- AgeMem-paper-review
-- Fast-Slow 프랙탈 - 도메인을 관통하는 구조
-- 지식 저장의 원리 - 카너먼 Loftus KGGen
-- Engram과 지식 구조 - KGGen 비교
 ---
 
 # Three-Layer Memory Architecture
@@ -919,37 +909,26 @@ const tools = {
 
 ## Observations
 
-### Methods
-- [method] Fast-Slow 패턴은 모든 도메인에서 반복되는 구조: AgeMem(STM/LTM), DeepSeek Engram(Quick/Deep), 카너먼(시스템1/2)
-- [method] 지식을 (주체-동사-객체) 트리플로 구조화하면 명시적 관계 추적 가능 (KGGen 방식)
-- [method] Knowledge Cache = "자주 쓰는 정보는 미리 로드, 필요할 때만 LTM 검색" (Engram의 O(1) + Fast path)
-
-### Facts
-- [fact] AgeMem 연구: STM(최근 작업)/LTM(지식) 분리 시 에이전트 성능 향상
-- [fact] DeepSeek Engram: Fast path(해시 O(1)) + Slow path(신경망), 75% 추론/25% 조회 비율
-- [fact] Basic Memory DB: entity(명사), relation(동사), observation(사실)으로 KGGen과 유사하게 구현됨
-- [fact] Loftus 기억 연구: 기억은 고정된 것이 아니라 재구성되므로 출처 명시 필수
-
-### Decisions
-- [decision] Working Memory: 현재 대화 + KV-Cache (VRAM)
-- [decision] STM: orchestration.db에 task 이력 저장 (시간 기반 검색)
-- [decision] LTM: Obsidian/Basic Memory에 구조화된 지식 저장 (그래프 기반 검색)
-- [decision] Knowledge Cache: observation.category='fact'를 세션 시작 시 미리 로드
-
-### Examples
-- [example] Knowledge Cache 쿼리: `SELECT content FROM observation WHERE category='fact' AND created_at > datetime('now', '-7 days')`
-- [example] 3계층 명령어: `/load-cache`(전 세션), `/tasks today`(오늘 작업), `/recall "BM25"`(지식 검색)
-- [example] 트리플 표현: (Fast-Slow) --[is_pattern_in]--> (Engram, KGGen, 카너먼)
-
-### Questions
-- [question] 세션 중 새로운 사실이 발견되면 Knowledge Cache 어떻게 갱신할 것인가? → `/update-cache` 제안
-- [question] 3개 저장소(Working/STM/LTM) 동기화 비용은 얼마나 되는가? → 측정 필요
-- [question] Knowledge Cache의 최적 크기는? → 프로젝트별 프로필 필요
-
-### References
-- [reference] [[Fast-Slow 프랙탈 - 도메인을 관통하는 구조|Fast-Slow 프랙탈]] - 이 아키텍처의 이론적 기반
-- [reference] [[AgeMem-paper-review|AgeMem 논문 리뷰]] - STM/LTM 도구 상세
-- [reference] [[03. sources/reviews/basic-memory-db-schema|Basic Memory DB 스키마]] - LTM 실제 구현
+- [method] Fast-Slow 패턴은 모든 도메인에서 반복되는 구조: AgeMem(STM/LTM), DeepSeek Engram(Quick/Deep), 카너먼(시스템1/2) #fast-slow
+- [method] 지식을 (주체-동사-객체) 트리플로 구조화하면 명시적 관계 추적 가능 (KGGen 방식) #knowledge-graph
+- [method] Knowledge Cache = "자주 쓰는 정보는 미리 로드, 필요할 때만 LTM 검색" (Engram의 O(1) + Fast path) #caching
+- [fact] AgeMem 연구: STM(최근 작업)/LTM(지식) 분리 시 에이전트 성능 향상 #research
+- [fact] DeepSeek Engram: Fast path(해시 O(1)) + Slow path(신경망), 75% 추론/25% 조회 비율 #architecture
+- [fact] Basic Memory DB: entity(명사), relation(동사), observation(사실)으로 KGGen과 유사하게 구현됨 #implementation
+- [fact] Loftus 기억 연구: 기억은 고정된 것이 아니라 재구성되므로 출처 명시 필수 #psychology
+- [decision] Working Memory: 현재 대화 + KV-Cache (VRAM) #layer-1
+- [decision] STM: orchestration.db에 task 이력 저장 (시간 기반 검색) #layer-2
+- [decision] LTM: Obsidian/Basic Memory에 구조화된 지식 저장 (그래프 기반 검색) #layer-3
+- [decision] Knowledge Cache: observation.category='fact'를 세션 시작 시 미리 로드 #optimization
+- [example] Knowledge Cache 쿼리: `SELECT content FROM observation WHERE category='fact' AND created_at > datetime('now', '-7 days')` #sql
+- [example] 3계층 명령어: `/load-cache`(전 세션), `/tasks today`(오늘 작업), `/recall "BM25"`(지식 검색) #commands
+- [example] 트리플 표현: (Fast-Slow) --[is_pattern_in]--> (Engram, KGGen, 카너먼) #triple
+- [question] 세션 중 새로운 사실이 발견되면 Knowledge Cache 어떻게 갱신할 것인가? → `/update-cache` 제안 #cache-invalidation
+- [question] 3개 저장소(Working/STM/LTM) 동기화 비용은 얼마나 되는가? → 측정 필요 #performance
+- [question] Knowledge Cache의 최적 크기는? → 프로젝트별 프로필 필요 #tuning
+- [reference] [[Fast-Slow 프랙탈 - 도메인을 관통하는 구조|Fast-Slow 프랙탈]] - 이 아키텍처의 이론적 기반 #source
+- [reference] [[AgeMem-paper-review|AgeMem 논문 리뷰]] - STM/LTM 도구 상세 #source
+- [reference] [[03. sources/reviews/basic-memory-db-schema|Basic Memory DB 스키마]] - LTM 실제 구현 #source
 
 ---
 

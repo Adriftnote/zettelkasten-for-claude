@@ -18,11 +18,9 @@ permalink: hubs/programming-basics-1
 
 ## Observations
 
-- [insight] 모든 코드는 결국 기계어가 된다 - 그 변환 과정을 누가, 언제 하느냐의 차이일 뿐 #compilation
-- [insight] 컴파일러는 미리 번역, 인터프리터는 실행하면서 번역 #execution
-- [insight] 라이브러리는 가져다 쓰는 것, 프레임워크는 그 안에서 작성하는 것 (IoC) #architecture
-- [path] 소스코드 → 실행도구(컴파일러/인터프리터) → 실행환경(런타임) → 기계어 실행 #learning
-- [path] 모듈 → 패키지 → 라이브러리 → 프레임워크 (재사용성 증가) #modularity
+- [fact] 모든 코드는 결국 기계어가 된다 - 그 변환 과정을 누가, 언제 하느냐의 차이일 뿐 #compilation
+- [fact] 컴파일러는 미리 번역, 인터프리터는 실행하면서 번역 #execution
+- [fact] 라이브러리는 가져다 쓰는 것, 프레임워크는 그 안에서 작성하는 것 (IoC) #architecture
 
 ## Relations
 

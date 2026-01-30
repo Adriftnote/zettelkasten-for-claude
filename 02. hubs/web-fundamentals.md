@@ -19,14 +19,10 @@ permalink: hubs/web-fundamentals-1
 
 ## Observations
 
-- [insight] 웹의 본질은 하이퍼링크로 연결된 문서다 - 나머지는 모두 그 위에 쌓인 레이어 #web
-- [insight] HTML은 구조, CSS는 표현, JS는 동작 - 관심사 분리의 전형 #separation-of-concerns
-- [insight] SOP는 웹 보안의 근간, CORS는 그 예외를 허용하는 메커니즘 #security
-- [insight] Chrome Extension은 웹 페이지 위에서 동작하는 별도의 실행 컨텍스트 #extension
-- [path] 입문: HTML → CSS → JS → DOM #learning
-- [path] 심화: HTTP Methods → HTTP Status Codes → HTTP Header → Web Communication #learning
-- [path] 보안: SOP → CORS #learning
-- [path] 확장: Chrome Extension → Content Script → Background Script #learning
+- [fact] 웹의 본질은 하이퍼링크로 연결된 문서 - 나머지는 모두 그 위에 쌓인 레이어 #web
+- [fact] HTML은 구조, CSS는 표현, JS는 동작 - 관심사 분리의 전형 #separation-of-concerns
+- [fact] SOP는 웹 보안의 근간, CORS는 그 예외를 허용하는 메커니즘 #security
+- [fact] Chrome Extension은 웹 페이지 위에서 동작하는 별도의 실행 컨텍스트 #extension
 
 ## Relations
 

@@ -2,17 +2,17 @@
 title: 컴퓨터 구조 학습 여정 - 라이브러리부터 GPU까지
 type: note
 tags:
-- computer-architecture
-- cognitive-science
-- gpu
-- memory
-- derived
+  - computer-architecture
+  - cognitive-science
+  - gpu
+  - memory
+  - derived
 permalink: notes/computer-architecture-learning-journey
 source_facts:
-- 데이터 구조와 메모리 배치
-- 메모리 계층 구조
-- GPU 병렬 처리
-- 시스템1-2 이론
+  - 데이터 구조와 메모리 배치
+  - 메모리 계층 구조
+  - GPU 병렬 처리
+  - 시스템1-2 이론
 ---
 
 # 컴퓨터 구조 학습 여정 - 라이브러리부터 GPU까지

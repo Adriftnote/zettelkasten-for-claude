@@ -19,10 +19,11 @@ LLM에게 **어떤 정보를 어떻게 전달**하느냐가 응답 품질을 결
 ## Observations
 
 - [fact] LLM은 컨텍스트 윈도우 안에서만 세상을 본다 #context #llm
-- [fact] 정보 배치가 이해도를 결정한다 #optimization
-- [fact] 중간 위치 정보는 잘 잊혀지고 시작/끝이 중요하다 #lost-in-middle
-- [fact] 오염된 컨텍스트는 전체 응답 품질을 저하시킨다 #context-poisoning
-- [method] 기초: 필요한 정보 선별 → 배치: 위치 최적화 → 정제: 오류/잡음 제거 #flow
+- [fact] 토큰 수 ≠ 용량, 주의력이 진짜 제약 #attention
+- [fact] 정보 배치가 이해도를 결정한다 - U자형 주의 곡선 #optimization
+- [fact] 중간 위치 정보는 10-40% 낮은 회수율 (Lost-in-Middle 현상) #lost-in-middle
+- [fact] Tool 출력이 전체 컨텍스트의 83.9% 차지 #tool-output
+- [fact] 도구 통합 시 80%→100% 성공률 향상 (17→2 도구) #tool-design
 
 ## Relations
 

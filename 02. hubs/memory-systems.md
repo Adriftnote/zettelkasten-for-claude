@@ -18,11 +18,9 @@ permalink: hubs/memory-systems-1
 
 ## Observations
 
-- [insight] 메모리는 속도 vs 용량의 트레이드오프 - 빠를수록 비싸고 작다 #hardware #memory
-- [insight] 메모리 계층구조: CPU 캐시(극고속) → RAM(고속) → SSD(저속) → HDD(극저속) #cache #storage
-- [insight] 속도 vs 비용 vs 용량의 삼각관계 - 한 가지만 택할 수 있음 #tradeoff
-- [tip] LLM 성능은 VRAM 크기에 직결 (모델 로드, KV 캐시, 배치 크기 결정) #llm #gpu
-- [path] 기초 계층 (L1/L2 캐시) → RAM → VRAM → 메모리 계층 구조 → LLM 최적화 #learning
+- [fact] 메모리는 속도 vs 용량의 트레이드오프 - 빠를수록 비싸고 작다 #hardware #memory
+- [fact] 메모리 계층구조: CPU 캐시(극고속) → RAM(고속) → SSD(저속) → HDD(극저속) #cache #storage
+- [fact] LLM 성능은 VRAM 크기에 직결 - 모델 로드, KV 캐시, 배치 크기 결정 #llm #gpu
 
 ## Relations
 

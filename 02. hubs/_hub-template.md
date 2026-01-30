@@ -120,8 +120,8 @@ Basic Memory는 `- {뭔가} [[링크]]` 패턴을 **문서 전체에서** 파싱
 ```markdown
 ## Observations
 
-- [insight] [[compiler]]는 미리 번역한다   ← ❌ relation으로 잘못 파싱!
-- [insight] 컴파일러는 미리 번역한다 #compiler   ← ✅ 태그 사용
+- [fact] [[compiler]]는 미리 번역한다   ← ❌ relation으로 잘못 파싱!
+- [fact] 컴파일러는 미리 번역한다 #compiler   ← ✅ 태그 사용
 ```
 
 ### 2. 테이블/blockquote 내 wikilink
