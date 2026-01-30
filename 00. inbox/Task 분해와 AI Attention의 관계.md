@@ -102,9 +102,50 @@ Transformer Attention은 `O(n²)` 복잡도를 가진다.
 
 ---
 
-## 5. 확장 가능한 질문
+## 5. 확장: RAG Chunking과의 연결
 
-- [ ] RAG에서 chunk 크기 결정도 같은 원리인가?
+> **RAG의 chunk 크기 결정도 정확히 같은 원리다.**
+
+### Task 크기 vs Chunk 크기
+
+| Task 분해 | RAG Chunking |
+|-----------|--------------|
+| 너무 작으면 → 오버헤드 낭비 | 너무 작으면 → 맥락 끊김, semantic coherence 붕괴 |
+| 너무 크면 → attention 희석 | 너무 크면 → 노이즈 섞임, "needle in haystack" |
+| 8-80시간 권장 | 256-1024 토큰 권장 (도메인마다 다름) |
+
+### 공통 원칙
+
+**1. 의미적 완결성**
+- Task: "하나의 담당자가 완료할 수 있는 단위"
+- Chunk: "하나의 의미 단위로 이해 가능한 범위"
+
+**2. Attention 집중 가능 크기**
+- Task: Subagent가 컨텍스트 내에서 집중할 수 있는 범위
+- Chunk: Retrieve된 후 LLM이 "여기서 답을 찾아라"할 때 집중 가능한 범위
+
+**3. 경계의 중요성**
+- Task: 의존성 경계가 명확해야 병렬 가능
+- Chunk: 문장/문단/섹션 경계에서 자르면 의미 보존
+
+### 통합 프레임워크
+
+```
+[공통 원리]
+"정보 처리 단위의 적정 크기 = Attention 효율의 최적점"
+
+Task 분해    →  Agent의 attention 배분
+RAG Chunk    →  Retrieval + Generation attention 배분
+프롬프트 구조 →  In-context attention 배분
+```
+
+> **"LLM에게 뭔가를 시킬 때 얼마나 쪼갤 것인가"는 전부 같은 문제의 변주**
+
+---
+
+## 6. 확장 가능한 질문
+
+- [x] RAG에서 chunk 크기 결정도 같은 원리인가? → **Yes, 위 섹션 참고**
 - [ ] 프롬프트 엔지니어링의 "구체적으로 써라"도 attention anchor 관점?
 - [ ] Human의 주의력 관리와 LLM attention 관리의 유사성?
 - [ ] Sparse Attention이 Task 분해 패턴에 주는 시사점?
