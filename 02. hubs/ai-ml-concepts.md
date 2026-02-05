@@ -7,7 +7,7 @@ tags:
 - ml
 - search
 - knowledge-graph
-permalink: hubs/ai-ml-concepts-1
+permalink: hubs/ai-ml-concepts
 ---
 
 # AI/ML 개념
@@ -31,6 +31,7 @@ permalink: hubs/ai-ml-concepts-1
 - organizes [[Knowledge Graph (지식 그래프)]] (3. 개체와 관계를 그래프 구조로 표현)
   - part_of [[Triple (트리플)]] (3a. 주어-서술어-목적어 형식의 기본 단위)
   - part_of [[Entity Resolution (엔티티 해결)]] (3b. 동일 개체의 중복 식별 및 통합)
+  - extends [[RPG (Repository Planning Graph)]] (3c. 코드 특화 지식 그래프. 의미론+위상으로 검색 가능한 코드 표현)
 - organizes [[Hybrid Search]] (4. BM25 + 시맨틱 검색의 결합으로 최적 결과 도출)
 - organizes [[ReAct Paradigm]] (5. Reasoning + Acting 결합. 생각→행동→관찰 루프)
   - extends [[Agent Architecture]] (5a. 에이전트 아키텍처 설계)
@@ -52,7 +53,10 @@ permalink: hubs/ai-ml-concepts-1
 
 [3] Knowledge Graph (지식 표현)
     ├─ [3a] Triple (기본 단위)
-    └─ [3b] Entity Resolution (통합)
+    ├─ [3b] Entity Resolution (통합)
+    └─ [3c] RPG (코드 특화)
+        ├─ 노드: 의미론 + 위상
+        └─ 엣지: 기능 + 의존성
 
 [4] Hybrid Search (결합)
     = [1a] + [2] + 의미 임베딩

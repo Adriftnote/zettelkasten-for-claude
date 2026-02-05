@@ -128,13 +128,13 @@ service = UserService(db)  # 의존성 주입
 
 ## 🔍 IoC가 적용된 곳
 
-| 영역 | 설명 | 예시 |
-|------|------|------|
-| **[[framework\|프레임워크]]** | 프레임워크가 개발자 코드 호출 | Django, Spring, React |
-| **이벤트 핸들러** | 이벤트 발생 시 시스템이 호출 | `addEventListener`, `onClick` |
-| **의존성 주입 (DI)** | 외부에서 의존성 주입 | Spring DI, Angular DI |
-| **템플릿 메서드** | 상위 클래스가 하위 구현 호출 | 디자인 패턴 |
-| **콜백 함수** | 시스템이 콜백 호출 | `setTimeout`, `Promise.then` |
+| 영역              | 설명               | 예시                            |
+| --------------- | ---------------- | ----------------------------- |
+| 프레임워크           | 프레임워크가 개발자 코드 호출 | Django, Spring, React         |
+| **이벤트 핸들러**     | 이벤트 발생 시 시스템이 호출 | `addEventListener`, `onClick` |
+| **의존성 주입 (DI)** | 외부에서 의존성 주입      | Spring DI, Angular DI         |
+| **템플릿 메서드**     | 상위 클래스가 하위 구현 호출 | 디자인 패턴                        |
+| **콜백 함수**       | 시스템이 콜백 호출       | `setTimeout`, `Promise.then`  |
 
 ## 🎯 장단점
 
@@ -152,11 +152,12 @@ service = UserService(db)  # 의존성 주입
 
 ## Relations
 
-- used_by [[framework]]
+- used_by [[framework]] (프레임워크가 개발자 코드 호출)
 - similar_to [[library]]
 - implements [[source-code]]
 - relates_to [[dependency-injection]]
 - relates_to [[design-pattern]]
+- requires [[다형성 (Polymorphism)]] (다형성이 있어야 제어 역전 가능)
 
 ---
 

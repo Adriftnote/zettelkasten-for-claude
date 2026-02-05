@@ -16,13 +16,13 @@ difficulty: intermediate
 
 ## 정의
 
-**UTF-16 (16-bit Unicode Transformation Format)**은 [[Unicode]] 문자를 2 또는 4[[Byte]]로 인코딩하는 가변 길이 방식입니다.
+**UTF-16 (16-bit Unicode Transformation Format)**은 Unicode 문자를 2 또는 4바이트(Byte)로 인코딩하는 가변 길이 방식입니다.
 
 Windows와 Java의 내부 문자열 표현 방식입니다.
 
 ## 숫자의 의미
 
-**UTF-16**의 "16"은 **16[[Bit]] (2[[Byte]]) 단위**로 처리한다는 뜻입니다.
+**UTF-16**의 "16"은 **16비트 (2바이트) 단위**로 처리한다는 뜻입니다.
 
 ```
 16 bits = 2 bytes (기본 처리 단위)
@@ -70,7 +70,7 @@ o: 2 bytes
 총합: 14 bytes
 ```
 
-## [[Endianness]] 문제
+## Endianness 문제
 
 UTF-16은 2바이트 단위이므로 바이트 순서가 중요합니다:
 
@@ -85,7 +85,7 @@ Little Endian: [00] [AC]
 → 같은 파일, 다른 해석!
 ```
 
-### [[BOM]]으로 구분
+### BOM으로 구분
 
 파일 시작에 BOM을 넣어서 구분:
 
@@ -167,7 +167,7 @@ Java String: UTF-16 내부 표현
 
 ## 단점
 
-### 1. [[ASCII]] 비호환
+### 1. ASCII 비호환
 
 ```
 'A' (U+0041):
@@ -187,7 +187,7 @@ Java String: UTF-16 내부 표현
 → 영어 문서는 2배 크기
 ```
 
-### 3. [[Endianness]] 복잡성
+### 3. Endianness 복잡성
 
 ```
 파일 교환 시 BOM 필수
@@ -364,12 +364,16 @@ console.log([...emoji].length);  // 1
 
 ## Relations
 
-- implements [[Unicode]]
-- similar_to [[UTF-8]]
-- used_by [[Endianness]]
-- used_by [[BOM (Byte Order Mark)]]
-- part_of [[Character Encoding]]
+- implements [[Unicode]] (Unicode를 바이트로 인코딩)
+- similar_to [[UTF-8]] (다른 UTF 방식)
+- similar_to [[UTF-32]] (다른 UTF 방식)
+- used_by [[Endianness]] (Big/Little Endian 구분 필요)
+- uses [[BOM (Byte Order Mark)]] (BOM 필수)
+- part_of [[Character Encoding]] (문자 인코딩 방식)
+- relates_to [[ASCII]] (ASCII 비호환)
+- uses [[Bit]] (16비트 단위 처리)
+- uses [[Byte]] (2~4바이트 가변 길이)
 
 ## 핵심 요약
 
-UTF-16은 "Windows/Java의 내부 인코딩"입니다. 한글/한자에는 효율적이지만, [[ASCII]] 비호환, [[Endianness]] 복잡성 때문에 파일 저장용으로는 [[UTF-8]]에 밀렸습니다. **내부 처리는 UTF-16, 파일 저장은 UTF-8**이 일반적 패턴입니다.
+UTF-16은 "Windows/Java의 내부 인코딩"입니다. 한글/한자에는 효율적이지만, ASCII 비호환, Endianness 복잡성 때문에 파일 저장용으로는 UTF-8에 밀렸습니다. **내부 처리는 UTF-16, 파일 저장은 UTF-8**이 일반적 패턴입니다.

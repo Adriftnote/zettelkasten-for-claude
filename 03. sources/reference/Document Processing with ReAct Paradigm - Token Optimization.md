@@ -1,7 +1,7 @@
 ---
 title: Document Processing with ReAct Paradigm - Token Optimization
-type: note
-permalink: reports/document-processing-with-re-act-paradigm-token-optimization
+type: guide
+permalink: sources/reference/react-document-processing-token-optimization
 extraction_status: pending
 ---
 

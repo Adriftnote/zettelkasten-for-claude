@@ -9,7 +9,7 @@ tags:
 - module
 - zettelkasten
 - basic-memory
-permalink: hubs/programming-basics-1
+permalink: hubs/programming-basics
 ---
 
 # 프로그래밍 기초 (Programming Basics)

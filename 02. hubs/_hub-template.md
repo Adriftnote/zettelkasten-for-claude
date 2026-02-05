@@ -6,7 +6,7 @@ tags:
 - hub
 - zettelkasten
 - basic-memory
-permalink: hubs/template-1
+permalink: hubs/hub-template
 ---
 
 # 허브 노트 템플릿

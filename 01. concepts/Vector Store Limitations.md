@@ -1,7 +1,7 @@
 ---
 title: Vector Store Limitations
 type: note
-permalink: 01.-concepts/vector-store-limitations
+permalink: knowledge/concepts/vector-store-limitations
 tags:
 - memory
 - vector-db

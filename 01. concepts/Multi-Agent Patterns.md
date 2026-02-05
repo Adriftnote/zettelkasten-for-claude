@@ -1,7 +1,7 @@
 ---
 title: Multi-Agent Patterns
 type: note
-permalink: 01.-concepts/multi-agent-patterns
+permalink: knowledge/concepts/multi-agent-patterns
 tags:
 - multi-agent
 - architecture

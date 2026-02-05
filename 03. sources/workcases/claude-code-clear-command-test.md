@@ -1,6 +1,7 @@
 ---
 extraction_status: pending
-permalink: 03.-sources/work-cases/claude-code-clear-command-test
+type: workcase
+permalink: sources/workcases/claude-code-clear-command-test
 ---
 
 # Claude Code /clear 명령어 동작 분석

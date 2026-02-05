@@ -5,7 +5,7 @@ tags:
 - pattern
 - framework
 - derived
-permalink: notes/fast-slow-peuraegtal-domeineul-gwantonghaneun-gujo-1
+permalink: notes/fast-slow-fractal-domain-structure
 source_facts:
 - 시스템1-2 이중과정이론
 - Engram 아키텍처 분석

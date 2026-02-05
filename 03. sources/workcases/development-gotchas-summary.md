@@ -1,6 +1,6 @@
 ---
 title: 개발 Gotchas 요약 (핵심만)
-type: reference
+type: workcase
 tags:
 - gotcha
 - summary

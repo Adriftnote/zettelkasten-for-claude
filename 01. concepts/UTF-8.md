@@ -15,13 +15,13 @@ difficulty: intermediate
 
 ## 정의
 
-**UTF-8 (8-bit Unicode Transformation Format)**은 [[Unicode]] 문자를 1~4[[Byte]]로 인코딩하는 가변 길이 방식입니다.
+**UTF-8 (8-bit Unicode Transformation Format)**은 Unicode 문자를 1~4바이트(Byte)로 인코딩하는 가변 길이 방식입니다.
 
 현재 **웹과 유닉스/리눅스의 사실상 표준** 인코딩입니다.
 
 ## 숫자의 의미
 
-**UTF-8**의 "8"은 **8[[Bit]] (1[[Byte]]) 단위**로 처리한다는 뜻입니다.
+**UTF-8**의 "8"은 **8비트 (1바이트) 단위**로 처리한다는 뜻입니다.
 
 ```
 8 bits = 1 byte (기본 처리 단위)
@@ -125,7 +125,7 @@ UTF-8:
 → UTF-8이 가장 작음!
 ```
 
-### 3. [[Endianness]] 문제 없음
+### 3. Endianness 문제 없음
 ```
 UTF-16/32: Big Endian vs Little Endian 구분 필요
 UTF-8: 바이트 순서가 고정됨
@@ -174,9 +174,9 @@ UTF-32: 고정 길이 → n×4 바이트로 즉시 접근
 문자 수: 처음부터 세어야 알 수 있음
 ```
 
-## [[BOM]] (Byte Order Mark)
+## BOM (Byte Order Mark)
 
-UTF-8은 [[BOM]]이 **선택 사항**입니다:
+UTF-8은 BOM이 **선택 사항**입니다:
 
 | BOM 유무 | 바이트 | 사용 |
 |---------|--------|------|
@@ -186,9 +186,9 @@ UTF-8은 [[BOM]]이 **선택 사항**입니다:
 **문제:**
 - 웹: BOM이 있으면 파싱 에러
 - 유닉스: 스크립트 실행 실패
-- Windows: [[PowerShell]] 5.x는 BOM 필수
+- Windows: PowerShell 5.x는 BOM 필수
 
-→ 자세한 내용은 [[BOM (Byte Order Mark)]] 참조
+→ 자세한 내용은 BOM (Byte Order Mark) 참조
 
 ## 역사
 
@@ -263,13 +263,16 @@ console.log(decoded);  // Hello안녕
 
 ## Relations
 
-- implements [[Unicode]]
-- similar_to [[UTF-16]]
-- similar_to [[UTF-32]]
-- extends [[ASCII]]
-- uses [[BOM (Byte Order Mark)]]
-- part_of [[Character Encoding]]
+- implements [[Unicode]] (Unicode를 바이트로 인코딩)
+- similar_to [[UTF-16]] (다른 UTF 방식)
+- similar_to [[UTF-32]] (다른 UTF 방식)
+- extends [[ASCII]] (ASCII와 완전 호환)
+- uses [[BOM (Byte Order Mark)]] (선택적으로 BOM 사용)
+- part_of [[Character Encoding]] (문자 인코딩 방식)
+- relates_to [[Endianness]] (Endianness 문제 없음)
+- uses [[Bit]] (8비트 단위 처리)
+- uses [[Byte]] (1~4바이트 가변 길이)
 
 ## 핵심 요약
 
-UTF-8은 "전 세계 웹의 표준 인코딩"입니다. [[ASCII]] 호환, 공간 효율, [[Endianness]] 문제 없음 등의 장점으로 압도적 1위를 차지했습니다. 한글은 3바이트로 비효율적이지만, 범용성과 호환성 때문에 여전히 최선의 선택입니다.
+UTF-8은 "전 세계 웹의 표준 인코딩"입니다. ASCII 호환, 공간 효율, Endianness 문제 없음 등의 장점으로 압도적 1위를 차지했습니다. 한글은 3바이트로 비효율적이지만, 범용성과 호환성 때문에 여전히 최선의 선택입니다.

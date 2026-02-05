@@ -1,7 +1,7 @@
 ---
 title: Category Theory 허브
 type: hub
-permalink: 02.-hubs/category-theory-heobeu
+permalink: hubs/category-theory
 tags:
 - hub
 - category-theory

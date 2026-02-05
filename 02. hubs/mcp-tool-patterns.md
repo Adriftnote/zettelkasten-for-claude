@@ -8,7 +8,7 @@ tags:
 - agent
 - pattern
 - lazy-loading
-permalink: hubs/mcp-tool-patterns-1
+permalink: hubs/mcp-tool-patterns
 ---
 
 # MCP & Tool 패턴

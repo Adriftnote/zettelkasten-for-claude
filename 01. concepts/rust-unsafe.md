@@ -207,9 +207,9 @@ cargo +nightly miri test
 ## Observations
 
 - [fact] Raw pointer 생성은 safe이지만 역참조는 unsafe입니다 #pointer
-- [tip] Safe abstraction으로 unsafe 코드를 캡슐화하면 안전성을 높일 수 있습니다 #design-pattern
-- [warning] Mutable static 변수는 thread-safe하지 않으므로 atomic 타입 사용을 권장합니다 #concurrency
-- [insight] Unsafe 코드의 양을 최소화하는 것이 유지보수 관점에서 중요합니다 #best-practice
+- [method] Safe abstraction으로 unsafe 코드를 캡슐화하면 안전성을 높일 수 있습니다 #design-pattern
+- [fact] Mutable static 변수는 thread-safe하지 않으므로 atomic 타입 사용을 권장합니다 #concurrency
+- [fact] Unsafe 코드의 양을 최소화하는 것이 유지보수 관점에서 중요합니다 #best-practice
 
 ## Relations
 

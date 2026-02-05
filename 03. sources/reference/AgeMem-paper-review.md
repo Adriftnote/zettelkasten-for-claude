@@ -6,7 +6,7 @@ tags:
   - memory
   - agent
   - reinforcement-learning
-permalink: reviews/agemem-paper-review
+permalink: sources/reference/agemem-paper-review
 date: 2026-01-21
 extraction_status: pending
 ---

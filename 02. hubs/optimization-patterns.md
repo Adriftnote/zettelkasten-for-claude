@@ -7,7 +7,7 @@ tags:
 - token
 - performance
 - pattern
-permalink: hubs/optimization-patterns-1
+permalink: hubs/optimization-patterns
 ---
 
 # 최적화 패턴 (Optimization Patterns)

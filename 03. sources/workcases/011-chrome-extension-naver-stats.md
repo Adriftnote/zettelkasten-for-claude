@@ -1,6 +1,7 @@
 ---
 extraction_status: pending
-permalink: 03.-sources/reviews/011-chrome-extension-naver-stats
+type: workcase
+permalink: sources/workcases/chrome-extension-naver-stats
 ---
 
 # Chrome Extension 개발 - 네이버 블로그 통계 수집기

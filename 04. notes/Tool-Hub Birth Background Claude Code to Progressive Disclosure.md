@@ -1,7 +1,7 @@
 ---
 title: Tool-Hub Birth Background Claude Code to Progressive Disclosure
 type: note
-permalink: architecture/tool-hub-birth-background-claude-code-to-progressive-disclosure
+permalink: notes/tool-hub-birth-background-claude-code
 tags:
 - tool-hub
 - progressive-disclosure

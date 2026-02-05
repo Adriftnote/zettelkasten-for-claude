@@ -1,6 +1,6 @@
 ---
 title: Chrome Extension 동작 원리 정리
-type: work-case
+type: workcase
 extraction_status: pending
 tags:
 - chrome-extension
@@ -11,7 +11,7 @@ tags:
 date: 2026-01-19
 project: Social Analytics Extractor
 status: completed
-permalink: work-cases/chrome-extension-dongjag-weonri-jeongri-1
+permalink: sources/workcases/chrome-extension-operation-guide
 ---
 
 # Chrome Extension 동작 원리 정리

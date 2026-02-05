@@ -49,7 +49,7 @@ Unicode는 각 문자에 `U+XXXX` 형식의 번호를 부여합니다.
 
 | 영역 | 범위 | 설명 |
 |------|------|------|
-| **Basic Latin** | U+0000 ~ U+007F | [[ASCII]] 영역 (영어) |
+| **Basic Latin** | U+0000 ~ U+007F | ASCII 영역 (영어) |
 | **Latin-1 Supplement** | U+0080 ~ U+00FF | 유럽 문자 (é, ñ 등) |
 | **한글 음절** | U+AC00 ~ U+D7AF | 한글 11,172자 |
 | **CJK Unified** | U+4E00 ~ U+9FFF | 한중일 한자 |
@@ -74,9 +74,9 @@ UTF-32:  00 00 AC 00 (4바이트로 저장)
 
 Unicode를 실제 바이트로 변환하는 방법:
 
-- [[UTF-8]] - 1~4바이트 가변 길이
-- [[UTF-16]] - 2 또는 4바이트
-- [[UTF-32]] - 항상 4바이트
+- UTF-8 - 1~4바이트 가변 길이
+- UTF-16 - 2 또는 4바이트
+- UTF-32 - 항상 4바이트
 
 → 자세한 내용은 각 인코딩 문서 참조
 
@@ -119,11 +119,11 @@ Unicode를 실제 바이트로 변환하는 방법:
 
 ## Relations
 
-- implements [[UTF-8]]
-- implements [[UTF-16]]
-- implements [[UTF-32]]
-- part_of [[Character Encoding]]
-- extends [[ASCII]]
+- implements [[UTF-8]] (UTF-8로 인코딩)
+- implements [[UTF-16]] (UTF-16으로 인코딩)
+- implements [[UTF-32]] (UTF-32로 인코딩)
+- part_of [[Character Encoding]] (문자 인코딩 체계)
+- extends [[ASCII]] (ASCII를 완전히 포함)
 
 ## 실용 예시
 
@@ -143,4 +143,4 @@ String.fromCharCode(0xAC00)  // '가'
 
 ## 핵심 요약
 
-Unicode는 "전 세계 문자 번호표"입니다. 실제 파일에 저장하려면 [[UTF-8]], [[UTF-16]], [[UTF-32]] 같은 인코딩 방식이 필요합니다. "Unicode로 저장한다"는 표현은 부정확하며, 정확히는 "UTF-8로 저장한다" 같이 말해야 합니다.
+Unicode는 "전 세계 문자 번호표"입니다. 실제 파일에 저장하려면 UTF-8, UTF-16, UTF-32 같은 인코딩 방식이 필요합니다. "Unicode로 저장한다"는 표현은 부정확하며, 정확히는 "UTF-8로 저장한다" 같이 말해야 합니다.

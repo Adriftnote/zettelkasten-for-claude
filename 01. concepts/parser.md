@@ -8,7 +8,7 @@ tags:
 category: 프로그래밍 기초
 difficulty: 초급
 date: 2026-01-28
-permalink: 01.-concepts/parser
+permalink: knowledge/concepts/parser
 ---
 
 # 파서 (Parser)

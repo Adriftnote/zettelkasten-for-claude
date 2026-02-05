@@ -15,7 +15,7 @@ difficulty: intermediate
 
 ## 정의
 
-**Endianness (엔디언)**는 멀티[[Byte]] 데이터를 메모리에 저장할 때 **바이트의 순서**를 정하는 방식입니다.
+**Endianness (엔디언)**는 멀티바이트(Byte) 데이터를 메모리에 저장할 때 **바이트의 순서**를 정하는 방식입니다.
 
 "Little Endian"과 "Big Endian" 두 가지가 있습니다.
 
@@ -87,7 +87,7 @@ Little Endian: 78 56 34 12
 
 ## UTF-16에서의 Endianness
 
-[[UTF-16]]은 2바이트 단위이므로 순서가 중요합니다:
+UTF-16은 2바이트 단위이므로 순서가 중요합니다:
 
 ### 문자 '가' (U+AC00)
 
@@ -101,7 +101,7 @@ Little Endian UTF-16:
 → 똑같은 파일인데 읽는 방식에 따라 다른 문자!
 ```
 
-### [[BOM]]으로 구분
+### BOM으로 구분
 
 ```
 UTF-16 파일 시작:
@@ -114,7 +114,7 @@ Little Endian: FF FE [00 AC] ...
 
 ## UTF-8은 왜 Endianness 문제가 없나?
 
-[[UTF-8]]은 **1바이트 단위**로 처리하므로 순서가 고정됨:
+UTF-8은 **1바이트 단위**로 처리하므로 순서가 고정됨:
 
 ```
 '가' = U+AC00
@@ -263,12 +263,12 @@ data = struct.pack('>H', 0xAC00)  # b'\xac\x00'
 
 ## Relations
 
-- used_by [[UTF-16]]
-- used_by [[UTF-32]]
-- relates_to [[UTF-8]]
-- used_by [[BOM (Byte Order Mark)]]
-- part_of [[Byte]]
+- used_by [[UTF-16]] (UTF-16은 Endianness 구분 필요)
+- used_by [[UTF-32]] (UTF-32는 Endianness 구분 필요)
+- relates_to [[UTF-8]] (UTF-8은 Endianness 문제 없음)
+- relates_to [[BOM (Byte Order Mark)]] (BOM으로 Endianness 구분)
+- relates_to [[Byte]] (멀티바이트 순서 정의)
 
 ## 핵심 요약
 
-Endianness는 "바이트 저장 순서"입니다. Big Endian(큰 쪽 먼저)과 Little Endian(작은 쪽 먼저)이 있으며, 현대 PC는 대부분 Little Endian입니다. [[UTF-16]]/[[UTF-32]]는 [[BOM]]으로 구분하지만, [[UTF-8]]은 1바이트 단위라서 이 문제가 없습니다.
+Endianness는 "바이트 저장 순서"입니다. Big Endian(큰 쪽 먼저)과 Little Endian(작은 쪽 먼저)이 있으며, 현대 PC는 대부분 Little Endian입니다. UTF-16/UTF-32는 BOM으로 구분하지만, UTF-8은 1바이트 단위라서 이 문제가 없습니다.

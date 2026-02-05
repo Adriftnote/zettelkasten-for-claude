@@ -3,5 +3,8 @@
   "dataview",
   "obsidian42-brat",
   "claudian",
-  "obsidian-git"
+  "obsidian-git",
+  "qmd-as-md-obsidian",
+  "obsidian-pandoc",
+  "execute-code"
 ]

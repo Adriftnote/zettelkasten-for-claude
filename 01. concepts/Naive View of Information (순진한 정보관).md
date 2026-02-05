@@ -10,6 +10,7 @@ category: 철학/정보학
 difficulty: 중급
 created: 2026-01-28
 source: 넥서스 (Nexus) - 유발 하라리
+permalink: knowledge/concepts/naive-view-of-information
 ---
 
 # Naive View of Information (순진한 정보관)

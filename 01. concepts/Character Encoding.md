@@ -16,7 +16,7 @@ difficulty: beginner
 
 ## 정의
 
-**Character Encoding (문자 인코딩)**은 문자를 컴퓨터가 저장하고 전송할 수 있는 [[Byte]] 형태로 변환하는 방법입니다.
+**Character Encoding (문자 인코딩)**은 문자를 컴퓨터가 저장하고 전송할 수 있는 바이트(Byte) 형태로 변환하는 방법입니다.
 
 ```
 문자 (사람이 읽음)
@@ -55,7 +55,6 @@ difficulty: beginner
 문제: 다른 나라 언어는?
 ```
 
-→ [[ASCII]] 참조
 
 ### 2. 각국 확장 인코딩 (1970~1990년대)
 
@@ -69,7 +68,6 @@ difficulty: beginner
 한글 파일을 일본 컴퓨터에서 열면 깨짐
 ```
 
-→ [[CP949]] 참조
 
 ### 3. Unicode 시대 (1991~현재)
 
@@ -80,19 +78,18 @@ UTF-8/16/32: Unicode를 바이트로 변환
 → 전 세계가 하나의 표준 사용!
 ```
 
-→ [[Unicode]], [[UTF-8]] 참조
 
 ## 주요 인코딩 방식
 
 | 인코딩 | 연도 | 범위 | 바이트/문자 | 용도 |
 |--------|------|------|------------|------|
-| [[ASCII]] | 1963 | 영어 | 1 | 레거시 시스템 |
+| ASCII | 1963 | 영어 | 1 | 레거시 시스템 |
 | ISO-8859-1 | 1987 | 서유럽 | 1 | 구형 웹 |
-| [[CP949]] | 1990s | 한글 | 2 | Windows 한국어 |
+| CP949 | 1990s | 한글 | 2 | Windows 한국어 |
 | Shift-JIS | 1980s | 일본어 | 1~2 | Windows 일본어 |
 | GB2312 | 1980 | 중국어 | 2 | Windows 중국어 |
-| **[[UTF-8]]** | 1993 | 전 세계 | 1~4 | **웹 표준** |
-| [[UTF-16]] | 1996 | 전 세계 | 2~4 | Windows 내부 |
+| **UTF-8** | 1993 | 전 세계 | 1~4 | **웹 표준** |
+| UTF-16 | 1996 | 전 세계 | 2~4 | Windows 내부 |
 | UTF-32 | 1996 | 전 세계 | 4 | 내부 처리 |
 
 ## 인코딩 vs 디코딩
@@ -134,7 +131,6 @@ text = bytes.decode('cp949')  # 깨진 문자 출력!
 문자 깨짐! (洹몃９ 같은 이상한 글자)
 ```
 
-→ [[PowerShell 한글 인코딩 문제]]
 
 ### 2. BOM 누락
 
@@ -146,7 +142,6 @@ PowerShell 5.x: "BOM 없으니 CP949로 읽자"
 한글 깨짐!
 ```
 
-→ [[BOM (Byte Order Mark)]]
 
 ### 3. Endianness 불일치
 
@@ -158,7 +153,6 @@ Little Endian으로 읽음
 문자 깨짐!
 ```
 
-→ [[Endianness]]
 
 ## 인코딩 감지
 
@@ -294,12 +288,16 @@ with open('file.txt', 'rb') as f:
 
 ## Relations
 
-- part_of [[ASCII]]
-- extends [[Unicode]]
-- implements [[UTF-8]]
-- implements [[UTF-16]]
-- implements [[CP949]]
+- includes [[ASCII]] (초기 인코딩 표준)
+- includes [[Unicode]] (현대 문자 집합)
+- includes [[UTF-8]] (UTF 인코딩 방식)
+- includes [[UTF-16]] (UTF 인코딩 방식)
+- includes [[UTF-32]] (UTF 인코딩 방식)
+- includes [[CP949]] (한국어 인코딩)
+- uses [[Byte]] (바이트 단위 변환)
+- relates_to [[BOM (Byte Order Mark)]] (BOM 사용)
+- relates_to [[Endianness]] (바이트 순서)
 
 ## 핵심 요약
 
-Character Encoding은 "문자를 숫자로 바꾸는 약속"입니다. 과거에는 나라마다 다른 인코딩을 썼지만([[CP949]], Shift-JIS 등), 현재는 [[UTF-8]]이 사실상 표준입니다. **항상 UTF-8을 사용하고, 인코딩을 명시**하면 대부분의 문제를 피할 수 있습니다.
+Character Encoding은 "문자를 숫자로 바꾸는 약속"입니다. 과거에는 나라마다 다른 인코딩을 썼지만(CP949, Shift-JIS 등), 현재는 UTF-8이 사실상 표준입니다. **항상 UTF-8을 사용하고, 인코딩을 명시**하면 대부분의 문제를 피할 수 있습니다.

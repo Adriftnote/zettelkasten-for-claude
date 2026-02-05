@@ -7,7 +7,7 @@ tags:
 - system-design
 - agent
 - tool
-permalink: hubs/architectures-1
+permalink: hubs/architectures
 ---
 
 # 아키텍처 (Architectures)

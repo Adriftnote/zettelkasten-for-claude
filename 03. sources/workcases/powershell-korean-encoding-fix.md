@@ -1,6 +1,7 @@
 ---
 extraction_status: pending
-permalink: 03.-sources/work-cases/powershell-korean-encoding-fix
+type: workcase
+permalink: sources/workcases/powershell-korean-encoding-fix
 ---
 
 # PowerShell 한글 인코딩 문제 해결

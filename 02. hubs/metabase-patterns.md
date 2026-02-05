@@ -7,7 +7,7 @@ tags:
 - bi
 - dashboard
 - pattern
-permalink: hubs/metabase-patterns-1
+permalink: hubs/metabase-patterns
 ---
 
 # Metabase 패턴

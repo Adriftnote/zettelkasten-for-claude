@@ -5,7 +5,7 @@ tags:
 - derived
 - knowledge-graph
 - entity-resolution
-permalink: notes/kggen-ihae-myeongsa-tonghabgwa-dongsa-gwangye-1
+permalink: notes/kggen-entity-resolution-relationships
 source_facts:
 - KGGen 프레임워크의 명사 처리 방식 (벡터 임베딩)
 - 동사 처리 방식 (규칙 기반 정규화)

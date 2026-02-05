@@ -15,13 +15,13 @@ difficulty: intermediate
 
 ## 정의
 
-**UTF-32 (32-bit Unicode Transformation Format)**은 [[Unicode]] 문자를 항상 4[[Byte]]로 인코딩하는 **고정 길이** 방식입니다.
+**UTF-32 (32-bit Unicode Transformation Format)**은 Unicode 문자를 항상 4바이트(Byte)로 인코딩하는 **고정 길이** 방식입니다.
 
 가장 단순하지만 공간 효율이 가장 낮은 인코딩입니다.
 
 ## 숫자의 의미
 
-**UTF-32**의 "32"는 **32[[Bit]] (4[[Byte]]) 단위**로 처리한다는 뜻입니다.
+**UTF-32**의 "32"는 **32비트 (4바이트) 단위**로 처리한다는 뜻입니다.
 
 ```
 32 bits = 4 bytes (고정 크기)
@@ -70,7 +70,7 @@ o: 00 00 00 6F
 녕: 00 00 B1 55
 ```
 
-## [[Endianness]] 문제
+## Endianness 문제
 
 UTF-32도 4바이트 단위이므로 바이트 순서가 중요합니다:
 
@@ -83,7 +83,7 @@ Big Endian:    [00] [00] [AC] [00]
 Little Endian: [00] [AC] [00] [00]
 ```
 
-### [[BOM]]으로 구분
+### BOM으로 구분
 
 | 인코딩 | BOM | 파일 시작 |
 |--------|-----|----------|
@@ -168,7 +168,7 @@ UTF-32: 모든 문자 4바이트
 → 메모리 4배 소비
 ```
 
-### 3. [[ASCII]] 비호환
+### 3. ASCII 비호환
 
 ```
 'A':
@@ -386,13 +386,16 @@ with open('file.txt', 'w', encoding='utf-32') as f:
 
 ## Relations
 
-- implements [[Unicode]]
-- similar_to [[UTF-8]]
-- similar_to [[UTF-16]]
-- used_by [[Endianness]]
-- used_by [[BOM (Byte Order Mark)]]
-- part_of [[Character Encoding]]
+- implements [[Unicode]] (Unicode를 바이트로 인코딩)
+- similar_to [[UTF-8]] (다른 UTF 방식)
+- similar_to [[UTF-16]] (다른 UTF 방식)
+- used_by [[Endianness]] (Big/Little Endian 구분 필요)
+- uses [[BOM (Byte Order Mark)]] (BOM 필수)
+- part_of [[Character Encoding]] (문자 인코딩 방식)
+- relates_to [[ASCII]] (ASCII 비호환)
+- uses [[Bit]] (32비트 단위 처리)
+- uses [[Byte]] (고정 4바이트)
 
 ## 핵심 요약
 
-UTF-32는 "모든 문자를 4바이트로 표현"하는 가장 단순한 인코딩입니다. 랜덤 접근이 빠르지만 공간 낭비가 심해서 **파일 저장에는 절대 사용하지 않습니다**. 내부 알고리즘에서 복잡도가 중요할 때만 제한적으로 사용됩니다.
+UTF-32는 "모든 문자를 4바이트로 표현"하는 가장 단순한 인코딩입니다. 랜덤 접근이 빠르지만 공간 낭비가 심해서 파일 저장에는 절대 사용하지 않습니다. 내부 알고리즘에서 복잡도가 중요할 때만 제한적으로 사용됩니다.

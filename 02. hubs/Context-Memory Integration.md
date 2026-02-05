@@ -1,7 +1,7 @@
 ---
 title: Context-Memory Integration
 type: hub
-permalink: 02.-hubs/context-memory-integration
+permalink: hubs/context-memory-integration
 tags:
 - hub
 - context-engineering

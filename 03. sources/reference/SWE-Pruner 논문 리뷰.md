@@ -1,7 +1,7 @@
 ---
 title: SWE-Pruner 논문 리뷰
-type: note
-permalink: 03.-sources/reviews/swe-pruner-nonmun-ribyu
+type: paper-review
+permalink: sources/reference/swe-pruner-paper-review
 tags:
 - llm
 - coding-agent

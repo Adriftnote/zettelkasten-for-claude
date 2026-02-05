@@ -9,7 +9,7 @@ tags:
 category: 수학/컴퓨터과학
 difficulty: 고급
 created: 2026-01-27
-permalink: 01.-concepts/category-theory-kategori-iron
+permalink: knowledge/concepts/category-theory
 ---
 
 # Category Theory (카테고리 이론)

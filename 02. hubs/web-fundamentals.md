@@ -10,7 +10,7 @@ tags:
 - http
 - zettelkasten
 - basic-memory
-permalink: hubs/web-fundamentals-1
+permalink: hubs/web-fundamentals
 ---
 
 # 웹 기초 (Web Fundamentals)

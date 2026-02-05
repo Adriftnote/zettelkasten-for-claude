@@ -1,7 +1,7 @@
 ---
 title: Claude File Perception
-type: note
-permalink: knowledge/setup-and-guides/claude-file-perception-1
+type: guide
+permalink: sources/reference/claude-file-perception
 extraction_status: pending
 ---
 

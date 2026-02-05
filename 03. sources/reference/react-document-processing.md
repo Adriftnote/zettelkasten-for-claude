@@ -1,6 +1,7 @@
 ---
+type: guide
 extraction_status: pending
-permalink: 03.-sources/reports/react-document-processing
+permalink: sources/reference/react-document-processing
 ---
 
 # ReAct 패러다임 기반 문서 처리 (토큰 최적화)

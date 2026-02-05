@@ -9,7 +9,7 @@ tags:
 - character-set
 - zettelkasten
 - basic-memory
-permalink: hubs/encoding-systems-1
+permalink: hubs/encoding-systems
 ---
 
 # 문자 인코딩 시스템 (Encoding Systems)

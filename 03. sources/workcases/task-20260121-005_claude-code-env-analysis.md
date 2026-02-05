@@ -5,13 +5,14 @@ target: obsidian
 created_at: 2026-01-21 19:30:00+09:00
 status: completed
 extraction_status: pending
+type: workcase
 tags:
 - claude-code
 - environment
 - mcp
 - junction
 - troubleshooting
-permalink: work-cases/task-20260121-005-claude-code-env-analysis
+permalink: sources/workcases/task-20260121-005-claude-code-env-analysis
 ---
 
 # Claude Code 환경설정 심층 분석 및 정리

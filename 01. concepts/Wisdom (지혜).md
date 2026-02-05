@@ -9,6 +9,7 @@ tags:
 category: 철학
 difficulty: 중급
 created: 2026-01-28
+permalink: knowledge/concepts/wisdom
 ---
 
 # Wisdom (지혜)

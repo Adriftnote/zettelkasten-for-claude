@@ -9,7 +9,7 @@ tags:
 category: 소프트웨어 아키텍처
 difficulty: 중급
 created: 2026-01-27
-permalink: 01.-concepts/middleware-mideulweeo
+permalink: knowledge/concepts/middleware
 ---
 
 # Middleware (미들웨어)

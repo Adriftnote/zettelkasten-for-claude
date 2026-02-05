@@ -15,7 +15,7 @@ difficulty: beginner
 
 ## 정의
 
-**Byte (바이트)**는 [[Bit]] 8개를 묶은 단위로, 컴퓨터에서 **실제로 사용하는 최소 단위**입니다.
+**Byte (바이트)**는 비트(Bit) 8개를 묶은 단위로, 컴퓨터에서 **실제로 사용하는 최소 단위**입니다.
 
 ```
 1 Byte = 8 Bits
@@ -103,13 +103,13 @@ IBM 시장 점유율 80%
 
 ## UTF에서의 바이트
 
-[[Unicode]] 문자를 저장할 때 바이트 사용:
+Unicode 문자를 저장할 때 바이트 사용:
 
 | 인코딩 | 바이트 단위 | 예: '가' |
 |--------|-----------|---------|
-| [[UTF-8]] | 1~4 bytes | 3 bytes (EA B0 80) |
-| [[UTF-16]] | 2~4 bytes | 2 bytes (AC 00) |
-| [[UTF-32]] | 4 bytes | 4 bytes (00 00 AC 00) |
+| UTF-8 | 1~4 bytes | 3 bytes (EA B0 80) |
+| UTF-16 | 2~4 bytes | 2 bytes (AC 00) |
+| UTF-32 | 4 bytes | 4 bytes (00 00 AC 00) |
 
 ## 메모리 크기 예시
 
@@ -190,10 +190,13 @@ long long l = 1e15;  // 8 bytes
 
 ## Relations
 
-- extends [[Bit]]
-- used_by [[UTF-8]]
-- part_of [[Character Encoding]]
+- extends [[Bit]] (8비트로 구성)
+- used_by [[UTF-8]] (UTF-8 인코딩 단위)
+- used_by [[UTF-16]] (UTF-16 인코딩 단위)
+- used_by [[UTF-32]] (UTF-32 인코딩 단위)
+- used_by [[Unicode]] (문자 저장 단위)
+- part_of [[Character Encoding]] (인코딩 기본 단위)
 
 ## 핵심 요약
 
-바이트는 "컴퓨터의 최소 작업 단위"입니다. [[Bit]]가 "알파벳"이라면, 바이트는 "단어"입니다. 8비트가 표준이 된 건 기술적 우수함보다는 **IBM의 영향력 + 적당한 실용성** 덕분입니다.
+바이트는 "컴퓨터의 최소 작업 단위"입니다. 비트(Bit)가 "알파벳"이라면, 바이트는 "단어"입니다. 8비트가 표준이 된 건 기술적 우수함보다는 **IBM의 영향력 + 적당한 실용성** 덕분입니다.

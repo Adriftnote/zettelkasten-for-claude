@@ -1,6 +1,7 @@
 ---
 extraction_status: pending
-permalink: 03.-sources/reviews/012-platform-data-extraction-comparison
+type: workcase
+permalink: sources/workcases/platform-data-extraction-comparison
 ---
 
 # 플랫폼별 데이터 추출 방식 비교

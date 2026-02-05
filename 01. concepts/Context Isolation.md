@@ -1,7 +1,7 @@
 ---
 title: Context Isolation
 type: note
-permalink: 01.-concepts/context-isolation
+permalink: knowledge/concepts/context-isolation
 tags:
 - multi-agent
 - architecture

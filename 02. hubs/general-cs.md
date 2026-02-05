@@ -6,7 +6,7 @@ tags:
 - cs
 - computer-science
 - networking
-permalink: hubs/general-cs-1
+permalink: hubs/general-cs
 ---
 
 # 일반 CS 개념 (General Computer Science)

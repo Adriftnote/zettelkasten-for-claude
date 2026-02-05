@@ -1,7 +1,7 @@
 ---
 title: 'Dep-Search: Dependency-Aware Reasoning with Persistent Memory'
-type: note
-permalink: paper-reviews/dep-search-dependency-aware-reasoning-with-persistent-memory
+type: paper-review
+permalink: sources/reference/dep-search-persistent-memory
 tags:
 - paper-review
 - multi-hop-qa

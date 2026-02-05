@@ -4,12 +4,13 @@ source: worker
 target: obsidian
 created_at: 2026-01-26T09:30:00+09:00
 status: completed
+type: workcase
 tags:
 - excel-claude
 - prompt-engineering
 - token-efficiency
 - workflow-comparison
-permalink: work-cases/excel-claude-prompt-vs-spec-comparison
+permalink: sources/workcases/excel-claude-prompt-vs-spec-comparison
 ---
 
 # Excel Claude 프롬프트 vs 작업명세서 효율 비교

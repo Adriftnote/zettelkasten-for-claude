@@ -1,6 +1,6 @@
 ---
 title: Metabase & MCP 패턴 요약
-type: reference
+type: workcase
 tags:
 - metabase
 - mcp

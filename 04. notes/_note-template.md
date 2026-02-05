@@ -6,7 +6,7 @@ tags:
 - note
 - derived
 - basic-memory
-permalink: notes/template-1
+permalink: notes/note-template
 ---
 
 # 노트 템플릿 (Derived Knowledge)

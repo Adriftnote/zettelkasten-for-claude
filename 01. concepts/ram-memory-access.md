@@ -5,7 +5,7 @@ tags: memory, hardware, performance, cache
 category: 컴퓨터 구조
 difficulty: 중급
 date: 2026-01-28
-permalink: 01.-concepts/ram-memory-access
+permalink: knowledge/concepts/ram-memory-access
 ---
 
 # RAM 물리적 구조와 메모리 접근

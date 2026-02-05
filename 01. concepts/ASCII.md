@@ -15,7 +15,7 @@ difficulty: beginner
 
 ## 정의
 
-**ASCII (American Standard Code for Information Interchange)**는 1963년에 제정된 문자 인코딩 표준으로, 7[[Bit]]로 영어 알파벳과 기본 기호를 표현합니다.
+**ASCII (American Standard Code for Information Interchange)**는 1963년에 제정된 문자 인코딩 표준으로, 7비트(Bit)로 영어 알파벳과 기본 기호를 표현합니다.
 
 ## 특징
 
@@ -106,7 +106,7 @@ ASCII = 7 bits (최상위 비트 미사용)
 
 ## 확장 ASCII (Extended ASCII)
 
-8[[Bit]]를 모두 사용해 128~255 추가:
+8비트(Bit)를 모두 사용해 128~255 추가:
 
 | 인코딩 | 범위 | 추가 문자 |
 |--------|------|----------|
@@ -120,7 +120,7 @@ ASCII = 7 bits (최상위 비트 미사용)
 
 ## Unicode와의 관계
 
-[[Unicode]]는 ASCII를 **완전히 포함**합니다:
+Unicode는 ASCII를 **완전히 포함**합니다:
 
 ```
 ASCII:   'A' = 65
@@ -129,7 +129,7 @@ Unicode: 'A' = U+0041 (65)
 → 호환 가능!
 ```
 
-[[UTF-8]]은 ASCII와 **1:1 호환**:
+UTF-8은 ASCII와 **1:1 호환**:
 
 ```
 ASCII:   'A' = 0x41 (1 byte)
@@ -204,7 +204,7 @@ ASCII 문자로 그림 그리기:
 | **1963** | ASCII 최초 표준화 (ASA X3.4) |
 | **1967** | 소문자 추가 (초기엔 대문자만) |
 | **1986** | ISO 표준 (ISO 646) |
-| **1991** | [[Unicode]] 등장 (ASCII 포함) |
+| **1991** | Unicode 등장 (ASCII 포함) |
 | **현재** | 레거시 시스템에만 사용 |
 
 ## ASCII vs UTF-8 비교
@@ -256,12 +256,12 @@ with open('file.txt', 'r', encoding='ascii') as f:
 
 ## Relations
 
-- part_of [[Character Encoding]]
-- part_of [[Unicode]]
-- implements [[UTF-8]]
-- part_of [[Bit]]
-- part_of [[Byte]]
+- part_of [[Character Encoding]] (ASCII는 문자 인코딩 방식)
+- extends_to [[Unicode]] (Unicode는 ASCII를 완전히 포함)
+- compatible_with [[UTF-8]] (UTF-8과 1:1 호환)
+- uses [[Bit]] (7비트 사용)
+- part_of [[Byte]] (1바이트의 일부)
 
 ## 핵심 요약
 
-ASCII는 "컴퓨터 문자의 시작"입니다. 7비트로 영어만 표현했지만, [[UTF-8]]에 완전히 포함되어 여전히 살아있습니다. **ASCII 텍스트 = UTF-8 텍스트** 이므로, UTF-8을 쓰면 자동으로 ASCII 호환입니다.
+ASCII는 "컴퓨터 문자의 시작"입니다. 7비트로 영어만 표현했지만, UTF-8에 완전히 포함되어 여전히 살아있습니다. **ASCII 텍스트 = UTF-8 텍스트** 이므로, UTF-8을 쓰면 자동으로 ASCII 호환입니다.

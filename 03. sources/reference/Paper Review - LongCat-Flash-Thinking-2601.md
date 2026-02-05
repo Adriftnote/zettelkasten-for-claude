@@ -1,7 +1,7 @@
 ---
 title: Paper Review - LongCat-Flash-Thinking-2601
-type: note
-permalink: paper-reviews/paper-review-long-cat-flash-thinking-2601
+type: paper-review
+permalink: sources/reference/longcat-flash-thinking-2601
 tags:
 - paper-review
 - llm

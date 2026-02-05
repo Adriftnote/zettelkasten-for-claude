@@ -1,7 +1,7 @@
 ---
 title: Temporal Knowledge Graph
 type: concept
-permalink: 01.-concepts/temporal-knowledge-graph
+permalink: knowledge/concepts/temporal-knowledge-graph
 tags:
 - memory
 - knowledge-graph

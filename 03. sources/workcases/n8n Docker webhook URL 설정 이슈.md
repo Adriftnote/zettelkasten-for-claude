@@ -1,7 +1,7 @@
 ---
 title: n8n Docker webhook URL 설정 이슈
-type: note
-permalink: troubleshooting/n8n-docker-webhook-url-seoljeong-isyu
+type: workcase
+permalink: sources/workcases/n8n-docker-webhook-url-issue
 tags:
 - n8n
 - docker

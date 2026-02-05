@@ -1,7 +1,7 @@
 ---
 title: Claude Code StatusLine 컨텍스트 정확도 해결 사례 조사
-type: note
-permalink: working/worker-research/claude-code-status-line-keontegseuteu-jeonghwagdo-haegyeol-sarye-josa
+type: workcase
+permalink: sources/workcases/claude-code-statusline-context-analysis
 tags:
 - claude-code
 - statusline

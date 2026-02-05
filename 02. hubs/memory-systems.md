@@ -7,7 +7,7 @@ tags:
 - hardware
 - ram
 - cache
-permalink: hubs/memory-systems-1
+permalink: hubs/memory-systems
 ---
 
 # 메모리 시스템 (Memory Systems)

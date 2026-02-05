@@ -11,7 +11,7 @@ tags:
 category: Rust
 difficulty: 중급
 created: 2026-01-29
-permalink: 01.-concepts/rust-type-system
+permalink: knowledge/concepts/rust-type-system
 ---
 
 # Rust Type System (러스트 타입 시스템)

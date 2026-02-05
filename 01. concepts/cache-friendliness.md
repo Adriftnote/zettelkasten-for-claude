@@ -5,7 +5,7 @@ tags: performance, cache, memory, optimization
 category: 컴퓨터 구조
 difficulty: 중급
 date: 2026-01-28
-permalink: 01.-concepts/cache-friendliness-1
+permalink: knowledge/concepts/cache-friendliness
 ---
 
 # 캐시 친화성 (Cache Friendliness)

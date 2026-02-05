@@ -1,5 +1,6 @@
 ---
 title: KGGen - Knowledge Graph Generation Framework
+type: doc-summary
 date: 2026-01-20
 source: https://discuss.pytorch.kr/t/kggen-kg/8706
 tags:
@@ -8,7 +9,7 @@ tags:
 - llm
 - neurips-2025
 category: AI Research
-permalink: reports/kggen-knowledge-graph-generation-framework
+permalink: sources/reference/kggen-framework
 extraction_status: pending
 ---
 

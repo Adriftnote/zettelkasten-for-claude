@@ -1,8 +1,8 @@
 ---
 title: Metabase Dashboard Looker Studio Migration Plan
-type: note
+type: workcase
 extraction_status: pending
-permalink: work-cases/metabase-dashboard-looker-studio-migration-plan
+permalink: sources/workcases/metabase-dashboard-looker-studio-migration-plan
 tags:
 - metabase
 - dashboard

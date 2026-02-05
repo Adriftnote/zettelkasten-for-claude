@@ -7,7 +7,7 @@ tags:
 - llm
 - prompt
 - optimization
-permalink: hubs/context-engineering-1
+permalink: hubs/context-engineering
 ---
 
 # Context Engineering

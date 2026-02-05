@@ -1,12 +1,12 @@
 ---
 title: 프로그래밍 언어별 라이브러리 생태계 통계
-type: reference
+type: doc-summary
 tags:
 - programming-basics
 - statistics
 - libraries
 - ecosystem
-permalink: knowledge/programming-basics/library-ecosystem-statistics
+permalink: sources/reference/library-ecosystem-statistics
 category: 참고 자료
 date: 2026-01-28
 ---

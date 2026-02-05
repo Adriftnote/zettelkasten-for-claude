@@ -5,7 +5,7 @@ tags:
 - AI-architecture
 - knowledge-management
 - derived
-permalink: notes/engramgwa-jisig-gujo-kggen-bigyo-1
+permalink: notes/engram-knowledge-structure-kggen-comparison
 source_facts:
 - Engram 아키텍처 분석
 - KGGen 구조 이해

@@ -4,12 +4,13 @@ source: worker
 target: obsidian
 created_at: 2026-01-26T09:45:00+09:00
 status: completed
+type: workcase
 tags:
 - excel-claude
 - data-recognition
 - api
 - limitations
-permalink: work-cases/excel-claude-data-recognition
+permalink: sources/workcases/excel-claude-data-recognition
 ---
 
 # Excel Claude 데이터 인식 방식
