@@ -27,6 +27,7 @@ description: 노트를 허브노트 형식으로 변환하여 02. hubs에 저장
 ```
 mcp__basic-memory__read_note
 identifier: [노트명]
+project: zettelkasten
 ```
 
 노트가 없으면 주제로 새 허브 생성.
@@ -36,6 +37,7 @@ identifier: [노트명]
 ```
 mcp__basic-memory__search_notes
 query: [주제 키워드]
+project: zettelkasten
 ```
 
 관련 개념들 파악.
@@ -80,6 +82,7 @@ permalink: hubs/[slug]
 mcp__basic-memory__write_note
 title: [허브 이름]
 folder: 02. hubs
+project: zettelkasten
 content: [변환된 내용]
 ```
 

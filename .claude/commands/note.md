@@ -25,6 +25,7 @@ concepts(facts)를 조합하여 **도출된 지식**을 `04. notes`에 생성합
 ```
 mcp__basic-memory__search_notes
 query: [주제 키워드]
+project: zettelkasten
 ```
 
 관련 facts 검색.
@@ -97,6 +98,7 @@ source_facts:
 mcp__basic-memory__write_note
 title: [도출된 지식 이름]
 folder: 04. notes
+project: zettelkasten
 content: [변환된 내용]
 ```
 

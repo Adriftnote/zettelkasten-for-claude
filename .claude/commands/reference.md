@@ -22,6 +22,7 @@ reference 노트를 `03. sources/reference`에 생성합니다.
 ```
 mcp__basic-memory__read_note
 identifier: [노트명]
+project: zettelkasten
 ```
 
 노트가 없으면 대화 내용에서 reference 생성.
@@ -91,6 +92,7 @@ permalink: sources/reference/[slug]
 mcp__basic-memory__write_note
 title: [제목]
 folder: 03. sources/reference
+project: zettelkasten
 content: [변환된 내용]
 ```
 

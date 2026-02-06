@@ -23,6 +23,7 @@ inbox 노트를 컨셉노트 형식으로 변환합니다.
 ```
 mcp__basic-memory__read_note
 identifier: [노트명]
+project: zettelkasten
 ```
 
 노트를 찾을 수 없으면 사용자에게 알림.
@@ -58,6 +59,7 @@ difficulty: 초급 | 중급 | 고급
 mcp__basic-memory__write_note
 title: [개념 이름]
 folder: 01. concepts
+project: zettelkasten
 content: [변환된 내용]
 ```
 
