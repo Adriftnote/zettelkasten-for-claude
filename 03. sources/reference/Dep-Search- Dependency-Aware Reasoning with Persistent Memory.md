@@ -29,12 +29,12 @@ tags:
 
 ### Control Tokens
 
-| 토큰 | 기능 |
-|------|------|
-| `<decompose>` | 질문을 K개 sub-question으로 분해, DAG 구조로 의존성 표현 |
-| `<retrieve>` | 2단계 검색 (dense retrieval → re-ranking) |
-| `<memory>` | 저장된 지식 접근 (embedding similarity) |
-| `<conclusion>` | 추론 결과를 fact sentences로 요약하여 메모리에 저장 |
+| 토큰             | 기능                                       |
+| -------------- | ---------------------------------------- |
+| `<decompose>`  | 질문을 K개 sub-question으로 분해, DAG 구조로 의존성 표현 |
+| `<retrieve>`   | 2단계 검색 (dense retrieval → re-ranking)    |
+| `<memory>`     | 저장된 지식 접근 (embedding similarity)         |
+| `<conclusion>` | 추론 결과를 fact sentences로 요약하여 메모리에 저장      |
 
 ### Persistent Memory System
 

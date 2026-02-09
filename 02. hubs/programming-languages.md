@@ -23,6 +23,8 @@ created: 2026-01-27
 - [fact] TypeScript = JavaScript + 타입 시스템 - Java의 친척이 아님 #typescript
 - [fact] 웹 브라우저는 JavaScript만 실행 가능 → 웹 개발에선 JS/TS가 필수 #web
 - [fact] AI 시대에 타입 언어가 부상 중 - LLM 생성 코드의 가드레일 역할 #ai
+- [fact] 프로그래밍 언어는 범용(GPL)과 도메인 특화(DSL)로 나뉨 #classification
+- [fact] 현대 GPL은 멀티 패러다임 - 명령형/선언형 모두 지원 (Python, Rust, JS 등) #paradigm
 
 ## 언어별 용도
 
@@ -67,6 +69,20 @@ JavaScript   TypeScript   Java   Rust
 | Java | 정적 | ⭐⭐⭐⭐ | 어려움 | 느림 |
 | Rust | 정적 | ⭐⭐⭐⭐⭐ | 매우 어려움 | 매우 느림 |
 
+## 언어 분류
+
+```
+프로그래밍 언어
+├── 범용 언어 (GPL) ─── 무엇이든 만들 수 있음
+│   ├── Python, JavaScript, Java, Rust, Go ...
+│   └── 명령형 / 선언형 / 멀티 패러다임
+│
+└── 도메인 특화 언어 (DSL) ─── 한 가지를 잘 함
+    ├── SQL (데이터), HTML (문서), CSS (스타일)
+    ├── 엑셀 수식 (계산), RegEx (패턴)
+    └── 대부분 선언형
+```
+
 ## AI 시대와 타입 언어
 
 > "2025년 학술 연구에 따르면 LLM이 생성한 컴파일 오류의 94%가 타입 체크 실패"
@@ -88,3 +104,6 @@ JavaScript   TypeScript   Java   Rust
 - extends [[programming-basics]] (언어별 상세 비교 추가)
 - connects_to [[rust-language]] (Rust 심화 가이드)
 - connects_to [[mcp-tool-patterns]] (TypeScript로 MCP 서버 개발)
+- organizes [[DSL (Domain-Specific Language)]] (6. 도메인 특화 언어 개념)
+- organizes [[범용 프로그래밍 언어 (General-Purpose Language)]] (7. 범용 언어 개념)
+- connects_to [[프로그래밍 패러다임]] (각 언어의 패러다임 분류)

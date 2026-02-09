@@ -49,7 +49,7 @@ gcc hello.c -o hello.exe
 
 | 도구 | 역할 | 출력 |
 |------|------|------|
-| **[[parser\|파서]]** | 텍스트 분석 | 데이터 구조 (RAM) |
+| **[[01. concepts/파서 (Parser)\|파서]]** | 텍스트 분석 | 데이터 구조 (RAM) |
 | **컴파일러** | 코드 번역 | 기계어 (CPU 실행) |
 
 ```
@@ -63,7 +63,7 @@ gcc hello.c -o hello.exe
 ## Relations
 
 - similar_to [[interpreter]] (둘 다 코드를 실행 가능하게 변환)
-- different_from [[parser]] (파서는 분석만, 컴파일러는 번역)
+- different_from [[01. concepts/파서 (Parser)]] (파서는 분석만, 컴파일러는 번역)
 - consumes [[source-code]] (입력으로 소스코드 받음)
 - produces [[binary]] (실행 파일 생성)
 - produces [[machine-language]] (기계어로 변환)

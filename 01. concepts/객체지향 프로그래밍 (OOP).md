@@ -108,6 +108,7 @@ class DataProcessor:
 - contains [[다형성 (Polymorphism)]] (4대 원칙 - 다른 동작)
 - contains [[메서드 (Method)]] (클래스의 함수)
 - contrasts_with [[절차지향 프로그래밍]] (대비되는 패러다임)
+- organized_by [[프로그래밍 패러다임]] (패러다임 허브)
 
 ---
 
