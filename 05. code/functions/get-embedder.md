@@ -1,7 +1,7 @@
 ---
 title: get-embedder
 type: function
-permalink: functions/get-embedder
+permalink: functions/get-embedder-1
 level: low
 category: search/semantic/embedding
 semantic: get embedding model

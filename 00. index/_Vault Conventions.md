@@ -271,6 +271,8 @@ tags:
 | `derived_from` | 도출 출처 (note 필수) | note |
 | `enables` | ~를 가능케 함 | concept |
 | `used_by` | 사용처 | concept |
+| `causes` | ~를 유발함 (인과) | concept, note |
+| `caused_by` | ~에 의해 발생 (인과) | concept, note |
 
 ## Permalink 규칙
 
@@ -292,6 +294,7 @@ slug는 영문 소문자, 하이픈 구분.
 - [decision] wikilink는 Relations 섹션에서만 사용 #convention
 - [decision] Observation 표준 6개 카테고리 + 확장 3개 #convention
 - [decision] 05. code를 같은 볼트에 통합 — 형식은 다르되 링크로 연결 #architecture
+- [decision] causes/caused_by 인과 관계 타입 추가 — MAGMA 논문의 멀티그래프 아이디어에서 도입, "왜?" 질문에 인과 체인 탐색 가능 #convention #causal
 
 ## Relations
 

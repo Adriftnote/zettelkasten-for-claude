@@ -1,7 +1,7 @@
 ---
 title: watch-service
 type: module
-permalink: modules/watch-service
+permalink: modules/watch-service-1
 level: high
 category: tools/knowledge-management/sync
 semantic: watch filesystem changes

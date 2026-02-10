@@ -1,7 +1,7 @@
 ---
 title: mcp-server
 type: module
-permalink: modules/mcp-server
+permalink: modules/mcp-server-1
 level: high
 category: tools/knowledge-management/mcp
 semantic: run FastMCP server
