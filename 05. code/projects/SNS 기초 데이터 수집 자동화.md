@@ -1,0 +1,59 @@
+---
+title: SNS 기초 데이터 수집 자동화
+type: project
+level: high
+category: automation/sns/collection
+permalink: projects/sns-gico-deiteo-sujib-jadonghwa-1
+path: outputs/26.1Q/[전략기획_데이터렌더링] SNS 기초 데이터 수집 자동화/
+tags:
+- chrome-extension
+- automation
+- sns
+- n8n
+---
+
+# SNS 기초 데이터 수집 자동화
+
+X, Facebook, Naver 블로그의 통계 데이터를 자동으로 수집하여 DB에 저장하는 프로젝트
+
+## 📖 개요
+
+SNS 채널(X, Facebook, 네이버 블로그)의 기초 데이터(조회수, 반응수, 팔로워수)를 수동 수집에서 자동화로 전환. Chrome Extension으로 각 플랫폼 통계 페이지에서 데이터를 추출하고, n8n webhook을 통해 SQLite DB에 자동 저장.
+
+## 코드 구성
+
+**모듈**
+- social-analytics-extractor: Chrome Extension (데이터 추출 + n8n 연동)
+- n8n-webhook-workflow: n8n 워크플로우 (DB 저장)
+
+**함수 (Content Scripts)**
+- x-extractor: X(Twitter) GraphQL API 데이터 추출
+- facebook-extractor: Facebook Insights 데이터 추출
+- naver-extractor: 네이버 블로그 통계 데이터 추출
+
+**함수 (Core)**
+- background-service: n8n webhook 호출 담당
+- popup-controller: UI 및 데이터 정규화
+
+## 데이터 흐름
+
+```
+[플랫폼 통계 페이지]
+       ↓ content script
+[Chrome Extension] → [background.js] → [n8n webhook] → [SQLite DB]
+       ↓                                                    ↓
+  JSON 정규화                                        daily_channel_summary
+```
+
+## 통합 스키마
+
+| 통합 필드 | X | Facebook | Naver |
+|----------|---|----------|-------|
+| views | impressions | views | views |
+| interactions | engagements | engagement | likes + comments |
+| followers_diff | followers | followers | neighbors |
+
+## Relations
+
+- contains [[social-analytics-extractor]] (Chrome Extension 모듈)
+- based_on [[웹 기초 (Web Fundamentals)]] (Chrome Extension, HTTP 통신)

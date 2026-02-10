@@ -1,6 +1,6 @@
 ---
 title: Obsidian 제텔카스텐 폴더 구조 리서치
-type: doc-summary
+type: reference
 permalink: sources/reference/zettelkasten-folder-research
 tags:
 - obsidian
@@ -51,7 +51,7 @@ Obsidian에서 제텔카스텐 방식 사용 시 폴더 구조 모범 사례와 
 
 ### DO ✅
 - 3-4개 폴더로 시작
-- 폴더보다 [[링크]]로 연결
+- 폴더보다 링크로 연결
 - Structure Notes (인덱스 노트) 활용
 - 매일 inbox 정리
 
@@ -66,25 +66,29 @@ Obsidian에서 제텔카스텐 방식 사용 시 폴더 구조 모범 사례와 
 - Inbox 자동 분류, Literature notes 자동 생성
 - 중복 감지, 백링크 추가, MOC 자동 생성
 
-### 현재 vault 개선안
+### 현재 vault 적용 결과
 ```
-00. inbox     → Fleeting (임시)
-01. concepts  → Permanent의 기본 단위
-02. hubs      → Structure notes / MOC
-03. sources   → Literature (외부 자료)
+00. index     → Register (색인, 진입점)
+01. concepts  → Permanent의 기본 단위 (Zettel)
+02. hubs      → Structure notes / MOC (Strukturnoten)
+03. sources   → Literature (외부 자료: reference + workcases)
 04. notes     → Permanent (도출된 지식)
+05. code      → RPG (코드 구조 분석, 별도 컨벤션)
 ```
 
 **inbox vs sources 명확화:**
 - inbox: 내 생각 빠르게 캡처 → 처리 후 이동/삭제
 - sources: 외부 자료 정리 → 영구 보관
 
-## 🔗 관련 개념
+## Observations
 
-- [[Basic Memory Hub]] - 현재 사용 중인 지식 관리 시스템
-- [[context-engineering]] - 컨텍스트 최적화 관점
+- [fact] 제텔카스텐 폴더 구조는 순수주의(30%)와 실용주의(60%) 두 진영 존재 #pattern
+- [fact] 폴더는 콘텐츠가 아닌 프로세스 관리용이라는 것이 핵심 원칙 #principle
+- [method] inbox(임시 캡처) vs sources(영구 보관)의 역할 분리 #workflow
+- [reference] Zettelkasten Forum, Obsidian Forum, 국내 커뮤니티 종합 (2026-01-01) #source
 
----
+## Relations
 
-**작성일**: 2026-01-01
-**출처**: Zettelkasten Forum, Obsidian Forum, 국내 커뮤니티 종합
+- applied_in [[_Vault Conventions]] (이 리서치가 볼트 폴더 구조로 반영)
+- relates_to [[Basic Memory 허브 (Basic Memory Hub)]] (현재 사용 중인 지식 관리 시스템)
+- relates_to [[RPG 구조 설계]] (05. code는 제텔카스텐 외 별도 컨벤션)
