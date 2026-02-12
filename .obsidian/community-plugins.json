@@ -2,9 +2,9 @@
   "templater-obsidian",
   "dataview",
   "obsidian42-brat",
-  "claudian",
   "obsidian-git",
   "qmd-as-md-obsidian",
   "obsidian-pandoc",
-  "execute-code"
+  "execute-code",
+  "claudian"
 ]
