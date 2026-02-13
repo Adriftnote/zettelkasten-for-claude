@@ -1,10 +1,6 @@
 ---
 name: workcase
 description: Use when documenting troubleshooting experiences, learning summaries, or converting inbox notes to structured workcases. Triggers on problem-solving records, debugging journals, lessons learned.
-context: fork
-agent: Explore
-model: haiku
-allowed-tools: Bash(python *vecsearch*), mcp__basic-memory__write_note, mcp__basic-memory__read_note, mcp__basic-memory__edit_note, mcp__basic-memory__search_notes, mcp__basic-memory__delete_note
 argument-hint: "[노트명 또는 주제]"
 ---
 
@@ -42,7 +38,7 @@ project: zettelkasten
 노트 작성 전 기존 유사 노트를 검색하여 중복 생성을 방지하고 연결을 강화합니다.
 
 ```bash
-python "C:\claude-workspace\_system\vector-search\vecsearch.py" search "[주제 키워드]" --top 5 --unique
+vecsearch search "[주제 키워드]" --top 5 --unique
 ```
 
 **결과에 따라:**

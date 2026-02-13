@@ -1,10 +1,6 @@
 ---
 name: rpg
 description: Use when analyzing source code to generate RPG (Repository Planning Graph) documentation. Triggers on code documentation, module analysis, codebase structure mapping, function/class cataloging.
-context: fork
-agent: Explore
-model: sonnet
-allowed-tools: Bash(python *vecsearch*), mcp__basic-memory__write_note, mcp__basic-memory__read_note, mcp__basic-memory__edit_note, mcp__basic-memory__search_notes, mcp__basic-memory__build_context, Glob, Grep, Read
 argument-hint: "[파일경로 | 폴더경로 | 모듈명]"
 ---
 

@@ -24,8 +24,7 @@ reference 노트를 `03. sources/reference`에 생성합니다.
 - **permalink는 반드시 폴더 포함 영문 slug**: `sources/reference/[영문-slug]`
   - O: `sources/reference/ai-video-tools-2026`
   - X: `ai-video-tools-2026` (폴더 누락)
-    - 저장된 노트 제목과 permalink 반환
-```
+- 완료 후 저장된 노트 제목과 permalink 반환
 
 ## 사용법
 

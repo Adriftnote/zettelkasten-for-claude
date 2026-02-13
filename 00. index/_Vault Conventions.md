@@ -159,8 +159,7 @@ tags:
 ├── projects/    ← 프로젝트 허브 (high level)
 ├── modules/     ← 파일/모듈 단위
 ├── functions/   ← 함수 단위 (atomic)
-├── classes/     ← 클래스 정의
-└── shared/      ← RPG 메타 문서
+└── classes/     ← 클래스 정의
 ```
 
 ### Frontmatter (코드 전용)
@@ -283,6 +282,11 @@ tags:
 | concept | `knowledge/concepts/` | `knowledge/concepts/orm` |
 | note | `notes/` | `notes/abstraction-repeats` |
 | reference | `sources/reference/` | `sources/reference/react-docs` |
+| workcase | `sources/workcases/` | `sources/workcases/wsl-tmux-memory-issue` |
+| project | `projects/` | `projects/vecsearch` |
+| module | `modules/` | `modules/vecsearch` |
+| function | `functions/` | `functions/check-duplicates` |
+| class | `classes/` | `classes/user-validator` |
 
 slug는 영문 소문자, 하이픈 구분.
 
