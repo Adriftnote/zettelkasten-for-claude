@@ -229,7 +229,7 @@ gpu.compute_shader(|i| {
 
 - [[VRAM]] - GPU 전용 메모리
 - [[computer-memory-hierarchy]] - 메모리 계층
-- [[gpu-and-human-intuition]] - GPU와 인간 직관
+- GPU 병렬처리와 뇌 시각피질은 연산 구조가 같다 - GPU와 인간 직관
 - [[Cache]] - CPU 캐시
 
 ## Relations

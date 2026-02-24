@@ -308,7 +308,7 @@ for j in 0..1000 {
 - [[Cache]] - 고속 임시 저장소
 - [[VRAM]] - GPU 전용 메모리
 - [[gpu]] - 병렬 처리 프로세서
-- [[gpu-and-human-intuition]] - GPU와 인간 직관
+- GPU 병렬처리와 뇌 시각피질은 연산 구조가 같다 - GPU와 인간 직관
 
 ## Relations
 

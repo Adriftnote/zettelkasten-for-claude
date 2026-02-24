@@ -34,8 +34,11 @@ FTS5 키워드 매칭이 아닌 시맨틱 검색으로, "컨텍스트 관리"를
 - [usage] `python vecsearch.py sync` 변경분 동기화
 - [usage] `python vecsearch.py index` 전체 재인덱싱
 - [usage] `python vecsearch.py stats` 인덱스 통계
-- [note] 346 entities → 2,346 chunks 인덱싱 완료 (2026-02-10) #stats
-- [note] Claude Code Stop hook으로 세션 종료 시 자동 sync #automation
+- [note] 459 entities → 2,904 chunks 인덱싱 완료 (2026-02-24 reindex) #stats
+- [impl] timeout=30, WAL 모드, busy_timeout=30000 설정 (DB 동시접근 방어) #stability
+- [impl] acquire_lock으로 동시 sync 방지 (msvcrt/fcntl 파일 락) #concurrency
+- [impl] remap_entity_chunks로 entity_id 변경 시 재임베딩 없이 메타데이터만 갱신 #optimization
+- [note] Claude Code Stop hook 자동 sync 설정 필요 (현재 미설정 상태) #automation
 
 ## 아키텍처
 
@@ -148,5 +151,7 @@ C:\claude-workspace\_system\vector-search\
 - contains [[cmd-index]] (전체 재인덱싱 CLI)
 - contains [[cmd-sync]] (증분 동기화 CLI)
 - contains [[cmd-search]] (시맨틱 검색 CLI)
+- contains [[remap-entity-chunks]] (entity_id 변경 시 메타데이터 remap)
+- contains [[acquire-lock]] (동시 sync 방지 파일 락)
 - contains [[cmd-stats]] (인덱스 통계 CLI)
 - contains [[main-vecsearch]] (CLI 엔트리포인트)

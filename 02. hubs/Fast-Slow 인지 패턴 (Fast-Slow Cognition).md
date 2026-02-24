@@ -39,7 +39,7 @@ tags:
 ### 하드웨어 (물리적 구현)
 - organizes [[컴퓨터 구조 학습 여정 - 라이브러리부터 GPU까지]] (GPU/CPU 역할)
 - connects_to [[컴퓨터 메모리 계층 구조]] (캐시 계층)
-- connects_to [[GPU와 인간 직관 - AI가 시스템1을 모방하는 방법]] (GPU-시스템1 연결)
+- connects_to [[GPU 병렬처리와 뇌 시각피질은 연산 구조가 같다]] (GPU-시스템1 연결)
 
 ### 관련 허브
 - connects_to [[메모리 시스템 (Memory Systems)]] (메모리 관점)

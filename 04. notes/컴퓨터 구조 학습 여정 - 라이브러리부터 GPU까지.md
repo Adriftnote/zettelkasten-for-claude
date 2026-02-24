@@ -68,7 +68,7 @@ source_facts:
 - [[data-structure]] - 데이터 구조와 메모리 배치
 - [[computer-memory-hierarchy]] - 메모리 계층 구조
 - [[gpu]] - GPU 기본 개념
-- [[gpu-and-human-intuition]] - GPU가 시스템1을 모방하는 방법
+- [[GPU 병렬처리와 뇌 시각피질은 연산 구조가 같다]] - GPU가 시스템1을 모방하는 방법
 
 ## Relations
 
@@ -76,7 +76,7 @@ source_facts:
 - derived_from [[computer-memory-hierarchy]] (메모리 계층에서 뇌 비유 도출)
 - derived_from [[gpu]] (GPU 구조에서 시스템1 연결 도출)
 - derived_from [[data-structure]] (데이터 구조에서 하드웨어 특성 도출)
-- organizes [[gpu-and-human-intuition]] (이 여정에서 생성된 노트)
+- organizes [[GPU 병렬처리와 뇌 시각피질은 연산 구조가 같다]] (이 여정에서 생성된 노트)
 - connects_to [[cognitive-science]] (인지과학과 컴퓨터 구조 연결)
 
 ---
