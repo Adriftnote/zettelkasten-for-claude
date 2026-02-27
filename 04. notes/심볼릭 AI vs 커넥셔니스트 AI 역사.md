@@ -47,8 +47,6 @@ source_facts:
 
 ## Relations
 
-- derived_from [[Engram과 지식 구조 - KGGen 비교]] (Engram 분석에서 역사적 맥락 도출)
-- provides_context [[Engram과 지식 구조 - KGGen 비교]] (이 역사가 Engram 이해의 배경)
 - similar_combination [[KGGen 이해 - 명사 통합과 동사 관계]] (유사한 결합 접근)
 
 ---

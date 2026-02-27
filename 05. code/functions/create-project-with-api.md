@@ -46,7 +46,10 @@ async function createProjectWithAPI(data: {
 ```
 
 ## Relations
-
 - part_of [[flow-content-script]] (소속 모듈)
-- calls [[create-task-api]] (Task 생성)
-- data_flows_to [[flow-sidepanel]] (진행상황 메시지)
+- calls [[create-project-api]] (line 613)
+- calls [[create-group-api]] (line 626)
+- calls [[create-task-api]] (line 639)
+- calls [[create-subtask-api]] (line 642)
+- calls [[update-task-status-api]] (line 646)
+- called_by [[add-tasks-to-project]] (line 953)

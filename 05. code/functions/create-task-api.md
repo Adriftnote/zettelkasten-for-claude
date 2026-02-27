@@ -62,8 +62,12 @@ async function createTaskAPI(data, colaboSrno, sectionSrno = '0') {
 ```
 
 ## Relations
-
 - part_of [[flow-content-script]] (소속 모듈)
-- depends_on [[get-auth-info]] (인증 정보)
-- depends_on [[content-to-html]] (마크다운 변환)
-- calls [[move-task-to-group-api]] (그룹 할당)
+- calls [[get-auth-info]] (line 489)
+- calls [[content-to-html]] (line 491)
+- calls [[call-flow-api]] (line 508)
+- calls [[move-task-to-group-api]] (line 512)
+- called_by [[add-tasks-to-project]] (line 829)
+- called_by [[create-project-with-api]] (line 639)
+- called_by [[create-single-task]] (line 733)
+- called_by [[create-task-with-api]] (line 714)

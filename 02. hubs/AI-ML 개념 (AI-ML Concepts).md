@@ -19,6 +19,7 @@ permalink: hubs/ai-ml-concepts
 - [fact] 검색의 본질은 관련성 점수를 매기는 것 #search #bm25 #semantic
 - [fact] 트랜스포머와 현대 AI의 핵심은 Attention - 어디에 집중할까를 학습하는 메커니즘 #attention #ai
 - [fact] 지식 표현의 구조: 개체 → 트리플 → 그래프로 점진적 복잡화 #knowledge-graph
+- [fact] (주체-관계-대상) 3항 구조는 KG, 온톨로지, 카테고리 이론, 제텔카스텐에서 반복되는 보편 패턴이다 #triple #ontology #category-theory
 - [fact] 하이브리드 검색 = BM25 + 시맨틱 검색 결합으로 최고 품질 달성 #hybrid-search
 
 ## Relations

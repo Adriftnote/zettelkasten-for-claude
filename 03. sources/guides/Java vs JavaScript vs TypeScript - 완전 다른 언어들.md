@@ -15,7 +15,7 @@ source_facts:
 - Java와 JavaScript는 이름만 비슷하고 완전히 다른 언어
 - TypeScript는 JavaScript의 확장판이지, Java의 변형이 아님
 - 웹 브라우저는 JavaScript만 실행 가능하므로 TypeScript로 작성해도 JS로 변환됨
-- TypeScript의 타입 정보는 컴파일 후 사라지지만, Java의 타입 정보는 런타임에 유지됨
+- TypeScript의 타입 정보는 JavaScript로 트랜스파일 시 제거됨(type erasure). Java의 타입 정보는 바이트코드에 유지되어 런타임에도 접근 가능
 ---
 
 # Java vs JavaScript vs TypeScript - 완전 다른 언어들
@@ -46,7 +46,7 @@ source_facts:
 - interface, generics 등 비슷한 개념을 사용
 
 **하지만:**
-- TypeScript의 타입은 컴파일 후 사라짐 (JavaScript로 변환되므로)
+- TypeScript의 타입은 트랜스파일 시 제거됨 (출력이 순수 JavaScript이므로 타입 정보가 남을 곳이 없음)
 - Java의 타입은 런타임에도 유지됨 (JVM이 알아야 하므로)
 - TypeScript는 JavaScript의 상위집합이지, Java의 변형이 아님
 
@@ -68,7 +68,7 @@ source_facts:
 - [fact] Java와 JavaScript는 1995년에 동시에 탄생했지만 완전히 다른 목적을 가짐 #history
 - [fact] JavaScript의 원래 이름은 "LiveScript"였고, 마케팅상 "JavaScript"로 변경됨 #naming
 - [fact] 웹 브라우저는 보안 샌드박스 때문에 JavaScript만 실행 가능하도록 설계됨 #browser
-- [fact] TypeScript 타입은 컴파일 시점에만 존재하고 런타임에 사라짐 #type-erasure
+- [fact] TypeScript 타입은 개발·컴파일 시점에만 존재하며, 트랜스파일 후 JavaScript에는 타입 정보가 없음 (type erasure) #type-erasure
 - [method] 타입 선언 방식의 차이: Java는 변수 선언 시 타입 명시, TypeScript도 동일, JavaScript는 런타임 결정 #type-system
 - [method] 컴파일 흐름: Java는 .java → 바이트코드 → JVM 실행 / TypeScript는 .ts → JavaScript → 브라우저/Node.js 실행 #compilation
 - [method] 에러 감지 시점: JavaScript는 런타임, TypeScript와 Java는 개발 단계에서 감지 #error-detection
@@ -79,7 +79,7 @@ source_facts:
 - [example] TypeScript 해결: `let age: number = 25; age = "스물다섯";` 개발 단계에서 빨간 줄 표시 #static-typing
 - [example] Java의 엄격함: 클래스 구조, 접근 제어자, 예외 처리 강제 #strictness
 - [reference] GitHub Blog: "Why AI is pushing developers toward typed languages" (2025) #source
-- [reference] LLM 연구 결과: AI가 생성한 컴파일 오류의 94%가 타입 체크 실패 #ai-research
+- [reference] LLM 연구: AI 생성 코드의 컴파일 오류 대부분이 타입 체크 실패 (정확한 비율은 연구 조건에 따라 다름) #ai-research
 - [reference] npm 통계: 200만+ 패키지가 JavaScript 생태계에 축적 #ecosystem
 - [question] 왜 브라우저는 JavaScript만 실행할까? → 보안과 표준화 때문에 #browser-security
 - [question] TypeScript가 Java를 대체할 수 있을까? → 웹에서만 가능, 안드로이드는 불가능 #platform
@@ -137,7 +137,7 @@ Java ☕ ←────────────────→ JavaScript 🟨
 **결정적 차이**:
 - TypeScript는 **JavaScript로 변환**되어 실행
 - Java는 **바이트코드로 변환**되어 JVM에서 실행
-- TypeScript의 타입은 **컴파일 후 사라짐**
+- TypeScript의 타입은 **트랜스파일 시 제거됨** (type erasure)
 
 ---
 
@@ -225,7 +225,7 @@ JavaScript   TypeScript   Java   Rust
 ```
 .ts → [tsc] → .js (JavaScript) → [Node.js/브라우저] → 실행
                  ↑
-             타입 정보 사라짐!
+             타입 정보 제거됨 (type erasure)
 ```
 
 #### JavaScript (인터프리터)
@@ -263,7 +263,7 @@ JavaScript   TypeScript   Java   Rust
 
 ## 🌐 AI 시대와 타입 언어
 
-> "2025년 학술 연구에 따르면 LLM이 생성한 컴파일 오류의 94%가 타입 체크 실패"
+> 일부 연구에서 LLM이 생성한 컴파일 오류의 대부분이 타입 체크 실패라고 보고 (GitHub Blog, 2025)
 
 - AI가 코드 생성 → **타입이 가드레일 역할**
 - TypeScript가 2025년 GitHub에서 Python, JavaScript 추월

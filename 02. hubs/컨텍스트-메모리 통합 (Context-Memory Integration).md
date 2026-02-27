@@ -7,7 +7,6 @@ tags:
 - context-engineering
 - memory
 - integration
-- fast-slow
 - three-layer
 ---
 
@@ -20,7 +19,7 @@ tags:
 ## Observations
 
 - [fact] Context Engineering과 Memory Architecture는 동일한 문제의 양면 #context-engineering #memory
-- [fact] Fast-Slow 프랙탈이 통합의 열쇠 - 인간 사고, AI 메모리, 컴퓨터 캐시 모두 같은 구조 #fast-slow
+- [fact] 컨텍스트 윈도우는 LLM의 Working Memory에 대응한다 — 인지 부하 이론의 용량 제한이 토큰 최적화의 원리를 설명 #working-memory #cognitive-load
 - [fact] 사용자 레벨에서 컨텍스트 조절 가능 (/compact, /clear, build_context) #boundary
 - [fact] 서비스 레벨 KV-Cache는 직접 제어 불가 #limitation
 - [method] 토픽 기반 압축: `/compact Focus on [topic]` - 특정 주제 보존 #compact
@@ -36,19 +35,6 @@ tags:
 | **Confusion** | 여러 작업 맥락 혼동 | Task 기반 STM + `/log` |
 | **Lost-in-Middle** | 중간 정보 회수율 저하 | Knowledge Cache + `/load-cache` |
 | **Clash** | 상충하는 정보 존재 | 명시적 충돌 해결 |
-
-## 🔮 Fast-Slow 프랙탈
-
-| 도메인 | Fast (빠름/저렴) | Slow (느림/정확) |
-|--------|-----------------|-----------------|
-| 인간 사고 | 시스템1 (직관) | 시스템2 (분석) |
-| AI 메모리 | Knowledge Cache | LTM 검색 |
-| 컨텍스트 최적화 | Progressive Disclosure | Full Context Load |
-| 컴퓨터 | CPU Cache | Main Memory |
-
-**공통 메커니즘**: Fast 먼저 → 필요시 Slow로 전환
-
----
 
 ## Relations
 
@@ -71,5 +57,5 @@ tags:
 - connects_to [[최적화 패턴 (Optimization Patterns)]] (최적화 전략과 패턴)
 - connects_to [[아키텍처 (Architectures)]] (시스템 아키텍처 설계)
 - references [[03. sources/architectures/Three-Layer Memory Architecture]] (3계층 메모리 아키텍처)
-- references [[03. sources/notes/Fast-Slow 프랙탈 - 도메인을 관통하는 구조]] (Fast-Slow 프랙탈 이론)
+
 - references [[03. sources/reviews/AgeMem-paper-review]] (Age Memory 논문 리뷰)

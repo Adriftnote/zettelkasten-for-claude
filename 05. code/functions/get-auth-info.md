@@ -52,6 +52,17 @@ function getAuthInfo() {
 ```
 
 ## Relations
-
 - part_of [[flow-content-script]] (소속 모듈)
-- data_flows_to [[create-task-api]] (인증 정보 제공)
+- calls [[get-auth-token]] (line 114)
+- calls [[get-company-sn]] (line 114)
+- calls [[get-current-user-name]] (line 114)
+- calls [[get-user-id]] (line 114)
+- called_by [[add-tasks-to-project]] (line 910)
+- called_by [[create-group-api]] (line 266)
+- called_by [[create-project-api]] (line 252)
+- called_by [[create-subtask-api]] (line 558)
+- called_by [[create-task-api]] (line 489)
+- called_by [[get-group-list-api]] (line 195)
+- called_by [[move-task-to-group-api]] (line 521)
+- called_by [[set-task-depth-api]] (line 581)
+- called_by [[update-task-status-api]] (line 535)

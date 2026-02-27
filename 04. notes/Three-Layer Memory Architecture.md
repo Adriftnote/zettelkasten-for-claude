@@ -131,7 +131,7 @@ source_facts:
 ## 🚀 Knowledge Cache: Fast Path 구현
 
 > **핵심 아이디어**: "추출된 구조화된 지식을 캐시로 넣는다"
-> — [[Fast-Slow 프랙탈 - 도메인을 관통하는 구조|Fast-Slow 프랙탈]]에서 도출
+> — Fast-Slow 패턴(카너먼 시스템1/2, Engram, KGGen 등 다수 도메인에서 반복되는 구조)에서 착안
 
 ### Fast-Slow 패턴과 Knowledge Cache
 
@@ -172,7 +172,7 @@ Knowledge Cache 적용 후:
 ```markdown
 ## 프로젝트 컨텍스트
 - 현재 작업: 3계층 메모리 아키텍처 구현
-- 관련 노트: Fast-Slow 프랙탈, Engram 비교, AgeMem
+- 관련 노트: AgeMem, 지식 저장의 원리, KGGen
 - 핵심 원칙: "미래의 나는 바보다" → 출처 기록 필수
 ```
 
@@ -219,7 +219,7 @@ SELECT content FROM observation WHERE category='fact'
 ```python
 # /load-cache 내부 구현
 result = build_context(
-    url="memory://notes/Fast-Slow 프랙탈",
+    url="memory://notes/three-layer-memory-architecture",
     depth=2,
     max_related=10,
     project="obsidian-kb"
@@ -660,7 +660,6 @@ knowledge-base/
 │
 ├── notes/                      ← 맥락 포함 기록
 │   ├── 지식 저장의 원리 - 카너먼 Loftus KGGen.md
-│   ├── Engram과 지식 구조 - KGGen 비교.md
 │   └── KGGen 이해 - 명사 통합과 동사 관계.md
 │
 └── reviews/                    ← 외부 지식 리뷰
@@ -843,10 +842,9 @@ const tools = {
 ## 🔗 관련 개념
 
 ### 이론적 배경
-- [[Fast-Slow 프랙탈 - 도메인을 관통하는 구조|Fast-Slow 프랙탈]] - Knowledge Cache의 이론적 기반
+- Fast-Slow 패턴 (카너먼 시스템1/2 등 다수 도메인에서 반복) - Knowledge Cache의 이론적 기반
 - [[AgeMem-paper-review|AgeMem 논문 리뷰]] - STM/LTM 에이전트 메모리
 - [[지식 저장의 원리 - 카너먼 Loftus KGGen|지식 저장의 원리]] - 카너먼 시스템1/2 + Loftus 기억 연구
-- [[Engram과 지식 구조 - KGGen 비교|Engram vs KGGen]] - 정적/동적 지식 구조 비교
 - [[KGGen 이해 - 명사 통합과 동사 관계|KGGen 이해]] - 명사(벡터) + 동사(규칙) 지식 그래프
 - [[심볼릭 AI vs 커넥셔니스트 AI 역사|심볼릭 vs 커넥셔니스트]] - "조회는 맞고 구축이 문제"
 - [[시스템1-2와 기억 재구성|시스템1-2와 기억]] - 빠른 인출 ≠ 정확한 것
@@ -926,7 +924,7 @@ const tools = {
 - [question] 세션 중 새로운 사실이 발견되면 Knowledge Cache 어떻게 갱신할 것인가? → `/update-cache` 제안 #cache-invalidation
 - [question] 3개 저장소(Working/STM/LTM) 동기화 비용은 얼마나 되는가? → 측정 필요 #performance
 - [question] Knowledge Cache의 최적 크기는? → 프로젝트별 프로필 필요 #tuning
-- [reference] [[Fast-Slow 프랙탈 - 도메인을 관통하는 구조|Fast-Slow 프랙탈]] - 이 아키텍처의 이론적 기반 #source
+- [reference] Fast-Slow 패턴 (카너먼 시스템1/2 등) - 이 아키텍처의 이론적 기반 #source
 - [reference] [[AgeMem-paper-review|AgeMem 논문 리뷰]] - STM/LTM 도구 상세 #source
 - [reference] [[03. sources/reviews/basic-memory-db-schema|Basic Memory DB 스키마]] - LTM 실제 구현 #source
 
@@ -946,10 +944,8 @@ const tools = {
 ### 볼트 내 자체 문서
 | 문서 | 역할 |
 |------|------|
-| [[Fast-Slow 프랙탈 - 도메인을 관통하는 구조\|Fast-Slow 프랙탈]] | Knowledge Cache의 이론적 기반 (자체 프레임워크) |
 | [[03. sources/reviews/basic-memory-db-schema\|Basic Memory DB 스키마]] | LTM 실제 구현 (entity/relation/observation) |
 | [[AgeMem-paper-review\|AgeMem 논문 리뷰]] | STM/LTM 도구 상세 |
-| [[Engram과 지식 구조 - KGGen 비교]] | Fast/Slow 패턴 비교 분석 |
 | [[KGGen - Knowledge Graph Generation Framework]] | 트리플 추출 방법론 |
 
 ### 자체 정의 개념
@@ -957,7 +953,7 @@ const tools = {
 
 - **Three-Layer Memory Architecture**: 이 문서 전체
 - **Knowledge Cache**: Engram의 Fast path를 Basic Memory에 적용한 아이디어
-- **Fast-Slow 프랙탈**: 여러 도메인의 Fast/Slow 패턴을 추상화한 메타 개념
+- **Fast-Slow 패턴**: 카너먼 시스템1/2, Engram, KGGen 등 여러 도메인에서 반복되는 Fast/Slow 이중구조를 추상화한 메타 개념 (별도 노트 없음, 이 문서 내 "Fast-Slow 패턴과 Knowledge Cache" 섹션 참조)
 
 ---
 
