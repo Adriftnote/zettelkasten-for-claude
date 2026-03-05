@@ -32,16 +32,16 @@ async function createSubtaskAPI(
 - [impl] 날짜는 parentDates에서 상속, 담당자는 현재 로그인 사용자 자동 설정 #pattern
 - [impl] Task 생성 후 `setTaskDepthAPI`로 부모-자식 관계 별도 설정 #algo
 - [return] `{ success: true, commtSrno, taskSrno }` 또는 예외 throw
-- [deps] contentToHtml, getAuthInfo, callFlowAPI, setTaskDepthAPI #import
+- [deps] stripOutputSection, contentToHtml, getAuthInfo, callFlowAPI, setTaskDepthAPI #import
 
 ## Relations
-
 - part_of [[flow-content-script]] (소속 모듈)
-- calls [[content-to-html]] (line 555)
-- calls [[get-auth-info]] (line 558)
-- calls [[call-flow-api]] (line 572)
-- calls [[set-task-depth-api]] (line 574)
-- called_by [[add-tasks-to-project]] (line 832)
-- called_by [[create-project-with-api]] (line 642)
-- called_by [[create-single-task]] (line 739)
-- called_by [[create-task-with-api]] (line 715)
+- calls [[strip-output-section]] (line 566)
+- calls [[content-to-html]] (line 567)
+- calls [[get-auth-info]] (line 570)
+- calls [[call-flow-api]] (line 584)
+- calls [[set-task-depth-api]] (line 586)
+- called_by [[add-tasks-to-project]] (line 844)
+- called_by [[create-project-with-api]] (line 654)
+- called_by [[create-single-task]] (line 751)
+- called_by [[create-task-with-api]] (line 727)

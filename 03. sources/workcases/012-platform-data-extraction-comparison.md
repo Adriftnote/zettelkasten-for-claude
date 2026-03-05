@@ -63,12 +63,12 @@ require('RelayStore')  // undefined 반환
 
 #### 데이터를 숨기는 방법
 
-| 방식 | 설명 |
-|------|------|
+| 방식                           | 설명                                  |
+| ---------------------------- | ----------------------------------- |
 | **Relay DevTools Hook 비활성화** | 프로덕션에서 `__RELAY_DEVTOOLS_HOOK__` 없음 |
-| **모듈 내용 숨김** | `require('RelayStore')` → undefined |
-| **React fiber에 데이터 안 넣음** | props에 raw data 대신 참조만 저장 |
-| **서버 스트리밍** | 데이터를 조각조각 전송 후 클라이언트에서 조립 |
+| **모듈 내용 숨김**                 | `require('RelayStore')` → undefined |
+| **React fiber에 데이터 안 넣음**    | props에 raw data 대신 참조만 저장           |
+| **서버 스트리밍**                  | 데이터를 조각조각 전송 후 클라이언트에서 조립           |
 
 #### Base64 인코딩 스크립트
 

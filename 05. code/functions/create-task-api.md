@@ -31,7 +31,7 @@ async function createTaskAPI(
 - [impl] content는 contentToHtml()로 HTML 변환 후 인코딩 #pattern
 - [impl] 그룹 할당은 생성 후 moveTaskToGroupAPI()로 처리 #pattern
 - [return] { success, commtSrno, taskSrno, startDate, endDate }
-- [deps] callFlowAPI, getAuthInfo, contentToHtml #import
+- [deps] callFlowAPI, getAuthInfo, contentToHtml, stripOutputSection #import
 
 ## 코드
 
@@ -63,11 +63,12 @@ async function createTaskAPI(data, colaboSrno, sectionSrno = '0') {
 
 ## Relations
 - part_of [[flow-content-script]] (소속 모듈)
-- calls [[get-auth-info]] (line 489)
-- calls [[content-to-html]] (line 491)
-- calls [[call-flow-api]] (line 508)
-- calls [[move-task-to-group-api]] (line 512)
-- called_by [[add-tasks-to-project]] (line 829)
-- called_by [[create-project-with-api]] (line 639)
-- called_by [[create-single-task]] (line 733)
-- called_by [[create-task-with-api]] (line 714)
+- calls [[strip-output-section]] (line 500)
+- calls [[get-auth-info]] (line 501)
+- calls [[content-to-html]] (line 503)
+- calls [[call-flow-api]] (line 520)
+- calls [[move-task-to-group-api]] (line 524)
+- called_by [[add-tasks-to-project]] (line 841)
+- called_by [[create-project-with-api]] (line 651)
+- called_by [[create-single-task]] (line 745)
+- called_by [[create-task-with-api]] (line 726)
