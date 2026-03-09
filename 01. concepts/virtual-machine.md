@@ -43,7 +43,7 @@ HelloWorld.java → [javac] → HelloWorld.class → [JVM] → 실행
 ## Relations
 
 - similar_to [[interpreter]]
-- implements [[runtime]]
+- implements [[런타임 (Runtime)]]
 - works_with [[compiler]]
 
 ---

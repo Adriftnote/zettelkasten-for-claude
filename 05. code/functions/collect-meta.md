@@ -1,11 +1,11 @@
 ---
 title: collect-meta
 type: function
-permalink: functions/collect-meta
+permalink: 05.-code/functions/collect-meta
 level: low
-category: automation/sns/collection
-semantic: collect meta facebook instagram post views via graphql
-path: C:\claude-workspace\working\projects\playwright-test\run-posts.js
+category: data/sns/analytics
+semantic: collect meta facebook instagram post view counts
+path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
 tags:
 - javascript
 - playwright
@@ -14,35 +14,32 @@ tags:
 - instagram
 ---
 
-# collect-meta
+# collectMeta
 
-Meta(Facebook+Instagram) 게시물 조회수 통합 수집 (GraphQL)
+Meta Business Suite의 GraphQL API를 통해 Facebook + Instagram 통합 게시물 조회수를 수집하는 함수.
 
 ## 시그니처
 
 ```javascript
-async function collectMeta(page: Page, capturedAt: string): Promise<Array<object>>
+async function collectMeta(page: Page, capturedAt: string): Promise<object[]>
 ```
 
 ## Observations
 
-- [impl] `business.facebook.com/latest/insights/content` 접속 후 HTML에서 fb_dtsg, lsd, pageId(asset_id 또는 pageID) 추출 #algo
-- [impl] `page.evaluate()` 내부에 `callGraphQL`, `fetchEdges` 중첩 함수 정의 — 브라우저 컨텍스트에서 직접 실행 #pattern
-- [impl] GraphQL doc_id `34106016262374963` (tofu_unified_table), timeRange LAST_7D→LAST_28D→LAST_90D fallback #algo
-- [impl] `resp.text()` 후 `for (;;);` 프리픽스 제거, 줄 단위로 JSON.parse — n8n 스타일 다중 응답 처리 #caveat
-- [impl] `node.fields.views.renderer.result.value` 경로로 조회수 추출 #pattern
-- [return] platform='meta' 레코드 배열 (최대 10개, FB+IG 통합)
-- [note] 이전 버전(initMeta + collectMetaFB + collectMetaIG 분리)에서 단일 함수로 리팩터링됨 #context
-- [note] FB와 IG 게시물을 같은 GraphQL 엔드포인트에서 가져옴 — ids=[pageId]로 통합 쿼리 #context
-
-## 내부 중첩 함수
-
-- `callGraphQL(variables)` — GraphQL POST 호출, `for (;;);` 프리픽스 처리
-- `fetchEdges(range)` — callGraphQL 래퍼, timeRange 파라미터 추상화
+- [impl] `business.facebook.com/latest/insights/content` 접속 후 HTML에서 `fb_dtsg`, `lsd`, `pageId(asset_id/pageID)` 추출 — regex 파싱 #algo
+- [impl] `page.evaluate()` 내에서 `callGraphQL` + `fetchEdges` 중첩 클로저 — `fb_dtsg`, `lsd`, `pageId`를 클로저로 캡처 #pattern
+- [impl] `doc_id: '34106016262374963'` 고정 — `tofu_unified_table` 쿼리 (FB+IG 통합 콘텐츠 테이블) #algo
+- [impl] `LIFETIME` 우선 조회, edges 빈 배열이면 `LAST_90D`로 fallback — 전체 게시물 확보 목적 #pattern
+- [impl] `count: 500`으로 최대 게시물 수 요청 (기존 기본값 대비 수집량 확대) #algo
+- [impl] 응답 body에서 `for(;;);` 제거 후 줄별 JSON.parse — JSONP 방어 코드 처리 #algo
+- [return] `{platform:'meta', post_id, post_title, view_count, captured_at}[]` — FB와 IG 통합 (entity_type 미분리)
+- [usage] `const records = await collectMeta(page, capturedAt);`
+- [note] FB/IG 분리 미구현 — `tofu_unified_table`이 통합 반환, entity_type 필터 또는 별도 API 필요 (보류) #caveat
+- [note] `LIFETIME` range가 빈 배열 반환 시 `LAST_90D` fallback — 계정 설정에 따라 LIFETIME 미지원 가능 #caveat
 
 ## Relations
 
-- part_of [[run-posts-collector]] (소속 모듈)
-- called_by [[run-main]] (line 508)
+- part_of [[run-posts]] (소속 모듈)
+- called_by [[run]] (line 565)
 - contains [[call-graph-ql]]
 - contains [[fetch-edges]]

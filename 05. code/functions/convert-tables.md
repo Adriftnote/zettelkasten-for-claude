@@ -23,29 +23,33 @@ function convertTables(content: string): string
 ```
 
 ## Observations
-
 - [impl] 라인 단위 순회(while 루프, i 포인터)로 `|`로 시작/끝나는 연속 행을 테이블 단위로 수집 #algo
 - [impl] 구분선 행 판별 정규식: `/^[\|\s\-:]+$/` AND `/---/` — GFM 정렬 표기(`:---:`, `---:`)도 처리 #regex
 - [impl] 테이블 조건: `tableLines.length >= 2` (헤더 + 구분선 최소 필요) #algo
-- [impl] 첫 번째 행(idx===0)은 `<th>`, 나머지는 `<td>`로 자동 구분 #pattern
+- [impl] 첫 번째 행(idx===0)은 헤더로 처리: `<td><strong>내용</strong></td>` (Flow 네이티브 방식 — `<th>` 미사용) #pattern
 - [impl] 셀 분리: `tline.split('|').filter((c, ci, arr) => ci > 0 && ci < arr.length - 1)` — 양끝 빈 셀 제거 #algo
+- [impl] 균등 컬럼 너비: `colWidth = Math.floor(605 / colCount)` — Flow 기본 테이블 폭 605px 기준 #pattern
 - [impl] 각 셀 내용에 `applyInlineStyles()` 적용 (굵게/기울임/코드 인라인) #pattern
-- [return] 테이블 행이 `<table>...<tr>...<th|td>...</table>`로 교체된 문자열 (나머지 줄은 그대로)
-- [note] contentToHtml의 2단계 전처리: 코드블록 변환 후 실행되므로 코드 안의 `|`는 이미 `<pre>`로 래핑된 상태 #context
+- [return] 테이블 행이 Flow 에디터 네이티브 포맷으로 교체된 문자열 (나머지 줄은 그대로)
+- [note] contentToHtml의 2단계 전처리: 코드블록 변환 후 실행되므로 코드 안의 `|`는 이미 테이블로 래핑된 상태 #context
 
 ## 출력 HTML 구조
-
 ```html
-<table style="border-collapse:collapse;border:1px solid #ddd;">
-  <tr>
-    <th style="border:1px solid #ddd;padding:8px;">헤더1</th>
-    <th style="border:1px solid #ddd;padding:8px;">헤더2</th>
-  </tr>
-  <tr>
-    <td style="border:1px solid #ddd;padding:8px;">값1</td>
-    <td style="border:1px solid #ddd;padding:8px;">값2</td>
-  </tr>
-</table>
+<!-- Flow 에디터 네이티브 포맷 (editor-table-wrap 래퍼 필수) -->
+<div class="editor-table-wrap">
+  <table border="1" cellspacing="1" cellpadding="1" style="width:605px">
+    <tbody>
+      <tr>
+        <td style="width:302px"><strong>헤더1</strong></td>
+        <td style="width:302px"><strong>헤더2</strong></td>
+      </tr>
+      <tr>
+        <td style="width:302px">값1</td>
+        <td style="width:302px">값2</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 ```
 
 ## Relations

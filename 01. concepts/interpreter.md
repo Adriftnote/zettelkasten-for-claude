@@ -41,7 +41,7 @@ python script.py
 
 - similar_to [[compiler]]
 - executes [[script]]
-- part_of [[runtime]]
+- part_of [[런타임 (Runtime)]]
 
 ---
 

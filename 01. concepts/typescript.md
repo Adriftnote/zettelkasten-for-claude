@@ -122,4 +122,4 @@ function greet(name) {
 - uses [[transpilation]]
 - compared_with [[java]]
 - relates_to [[compiler]] (tsc는 컴파일러)
-- runs_on [[runtime]] (Node.js, 브라우저)
+- runs_on [[런타임 (Runtime)]] (Node.js, 브라우저)

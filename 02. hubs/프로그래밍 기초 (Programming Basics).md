@@ -32,7 +32,7 @@ permalink: hubs/programming-basics
 - organizes [[compiler]] (2. 소스를 미리 기계어로 변환하는 도구)
   - part_of [[linker]] (2a. 여러 오브젝트 파일을 연결)
 - organizes [[interpreter]] (3. 소스를 실행하면서 즉시 변환하는 도구)
-  - extends [[runtime]] (3a. 프로그램이 실행되는 환경 (Node.js, JVM, .NET))
+  - extends [[런타임 (Runtime)]] (3a. 프로그램이 실행되는 환경 (Node.js, JVM, .NET))
   - extends [[virtual-machine]] (3b. 추상화된 실행 환경)
 - organizes [[assembler]] (4. 어셈블리 언어를 기계어로 변환하는 도구)
 - organizes [[module]] (5. 코드의 논리적 단위, 구조화의 첫 단계)

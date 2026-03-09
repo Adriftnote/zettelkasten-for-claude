@@ -1,37 +1,40 @@
 ---
 title: collect-you-tube
 type: function
-permalink: functions/collect-you-tube
+permalink: 05.-code/functions/collect-you-tube
 level: low
-category: automation/sns/collection
-semantic: collect youtube studio video view counts
-path: C:\claude-workspace\working\projects\playwright-test\run-posts.js
+category: data/sns/analytics
+semantic: collect youtube post view counts via api interception
+path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
 tags:
 - javascript
 - playwright
 - youtube
 ---
 
-# collect-you-tube
+# collectYouTube
 
-YouTube Studio 동영상 및 Shorts 조회수 수집 (DOM 파싱)
+YouTube Studio의 list_creator_videos API 응답을 Playwright response 가로채기로 수집하는 함수. 동영상 + Shorts 탭을 순차 처리하며 페이지네이션 지원.
 
 ## 시그니처
 
 ```javascript
-async function collectYouTube(page: Page, capturedAt: string): Promise<Array<object>>
+async function collectYouTube(page: Page, capturedAt: string): Promise<object[]>
 ```
 
 ## Observations
 
-- [impl] 동영상 탭(`videos/upload`) + Shorts 탭(`videos/short`) 순차 수집 후 중복 제거 (Set 기반) #algo
-- [impl] `ytcp-video-row` 커스텀 엘리먼트 탐색 → `#video-title`, `.tablecell-views`, `a[href*="/video/"]` 선택 #pattern
-- [impl] 최대 20개 (탭당 10개), 중복 videoId 제거 후 youtube 플랫폼 레코드로 변환 #pattern
-- [return] platform='youtube' 레코드 배열
-- [note] `accounts.google.com` URL 감지 시 로그인 만료 throw #context
-- [note] YOUTUBE_CHANNEL_ID 상수(`UCWpvotHqOrqnaT_cielUzRQ`)를 URL에 직접 삽입 #context
+- [impl] `page.on('response')` 이벤트로 URL에 `list_creator_videos` 포함된 응답 가로채기 — API 직접 호출 대신 브라우저 세션 활용 #pattern
+- [impl] 동영상 탭(`videos/upload`) + Shorts 탭(`videos/short`) 순차 처리 — 탭 전환 시 `apiResponses` 배열 초기화 #algo
+- [impl] `videosTotalSize.size`로 전체 개수 파악 → "다음" 버튼(`aria-label="다음"` 또는 `#navigate-after`) 클릭으로 페이지네이션 — 최대 20페이지 #algo
+- [impl] `Set`으로 `videoId` 중복 제거 — 탭 간 동일 영상 방지 #pattern
+- [impl] 조회수 추출: `publicMetrics.externalViewCount || publicMetrics.viewCount` — 필드명 버전별 차이 대응 #caveat
+- [return] `{platform:'youtube', post_id, post_title, view_count, captured_at}[]`
+- [usage] `const records = await collectYouTube(page, capturedAt);`
+- [note] 탭 이동 후 8초 대기 — API 응답 수신 완료 대기 (하드코딩된 타임아웃) #caveat
+- [note] 수집 완료 후 `page.removeAllListeners('response')` — 다른 수집기와 리스너 충돌 방지 #pattern
 
 ## Relations
 
-- part_of [[run-posts-collector]] (소속 모듈)
-- called_by [[run-main]] (line 475)
+- part_of [[run-posts]] (소속 모듈)
+- called_by [[run]] (line 532)

@@ -62,6 +62,22 @@ playwright-test/
 ### run-posts.js (게시물별 스냅샷 → post_view_snapshots)
 | 플랫폼 | API 방식 | 데이터 |
 |--------|---------|--------|
+| YouTube | `list_creator_videos` API 가로채기 | 동영상+Shorts 전체 (페이지네이션), externalViewCount |
+| 네이버TV | apis.naver.com clips API | 최근 10개 클립 totalPlayCount |
+| 네이버 블로그 | admin.blog iframe 순위 테이블 | 당일 조회수 상위 게시물 |
+| Meta | GraphQL doc_id 34106016262374963 (FB+IG 통합) | 최근 게시물 views |
+| TikTok | `/creator/manage/item_list/v1` API 가로채기 | 최근 10개 게시물 play_count |
+
+### run.js (채널 일별 요약 → daily_channel_summary)
+| 플랫폼 | API 방식 | 데이터 |
+|--------|---------|--------|
+| Facebook | GraphQL doc_id 3종 병렬 | views, interactions, followers (7일) |
+| X | AccountOverviewQuery GraphQL | impressions, engagements, follows (7일) |
+| Naver Blog | admin.blog iframe DOM 파싱 | views, likes, comments, neighbors (7일, prev 버튼) |
+
+### run-posts.js (게시물별 스냅샷 → post_view_snapshots)
+| 플랫폼 | API 방식 | 데이터 |
+|--------|---------|--------|
 | YouTube | studio.youtube.com DOM 파싱 (`ytcp-video-row`) | 동영상+Shorts 최대 20개 viewCount |
 | 네이버TV | apis.naver.com clips API | 최근 10개 클립 totalPlayCount |
 | 네이버 블로그 | admin.blog iframe 순위 테이블 | 당일 조회수 상위 게시물 |
