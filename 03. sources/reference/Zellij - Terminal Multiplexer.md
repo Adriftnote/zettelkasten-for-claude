@@ -89,7 +89,7 @@ zellij attach   # 기존 세션 재연결
 
 ## 🔗 관련 개념
 
-- [[web-fundamentals]] - 웹 기반 터미널 접근
+- [[웹 기초 (Web Fundamentals)]] - 웹 기반 터미널 접근
 - [[rust-language]] - Zellij 구현 언어
 
 ---

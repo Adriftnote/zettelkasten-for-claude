@@ -117,7 +117,7 @@ function greet(name) {
 
 ## Relations
 
-- hub [[programming-languages]]
+- hub [[프로그래밍 언어 비교 (Programming Languages)]]
 - is_superset_of [[javascript]]
 - uses [[transpilation]]
 - compared_with [[java]]

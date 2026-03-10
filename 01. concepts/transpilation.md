@@ -98,7 +98,7 @@ TypeScript → [tsc] → JavaScript
 
 ## Relations
 
-- hub [[programming-basics]]
+- hub [[프로그래밍 기초 (Programming Basics)]]
 - used_by [[typescript]] (TS는 트랜스파일 언어)
 - contrasts_with [[compiler]] (컴파일은 저급 언어로 변환)
 - relates_to [[javascript]] (트랜스파일의 주요 타깃)

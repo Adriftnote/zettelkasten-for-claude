@@ -57,7 +57,7 @@ difficulty: 중급
 
 ## Relations
 
-- part_of [[runtime|런타임 (Runtime)]] (런타임의 핵심 구성 요소)
+- part_of [[런타임 (Runtime)|런타임 (Runtime)]] (런타임의 핵심 구성 요소)
 - depends_on [[interpreter|인터프리터]] (인터프리터 방식 엔진은 코드를 한 줄씩 실행)
 - relates_to [[compiler|컴파일러]] (JIT 엔진은 실행 중 기계어로 컴파일)
 - enables [[javascript|JavaScript]] (JS 코드를 실행 가능하게 만드는 핵심)

@@ -87,10 +87,10 @@ manifest.json에서 `all_frames: true` 설정:
 
 ## 3. Content Script vs Background Script
 
-| 구분 | [[Content Script]] | [[Background Script (Service Worker)\|Background Script]] |
+| 구분 | [[Content Script]] | [[Background Script (Service Worker)|Background Script]] |
 |------|-------------------|---------------------|
 | 실행 위치 | 웹 페이지 안 | Extension 독립 공간 |
-| 할 수 있는 것 | [[DOM (Document Object Model)\|DOM]] 읽기/수정 | 외부 API 호출, 스토리지 |
+| 할 수 있는 것 | [[DOM (Document Object Model)|DOM]] 읽기/수정 | 외부 API 호출, 스토리지 |
 | 할 수 없는 것 | 외부 API 호출 (CORS) | DOM 접근 |
 
 ### 메시지 전달 패턴
@@ -169,9 +169,9 @@ social-analytics-extractor/
 
 | 개념 | 분야 |
 |------|------|
-| [[DOM (Document Object Model)\|DOM]], [[JavaScript (JS)\|JavaScript]] | 프론트엔드 |
-| [[CORS (Cross-Origin Resource Sharing)\|CORS]], [[Same-Origin Policy (동일 출처 정책)\|Same-Origin Policy]] | 웹 보안 |
-| [[Content Script]], [[Background Script (Service Worker)\|Background Script]] | Chrome Extension |
+| [[DOM (Document Object Model)|DOM]], [[JavaScript (JS)|JavaScript]] | 프론트엔드 |
+| [[CORS (Cross-Origin Resource Sharing)|CORS]], [[Same-Origin Policy (동일 출처 정책)|Same-Origin Policy]] | 웹 보안 |
+| [[Content Script]], [[Background Script (Service Worker)|Background Script]] | Chrome Extension |
 | [[Chrome Extension]] | 브라우저 확장 |
 
 ### 추천 자료

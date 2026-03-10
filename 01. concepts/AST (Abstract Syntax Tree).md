@@ -70,7 +70,7 @@ print(ast.dump(tree, indent=2))
 ## Relations
 
 - used_by [[RPG (Repository Planning Graph)]] (의존성 추출에 사용)
-- relates_to [[dependency]] (AST로 의존성 분석)
+- relates_to [[의존성 (Dependency)]] (AST로 의존성 분석)
 - part_of [[compiler|컴파일러]] (컴파일 과정의 일부)
 - enables [[source-code]] (소스 코드 분석 가능케 함)
 

@@ -177,7 +177,7 @@ Full URL:    https://api.example.com/v1/users
 
 ## Relations
 
-- part_of [[API (Application Programming Interface)]]
+- part_of [[api]]
 - uses [[HTTP Methods]]
 - used_by [[Web Communication]]
 - used_by [[Payload]]

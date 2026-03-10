@@ -149,7 +149,7 @@ Copilot Space (자동 인덱싱 + 자동 동기화)
 - [[Gemini File Search API 공식 문서]] - 경쟁 클라우드 RAG 서비스
 - [[Gemini CLI 공식 문서]] - Gemini 진영 CLI 도구
 - [[벡터 시맨틱 검색]] - 로컬 vecsearch와 비교
-- [[MCP]] - Model Context Protocol 연동
+- [[MCP (Model Context Protocol)]] - Model Context Protocol 연동
 
 ---
 

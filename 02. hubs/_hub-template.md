@@ -127,7 +127,7 @@ Basic Memory는 `- {뭔가} [[링크]]` 패턴을 **문서 전체에서** 파싱
 ### 2. 테이블/blockquote 내 wikilink
 
 ```markdown
-| 도구 | [[parser]] |   ← ❌
+| 도구 | [[파서 (Parser)]] |   ← ❌
 > 참고: [[가이드]]     ← ❌
 ```
 
@@ -157,9 +157,9 @@ Basic Memory는 `- {뭔가} [[링크]]` 패턴을 **문서 전체에서** 파싱
 - organizes [[compiler]] (2. 소스를 미리 기계어로 변환)
   - part_of [[linker]] (2a. 오브젝트 파일 연결)
 - organizes [[interpreter]] (3. 실행하면서 변환)
-  - part_of [[runtime]] (3a. 실행 환경)
-- connects_to [[programming-languages]] (언어별 비교)
-- connects_to [[web-fundamentals]] (웹 개발 연결)
+  - part_of [[런타임 (Runtime)]] (3a. 실행 환경)
+- connects_to [[프로그래밍 언어 비교 (Programming Languages)]] (언어별 비교)
+- connects_to [[웹 기초 (Web Fundamentals)]] (웹 개발 연결)
 ```
 
 ---

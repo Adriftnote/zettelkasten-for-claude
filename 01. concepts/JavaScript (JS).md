@@ -73,9 +73,9 @@ document.getElementById("btn").addEventListener("click", () => {
 
 ## Relations
 
-- used_by [[html]]
-- similar_to [[css]]
-- relates_to [[iframe]]
+- used_by [[HTML (HyperText Markup Language)]]
+- similar_to [[CSS (Cascading Style Sheets)]]
+- relates_to [[iframe (Inline Frame)]]
 - implements [[api]]
 
 ---

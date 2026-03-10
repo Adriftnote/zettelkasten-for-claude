@@ -129,6 +129,6 @@ fn main() {
 
 ## 관련 개념
 
-- [[data-structure]] - 기본 자료구조
+- [[데이터 구조 (Data Structure)]] - 기본 자료구조
 - [[queue]] - 스택의 대응 개념 (FIFO)
 - [[array]] - 스택의 기반 자료구조

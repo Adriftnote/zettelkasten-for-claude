@@ -131,8 +131,8 @@ entire enable
 
 ## 🔗 관련 개념
 
-- [[context-engineering]] - 에이전트 컨텍스트 관리의 핵심 과제
-- [[memory-systems]] - 에이전트의 장기 기억/컨텍스트 보존
+- [[컨텍스트 엔지니어링 (Context Engineering)]] - 에이전트 컨텍스트 관리의 핵심 과제
+- [[메모리 시스템 (Memory Systems)]] - 에이전트의 장기 기억/컨텍스트 보존
 - [[Git]] - Checkpoints가 확장하는 기반 시스템
 - [[agentic-coding]] - 에이전트 주도 코딩 패러다임
 - [[Claude Code]] - 지원되는 첫 번째 에이전트 중 하나

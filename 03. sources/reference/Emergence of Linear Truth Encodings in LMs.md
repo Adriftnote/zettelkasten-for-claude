@@ -109,7 +109,7 @@ LLAMA3-8B 검증:
 
 ## 🔗 관련 개념
 
-- [[선형 표현 가설 (Linear Representation Hypothesis)]] - 상위 가설
+- [[Linear Representation Hypothesis]] - 상위 가설
 - [[Layer Normalization]] - truth direction 출현의 핵심 메커니즘
 - [[Linear Representation Hypothesis - LLM 기하학]] - companion paper (causal inner product 관점)
 - [[Hallucination]] - truth encoding 활용한 완화 가능성

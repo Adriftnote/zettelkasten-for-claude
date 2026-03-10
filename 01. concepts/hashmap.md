@@ -224,7 +224,7 @@ world: 1 번
 
 ## 관련 개념
 
-- [[data-structure]] - 자료구조 개요
+- [[데이터 구조 (Data Structure)]] - 자료구조 개요
 - [[array]] - 배열 기초
 - [[hash-function]] - 해시 함수 상세
 - [[collision-resolution]] - 충돌 해결 기법

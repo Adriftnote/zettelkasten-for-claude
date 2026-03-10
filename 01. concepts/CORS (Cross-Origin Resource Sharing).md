@@ -70,15 +70,15 @@ Access-Control-Allow-Headers: Content-Type
 |------|------|
 | 서버 설정 | 서버에서 CORS 헤더 추가 (정석) |
 | 프록시 서버 | 같은 출처의 서버를 경유 |
-| [[Background Script (Service Worker)\|Background Script]] | Chrome Extension 권한 활용 |
+| [[Background Script (Service Worker)|Background Script]] | Chrome Extension 권한 활용 |
 
 ## Relations
 
 - implements [[http-header]]
 - extends [[same-origin-policy]]
 - relates_to [[content-script]]
-- relates_to [[background-script]]
-- relates_to [[iframe]]
+- relates_to [[Background Script (Service Worker)]]
+- relates_to [[iframe (Inline Frame)]]
 
 ---
 

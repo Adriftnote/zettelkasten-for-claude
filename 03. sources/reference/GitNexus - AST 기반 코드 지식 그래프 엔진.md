@@ -120,9 +120,9 @@ KuzuDB (그래프 DB)
 
 ## 🔗 관련 개념
 
-- [[data-structure]] - 그래프 자료구조, AST 트리 구조
-- [[architectures]] - 코드 아키텍처 분석 도구
-- [[mcp-tool-patterns]] - MCP 도구 설계 패턴 (defer_loading)
+- [[데이터 구조 (Data Structure)]] - 그래프 자료구조, AST 트리 구조
+- [[아키텍처 (Architectures)]] - 코드 아키텍처 분석 도구
+- [[MCP Tool 패턴 (MCP Tool Patterns)]] - MCP 도구 설계 패턴 (defer_loading)
 
 ---
 

@@ -106,7 +106,7 @@ JavaScript 엔진 (V8)
 
 ## Relations
 
-- hub [[programming-languages]]
+- hub [[프로그래밍 언어 비교 (Programming Languages)]]
 - extended_by [[typescript]] (TypeScript는 JS의 슈퍼셋)
 - different_from [[java]] (이름만 비슷, 완전 다른 언어)
 - is_a [[interpreter]] (인터프리터 언어)

@@ -1,339 +1,96 @@
 ---
 name: rpg
 description: Use when analyzing source code to generate RPG (Repository Planning Graph) documentation. Triggers on code documentation, module analysis, codebase structure mapping, function/class cataloging.
-argument-hint: "[파일경로 | 폴더경로 | 모듈명]"
+allowed-tools: Bash(rpg-extract *), Bash(python *vecsearch*), mcp__basic-memory__write_note, mcp__basic-memory__read_note, mcp__basic-memory__edit_note, mcp__basic-memory__search_notes, mcp__basic-memory__build_context, mcp__basic-memory__list_directory, Glob, Grep, Read
+argument-hint: "extract <path> | update <module> | doc"
 ---
 
-# RPG Document Creator
+# RPG (Repository Planning Graph)
 
-소스 코드를 분석하여 zettelkasten 프로젝트(basic-memory)에 코드 문서를 생성합니다.
+소스 코드를 분석하여 zettelkasten(basic-memory)에 코드 문서를 생성합니다.
+그래프 구조: project → module → function/class
 
-> **목적**: 코드베이스를 그래프 구조(project→module→function/class)로 관리하여 LLM이 검색 가능한 형태로 구조화
+## 모드
 
-> **MCP 도구 사용 가능**: write_note, edit_note, read_note, build_context 등 basic-memory MCP 도구를 사용할 수 있습니다.
+### /rpg extract <file|folder>
 
-## 사용법
+소스 코드에서 RPG 노트를 새로 생성.
 
-```
-/rpg [파일경로 | 폴더경로 | 모듈명]
-```
+1. `rpg-extract <path> --module-name <name>` 실행 → 구조 데이터 확보
+   - 함수/클래스 목록, 내부 호출 관계, import, RPG Relations 섹션 자동 생성
+2. 소스 코드 Read → 자동 추출이 못 잡는 부분만 파악 (목적, 설계 의도, 외부 의존)
+3. vecsearch로 중복 확인 (→ 공통 절차 참조)
+4. 소속 프로젝트 확인 (`list_directory dir_name=/05. code/projects`)
+5. 노드 타입별 템플릿 참조하여 작성:
+   - project → `Read references/project-template.md`
+   - module → `Read references/module-template.md`
+   - function/class → `Read references/function-template.md`
+6. **모든 계층 생성 필수** — project/module만 만들고 끝내지 말 것. function/class까지 생성
+7. write_note로 저장 → build_context depth 2로 트리 검증
 
-### 예시
+### /rpg update <module-name>
 
-```
-/rpg C:\path\to\script.py              → 단일 파일 문서화
-/rpg C:\path\to\project\               → 폴더 전체 문서화
-/rpg vecsearch                         → 기존 모듈 업데이트
-/rpg                                   → 대화 내용에서 생성
-```
+기존 RPG 노트를 코드 변경사항에 맞게 업데이트.
 
-## 실행 절차
+1. `read_note identifier=modules/<module-name>` → 기존 노트 로딩
+2. 노트의 `path`에서 소스 파일 경로 확인
+3. `rpg-extract <소스파일>` → 현재 코드 상태 추출
+4. 기존 노트와 비교:
+   - 추가된 함수 → 새 function 노드 생성
+   - 삭제된 함수 → 기존 function 노드에 [deprecated] 표기
+   - 변경된 호출 관계 → Relations 업데이트
+5. `edit_note`로 업데이트 → build_context로 검증
 
-### Step 1: 입력 판단
+### /rpg doc
 
-| 입력 | 처리 |
-|------|------|
-| 파일 경로 (.py, .js 등) | 해당 파일 Read → 분석 |
-| 폴더 경로 | 폴더 내 소스 파일 Glob → 각 파일 분석 |
-| 기존 모듈명 | zettelkasten에서 read_note → 소스 파일 Read → 업데이트 |
-| 인자 없음 | 대화에서 논의된 코드 기반 생성 |
+대화 컨텍스트에서 RPG 노드를 작성. (인자 없이 `/rpg` 호출 시에도 이 모드)
 
-### Step 2: 소스 코드 분석
+1. 대화에서 논의된 코드 구조 파악
+2. vecsearch로 중복 확인
+3. 노드 타입 판단 → 해당 템플릿 참조 (Read references/...)
+4. write_note로 저장
 
-파일을 Read하고 구조를 파악:
+## 공통 절차
 
-1. **모듈 수준**: 파일의 목적, 전역 변수/상수, 의존성
-2. **함수 목록**: 모든 `def`/`function` 추출 (시그니처, 로직, 반환값)
-3. **클래스 목록**: 모든 `class` 추출 (메서드, 속성)
-4. **호출 관계**: 함수 간 calls, data_flows_to 파악
-
-### Step 3: 벡터 검색 (중복 방지 + 연결 강화)
-
-노트 작성 전 기존 유사 코드 문서를 검색하여 중복 생성을 방지하고 연결을 강화합니다.
+### vecsearch 중복 확인
 
 ```bash
 vecsearch search "[모듈/함수 키워드]" --top 5 --unique --type module
 vecsearch search "[모듈/함수 키워드]" --top 5 --unique --type function
 ```
 
-**결과에 따라:**
-
 | 유사도 | 조치 |
 |--------|------|
-| 매우 유사 (distance < 14) | 기존 노트 업데이트 (edit_note) — 새로 만들지 않음 |
-| 관련 있음 (14~17) | 새 노트 생성 + Relations에 연결 추가 |
-| 관련 없음 (> 17) | 그대로 새 노트 생성 |
+| distance < 14 | 기존 노트 업데이트 (edit_note) — 새로 만들지 않음 |
+| 14~17 | 새 노트 생성 + Relations에 연결 추가 |
+| > 17 | 그대로 새 노트 생성 |
 
-### Step 4: 소속 프로젝트 확인
-
-기존 프로젝트에 속하는지 확인:
+### 저장
 
 ```
-mcp__basic-memory__list_directory
-dir_name: /05. code/projects
-project: zettelkasten
+write_note: folder=05. code/projects | modules | functions | classes, project=zettelkasten
+edit_note: identifier=[permalink], operation=replace_section, section=[섹션명]
 ```
 
-- 기존 프로젝트에 속하면 → 해당 프로젝트에 연결
-- 새 프로젝트면 → 사용자에게 프로젝트 생성 여부 확인
-
-### Step 5: 문서 생성 (계층순: project → module → function/class)
-
----
-
-#### 4-1. Project (허브 노트)
-
-**프론트매터:**
-
-```yaml
----
-title: [프로젝트명]
-type: project
-level: high
-category: "[area/category]"
-permalink: projects/[slug]
-path: "[실제 경로]"
-tags:
-- [태그들]
----
-```
-
-**본문:**
-
-```markdown
-# [프로젝트명]
-
-[한 줄 설명]
-
-## 개요
-
-[프로젝트 설명 2-3문장]
-
-## 코드 구성
-
-**모듈**
-- [모듈명]: [설명]
-
-**함수 ([그룹명])**
-- [함수명]: [설명]
-
-**함수 ([다른 그룹명])**
-- [함수명]: [설명]
-
-## Relations
-
-- contains [[모듈A]] (설명)
-- contains [[모듈B]] (설명)
-- extends/depends_on [[외부]] (설명)
-```
-
-**규칙:**
-- Observations 없음
-- 코드 구성 섹션에서 모듈/함수를 그룹별로 나열 (텍스트, wikilink 아님)
-- Relations에서 contains로 모듈만 연결
-
----
-
-#### 4-2. Module (파일 단위)
-
-**프론트매터:**
-
-```yaml
----
-title: [모듈명]
-type: module
-level: high
-category: "[area/category/sub]"
-semantic: "[verb object phrase]"
-permalink: modules/[slug]
-path: "[실제 파일 경로]"
-tags:
-- [언어]
-- [기술태그]
----
-```
-
-**본문:**
-
-```markdown
-# [모듈명]
-
-[한 줄 설명]
-
-## 개요
-
-[모듈 설명]
-
-## Observations
-
-- [impl] 구현 방식 #태그
-- [deps] 의존성 목록 #import
-- [usage] `사용 예시`
-- [note] 참고사항 #context
-
-## [자유 섹션 - 아키텍처, 스키마, 동작 흐름 등]
-
-## Relations
-
-- part_of [[프로젝트명]] (소속 프로젝트)
-- contains [[함수명A]] (설명)
-- contains [[함수명B]] (설명)
-- contains [[클래스명]] (설명)
-- depends_on/uses/extends [[외부 의존성]] (설명)
-```
-
-**규칙:**
-- **contains 필수** - 모든 하위 함수/클래스를 나열
-- **part_of 필수** - 소속 프로젝트 연결
-- 자유 섹션으로 아키텍처, DB 스키마, 동작 흐름 등 추가 가능
-
----
-
-#### 4-3. Function (함수 단위)
-
-**프론트매터:**
-
-```yaml
----
-title: [함수명-kebab-case]
-type: function
-level: low
-category: "[area/category/sub]"
-semantic: "[verb object]"
-permalink: functions/[slug]
-path: "[실제 파일 경로]"
-tags:
-- [언어]
----
-```
-
-**본문:**
-
-```markdown
-# [함수명]
-
-[한 줄 설명]
-
-## 시그니처
-
-｀｀｀python
-def function_name(param: Type, param2: Type) -> ReturnType
-｀｀｀
-
-## Observations
-
-- [impl] 구현 방식/알고리즘 #algo
-- [impl] 세부 로직 #pattern
-- [return] 반환값 설명
-- [usage] `사용 예시`
-- [deps] 의존성 #import
-- [note] 주의사항 #caveat
-
-## [선택 섹션 - SQL 쿼리, 데이터 흐름 등]
-
-## Relations
-
-- part_of [[모듈명]] (소속 모듈)
-- calls [[다른함수]] (호출)
-- data_flows_to [[다른함수]] (데이터 흐름)
-```
-
-**규칙:**
-- **part_of 필수** - 소속 모듈 연결
-- 시그니처 섹션에 함수 선언부 코드 블록
-- main 함수는 `main-[모듈명]`으로 네이밍
-
----
-
-#### 4-4. Class (클래스 단위)
-
-**프론트매터:**
-
-```yaml
----
-title: [클래스명-kebab-case]
-type: class
-level: low
-category: "[area/category/sub]"
-semantic: "[verb object]"
-permalink: classes/[slug]
-path: "[실제 파일 경로]"
-tags:
-- [언어]
----
-```
-
-**본문:**
-
-```markdown
-# [클래스명]
-
-[한 줄 설명]
-
-## 인터페이스
-
-｀｀｀python
-class ClassName:
-    def __init__(self, ...): ...
-    def method_a(self, ...): ...
-｀｀｀
-
-## Observations
-
-- [impl] 구현 패턴 #pattern
-- [deps] 의존성 #import
-- [usage] `사용 예시`
-- [note] 주의사항 #caveat
-
-## Relations
-
-- part_of [[모듈명]] (소속 모듈)
-- contains [[메서드명]] (포함된 메서드)
-- implements [[인터페이스]] (구현)
-```
-
----
-
-### Step 6: 저장
-
-각 문서를 zettelkasten 프로젝트의 `05. code/` 하위에 저장:
-
-```
-mcp__basic-memory__write_note
-title: [제목]
-folder: 05. code/projects | 05. code/modules | 05. code/functions | 05. code/classes
-project: zettelkasten
-content: [작성된 내용]
-```
-
-기존 문서 업데이트 시:
-
-```
-mcp__basic-memory__edit_note
-identifier: [permalink]
-project: zettelkasten
-operation: replace_section
-section: Relations
-content: [수정된 Relations]
-```
-
-### Step 7: 트리 검증
-
-생성 후 build_context로 연결 확인:
-
-```
-mcp__basic-memory__build_context
-url: [프로젝트 또는 모듈 permalink]
-project: zettelkasten
-depth: 2
-```
-
-project에서 depth 2로 탐색 시 module→function까지 트리가 보여야 정상.
+### 트리 검증
+
+생성 후 `build_context url=[permalink] project=zettelkasten depth=2` — project에서 module→function까지 보여야 정상.
+
+## 핵심 규칙
+
+1. **양방향 Relations 필수** — contains↔part_of 반드시 쌍으로
+2. **모든 함수/클래스 문서화 필수** — 유틸리티 함수도 포함 (인라인 코드만 제외)
+3. **rpg-extract의 "RPG Relations" 섹션 그대로 사용** — contains/calls 수동 나열 금지
+4. **수동 분석은 외부 관계만** — depends_on, data_flows_to, extends
+5. **semantic은 verb-object** — "load csv", "validate user"
+6. **category는 area/cat/sub** — 의미 계층 분류
+7. **wikilink는 Relations에서만** — 테이블, blockquote에 wikilink 금지
+8. **기존 프로젝트 업데이트 시** — 프로젝트의 코드 구성 + Relations도 함께 업데이트
 
 ## 네이밍 규칙
 
-| 항목 | 변환 규칙 | 예시 |
-|------|----------|------|
+| 항목 | 변환 | 예시 |
+|------|------|------|
 | 함수명 | snake_case → kebab-case | `check_duplicates` → `check-duplicates` |
 | 클래스명 | PascalCase → kebab-case | `UserValidator` → `user-validator` |
 | 모듈명 | 파일명 그대로 (확장자 제거) | `vecsearch.py` → `vecsearch` |
@@ -344,60 +101,20 @@ project에서 depth 2로 탐색 시 module→function까지 트리가 보여야 
 
 | 카테고리 | 용도 | 태그 예시 |
 |---------|------|----------|
-| `[impl]` | 구현 방식, 알고리즘 | `#algo`, `#pattern`, `#regex` |
+| `[impl]` | 구현 방식, 알고리즘 | `#algo`, `#pattern` |
 | `[return]` | 반환값 설명 | `#type` |
-| `[usage]` | 사용법, 호출 예시 | `#cli` |
-| `[deps]` | 의존성 (import) | `#import` |
-| `[note]` | 참고사항, 주의점 | `#context`, `#caveat`, `#performance` |
+| `[usage]` | 사용법 | `#cli` |
+| `[deps]` | 의존성 | `#import` |
+| `[note]` | 참고사항 | `#context`, `#caveat` |
 
 ## Relations 패턴
 
-| relation | 방향 | 용도 | 예시 |
-|----------|------|------|------|
-| `contains` | 부모→자식 | 계층 | project→module, module→function |
-| `part_of` | 자식→부모 | 소속 | function→module, module→project |
-| `calls` | A→B | 함수 호출 | func-a calls func-b |
-| `data_flows_to` | A→B | 데이터 흐름 | parser → validator |
-| `depends_on` | A→B | 외부 의존성 | module depends_on library |
-| `extends` | A→B | 기능 확장 | vecsearch extends basic-memory |
-| `implements` | A→B | 인터페이스 구현 | class implements interface |
-| `uses` | A→B | 라이브러리 사용 | module uses sqlite-vec |
-| `watches` | A→B | 감시 | watcher watches db |
-| `causes` | A→B | 인과 (원인→결과) | config-error causes build-failure |
-| `caused_by` | B→A | 인과 (결과→원인) | build-failure caused_by config-error |
-
-## 타입별 필수 체크리스트
-
-### project
-- [ ] Observations 없음
-- [ ] 코드 구성 섹션에 모듈/함수 그룹별 나열
-- [ ] Relations: contains로 모든 모듈 연결
-
-### module
-- [ ] Observations: [impl], [deps] 최소 포함
-- [ ] Relations: part_of [[프로젝트]] 있음
-- [ ] Relations: contains로 **모든** 함수/클래스 연결
-- [ ] 자유 섹션 (아키텍처, 스키마 등) 필요 시 추가
-
-### function
-- [ ] 시그니처 섹션에 함수 선언부 코드 블록
-- [ ] Observations: [impl], [return] 최소 포함
-- [ ] Relations: part_of [[모듈]] 있음
-- [ ] 다른 함수 호출 시 calls 연결
-
-### class
-- [ ] 인터페이스 섹션에 클래스 구조 코드 블록
-- [ ] Observations: [impl] 최소 포함
-- [ ] Relations: part_of [[모듈]] 있음
-- [ ] 메서드가 별도 함수 노드면 contains 연결
-
-## 핵심 규칙
-
-1. **양방향 Relations 필수** - contains↔part_of 반드시 쌍으로 작성
-2. **모든 함수/클래스 문서화** - 유틸리티 함수도 포함 (인라인 코드만 제외)
-3. **인라인 코드는 노드 안 만듦** - 모듈의 "주요 로직" 섹션에 텍스트로 설명
-4. **semantic은 verb-object** - 일관된 의미 표현 ("load csv", "validate user")
-5. **category는 area/cat/sub** - 의미 계층으로 분류 (폴더 구조와 별개)
-6. **wikilink는 Relations에서만** - 테이블, blockquote에 wikilink 금지
-7. **build_context로 검증** - 생성 후 반드시 depth 2 트리 확인
-8. **기존 프로젝트 업데이트 시** - 프로젝트의 코드 구성 + Relations도 함께 업데이트
+| relation | 용도 | 예시 |
+|----------|------|------|
+| `contains` | 부모→자식 | project→module, module→function |
+| `part_of` | 자식→부모 | function→module |
+| `calls` | 함수 호출 | func-a calls func-b |
+| `data_flows_to` | 데이터 흐름 | parser → validator |
+| `depends_on` | 외부 의존성 | module depends_on library |
+| `extends` | 기능 확장 | vecsearch extends basic-memory |
+| `uses` | 라이브러리 사용 | module uses sqlite-vec |

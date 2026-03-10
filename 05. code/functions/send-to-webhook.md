@@ -5,7 +5,7 @@ permalink: 05.-code/functions/send-to-webhook
 level: low
 category: data/sns/analytics
 semantic: post records to n8n webhook
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 - webhook
@@ -31,6 +31,6 @@ async function sendToWebhook(records: object[]): Promise<void>
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈)
 - called_by [[run]] (line 589)
 - data_flows_to [[n8n webhook]] (post-view-snapshots)

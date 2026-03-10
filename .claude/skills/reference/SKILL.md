@@ -10,27 +10,20 @@ reference 노트를 `03. sources/reference`에 생성합니다.
 
 > **목적**: 외부 지식(논문, 문서, 가이드)을 정리하여 나중에 참조
 
-## 실행 모드
-
-| 상황 | 모드 | 방법 |
-|------|------|------|
-| **메인에서 직접 호출** (`/reference`) | 직접 실행 | 현재 컨텍스트에서 MCP 도구로 바로 저장 |
-| **위임이 필요할 때** (팀/오케스트레이터) | 에이전트 위임 | `Task tool: subagent_type=Explore, model=haiku` 로 수동 위임 |
-
-> **MCP 도구 사용**: write_note, edit_note, read_note 등 basic-memory MCP 도구를 직접 사용합니다.
+> **MCP 도구 사용 가능**: write_note, edit_note, read_note 등 basic-memory MCP 도구를 직접 사용합니다.
 
 ## 핵심 규칙 (반드시 준수)
 
 - **permalink는 반드시 폴더 포함 영문 slug**: `sources/reference/[영문-slug]`
   - O: `sources/reference/ai-video-tools-2026`
   - X: `ai-video-tools-2026` (폴더 누락)
+- **REF-NNN 넘버링 필수**: title(=파일명)에 `REF-NNN` prefix
+  - frontmatter title은 넘버링 없이 원제목만
+  - 기존 번호 없는 노트 57개는 REF-001~057 예약
+  - 새 노트: `Glob pattern="REF-*" path="from-obsidian/03. sources/reference"` → 최대 번호 +1
+- **Observations 없음** — 외부 지식 정리이므로
+- **이모지 섹션 헤더** 사용 (📖🛠️🔧💡🔗)
 - 완료 후 저장된 노트 제목과 permalink 반환
-
-## 사용법
-
-```
-/reference [노트명 또는 주제]
-```
 
 ## 실행 절차
 
@@ -57,10 +50,22 @@ vecsearch search "[주제 키워드]" --top 5 --unique
 | 유사도 | 조치 |
 |--------|------|
 | 매우 유사 (distance < 14) | 기존 노트 업데이트 (edit_note) — 새로 만들지 않음 |
-| 관련 있음 (14~17) | 새 노트 생성 + 🔗 관련 개념에 연결 추가 |
+| 관련 있음 (14~17) | 새 노트 생성 + 관련 노트에 **연결 이유와 함께** 추가 |
 | 관련 없음 (> 17) | 그대로 새 노트 생성 |
 
-### Step 3: type 판단
+**연결 이유 작성 (distance 14~17):**
+- `- [[노트제목]] - (이 노트와 연결되는 이유/공통점/대비점)`
+- 괄호 안 내용이 basic-memory relation context로 저장됨
+
+### Step 3: REF 번호 부여
+
+```
+Glob pattern="REF-*" path="from-obsidian/03. sources/reference"
+```
+
+최대 번호 +1로 REF-NNN 부여.
+
+### Step 4: type 판단
 
 내용 분석하여 타입 선택:
 
@@ -70,14 +75,14 @@ vecsearch search "[주제 키워드]" --top 5 --unique
 | `doc-summary` | 공식 문서 정리 | Chrome Extension 공식문서 |
 | `guide` | 가이드/튜토리얼 | Basic Memory 사용법 |
 
-### Step 4: 형식 작성
+### Step 5: 형식 작성
 
 > **필수**: permalink는 반드시 **영문 slug**로 지정. basic-memory는 frontmatter의 permalink를 그대로 사용함.
 > 한글 제목이어도 permalink는 영문으로. 예: `sources/reference/ai-video-tools-2026`
 
 ```yaml
 ---
-title: [제목]
+title: [제목 - REF 번호 없이]
 type: paper-review | doc-summary | guide
 tags:
 - [기술태그]
@@ -86,7 +91,7 @@ permalink: sources/reference/[영문-slug]
 ---
 ```
 
-### Step 5: 본문 작성
+### Step 6: 본문 작성
 
 ```markdown
 # [제목]
@@ -113,8 +118,8 @@ permalink: sources/reference/[영문-slug]
 
 ## 🔗 관련 개념
 
-- [[관련개념1]] - 설명
-- [[관련개념2]] - 설명
+- [[관련개념1]] - (이 노트와 연결되는 이유)
+- [[관련개념2]] - (공통점 또는 대비점)
 
 ---
 
@@ -122,11 +127,11 @@ permalink: sources/reference/[영문-slug]
 **분류**: [카테고리]
 ```
 
-### Step 6: 저장
+### Step 7: 저장
 
 ```
 mcp__basic-memory__write_note
-title: [제목]
+title: REF-NNN [제목]
 folder: 03. sources/reference
 project: zettelkasten
 content: [변환된 내용]
@@ -153,12 +158,5 @@ content: [변환된 내용]
 - "우리한테 어떻게 유용한가?"
 
 ### 🔗 관련 개념
-- wikilink로 연결
-- Relations 형식 아님 (단순 링크)
-
-## 핵심 규칙
-
-- **이모지 섹션 헤더** 사용 (📖🛠️🔧💡🔗)
-- **🔗 관련 개념**에서 wikilink로 연결 (Relations 형식 아님)
-- **Observations 없음** - 외부 지식 정리이므로
-- 필요 시 섹션 추가/생략 가능 (유연하게)
+- `[[노트]] - (연결 이유)` 형식 — 괄호 안 이유가 basic-memory relation context로 저장됨
+- vecsearch distance 14~17 노트를 여기에 연결 (연결 이유 괄호 필수)

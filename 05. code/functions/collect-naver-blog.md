@@ -5,7 +5,7 @@ permalink: 05.-code/functions/collect-naver-blog
 level: low
 category: data/sns/analytics
 semantic: collect naver blog post view counts via iframe api
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 - playwright
@@ -34,5 +34,5 @@ async function collectNaverBlog(page: Page, capturedAt: string): Promise<object[
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈)
 - called_by [[run]] (line 554)

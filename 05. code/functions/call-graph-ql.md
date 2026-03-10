@@ -5,7 +5,7 @@ permalink: 05.-code/functions/call-graph-ql
 level: low
 category: data/sns/analytics
 semantic: post meta graphql request and parse response
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 - graphql
@@ -32,5 +32,5 @@ async function callGraphQL(variables: object): Promise<object[]>
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈 — collectMeta 내부 클로저)
 - called_by [[fetch-edges]] (line 458)

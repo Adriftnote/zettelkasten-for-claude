@@ -56,5 +56,5 @@ C    Java   Python   JS    SQL   HTML   CSS
   - extends [[객체지향 프로그래밍 (OOP)]] (1a. 명령형의 하위 - 객체에 상태+행동 캡슐화)
 - organizes [[선언형 프로그래밍 (Declarative Programming)]] (2. "무엇을" - 결과만 선언)
   - extends [[함수형 프로그래밍 (Functional Programming)]] (2a. 선언형의 하위 - 순수 함수 조합)
-- connects_to [[프로그래밍 언어 비교]] (각 언어가 어떤 패러다임을 지원하는지)
+- connects_to [[프로그래밍 언어 비교 (Programming Languages)]] (각 언어가 어떤 패러다임을 지원하는지)
 - connects_to [[프로그래밍 기초 (Programming Basics)]] (프로그래밍 기초 개념)

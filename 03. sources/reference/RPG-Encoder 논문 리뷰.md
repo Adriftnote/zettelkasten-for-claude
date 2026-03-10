@@ -83,10 +83,10 @@ o3-mini, GPT-4o, GPT-4.1, GPT-5, DeepSeek-V3.1, Claude-4.5-Sonnet
 
 ## 🔗 관련 개념
 
-- [[Knowledge Graph]] - RPG는 코드 특화 지식 그래프
+- [[Knowledge Graph (지식 그래프)]] - RPG는 코드 특화 지식 그래프
 - [[Code Understanding]] - 코드 이해 태스크
 - [[SWE-bench]] - 소프트웨어 엔지니어링 벤치마크
-- [[AST]] - 추상 구문 트리, 의존성 엣지 추출에 사용
+- [[AST (Abstract Syntax Tree)]] - 추상 구문 트리, 의존성 엣지 추출에 사용
 
 ---
 

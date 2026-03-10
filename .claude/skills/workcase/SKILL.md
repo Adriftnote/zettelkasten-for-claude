@@ -17,9 +17,9 @@ workcase 노트를 `03. sources/workcases`에 생성합니다.
 - **permalink는 반드시 폴더 포함 영문 slug**: `sources/workcases/[영문-slug]`
   - O: `sources/workcases/wsl-tmux-memory-issue`
   - X: `wsl-tmux-memory-issue` (폴더 누락)
-- **Relations 섹션 없음** - workcase는 경험 기록이므로
-- **Observations 필수** - 배운 것을 명시적으로 추출
-- **관련 Task 섹션** - 업무 맥락 연결
+- **Relations 필수** — concept, code(05.), 다른 workcase와 연결
+- **Observations 필수** — 배운 것을 명시적으로 추출
+- **관련 Task 섹션** — 업무 맥락 연결
 
 ## 실행 절차
 
@@ -46,14 +46,19 @@ vecsearch search "[주제 키워드]" --top 5 --unique
 | 유사도 | 조치 |
 |--------|------|
 | 매우 유사 (distance < 14) | 기존 노트 업데이트 (edit_note) — 새로 만들지 않음 |
-| 관련 있음 (14~17) | 새 노트 생성 + Observations에 관련 노트 언급 |
+| 관련 있음 (14~17) | 새 노트 생성 + 관련 노트에 **연결 이유와 함께** 추가 |
 | 관련 없음 (> 17) | 그대로 새 노트 생성 |
+
+**연결 이유 작성 (distance 14~17):**
+- `- [[노트제목]] - (이 노트와 연결되는 이유/공통점/대비점)`
+- 괄호 안 내용이 basic-memory relation context로 저장됨
 
 ### Step 3: 패턴 판단
 
 내용 분석하여 패턴 선택:
-- **트러블슈팅**: 문제 해결 과정 → 패턴 A
-- **학습정리**: 새로 배운 것 → 패턴 B
+- **패턴 A (트러블슈팅)**: 단일 문제 해결 과정
+- **패턴 B (학습 정리)**: 새로 배운 것 정리
+- **패턴 C (혼합형)**: 트러블슈팅 + 학습 (실제 대부분)
 
 ### Step 4: 형식 변환
 
@@ -96,6 +101,12 @@ permalink: sources/workcases/[영문-slug]
 ## 관련 Task
 - task-YYYYMMDD-NNN: 설명
 
+## Relations
+- uses [[개념/도구]] (활용한 기술)
+- implemented_in [[코드모듈]] (구현된 코드)
+- learned_from [[출처노트]] (배운 원천)
+- applied_in [[적용대상]] (결과가 적용된 곳)
+
 ## Observations
 - [fact] 객관적 사실 #태그
 - [solution] 해결책 요약 #태그
@@ -125,9 +136,49 @@ permalink: sources/workcases/[영문-slug]
 ## 관련 Task
 - task-YYYYMMDD-NNN: 설명
 
+## Relations
+- uses [[개념/도구]] (활용한 기술)
+- learned_from [[출처노트]] (배운 원천)
+- applied_in [[적용대상]] (결과가 적용된 곳)
+
 ## Observations
 - [fact] 객관적 사실 #태그
 - [pattern] 발견한 패턴 #태그
+- [method] 방법/절차 #태그
+- [tech] 기술 팁 #태그
+```
+
+#### 패턴 C: 혼합형
+
+중간 섹션은 내용에 따라 자유 구성. **도입부 + 관련 Task + Relations + Observations는 필수**.
+
+```markdown
+# [제목]
+
+> [프로젝트/작업] 하면서 학습한 내용 (YYYY-MM-DD ~ YYYY-MM-DD)
+> source: [원본 프로젝트 경로 또는 출처]
+
+## [상황/배경 섹션]
+[왜 이 작업을 했는지]
+
+## [핵심 내용 섹션들 — 자유 구성]
+[아키텍처, 설정, 코드, 트러블슈팅 등]
+
+## 관련 Task
+- task-YYYYMMDD-NNN: 설명
+
+## Relations
+- uses [[개념/도구]] (활용한 기술)
+- implemented_in [[코드모듈]] (구현된 코드)
+- learned_from [[출처노트]] (배운 원천)
+- applied_in [[적용대상]] (결과가 적용된 곳)
+- led_to [[다음workcase]] (이어진 작업)
+- part_of [[프로젝트/허브]] (소속 프로젝트)
+
+## Observations
+- [fact] 객관적 사실 #태그
+- [solution] 해결책 요약 #태그
+- [warning] 주의사항 #태그
 - [method] 방법/절차 #태그
 - [tech] 기술 팁 #태그
 ```
@@ -142,6 +193,18 @@ project: zettelkasten
 content: [변환된 내용]
 ```
 
+## 형식 변환 모드 (기존 노트 수정)
+
+기존 노트의 **내용은 유지**하고 workcase 형식만 맞출 때:
+
+1. frontmatter: `type: workcase`, `permalink: sources/workcases/[영문-slug]`
+2. 본문 산재 relation 라인 → `## Relations` 섹션으로 통합
+3. `## 메타데이터` 인라인 → 도입부 blockquote로 이동
+4. 본문 섹션 구조는 기존 유지 (강제로 패턴에 끼워맞추지 않음)
+5. `## 관련 Task` 섹션 추가
+6. `## Relations` 섹션 추가 — concept, code(05.), 다른 workcase 연결
+7. `## Observations` 섹션 추가 — 기존 내용에서 핵심 학습 추출
+
 ## Observation 카테고리
 
 | 카테고리 | 용도 | 예시 |
@@ -152,3 +215,14 @@ content: [변환된 내용]
 | `[pattern]` | 반복 패턴 | "Content/Background 역할 분리" |
 | `[method]` | 방법/절차 | "System.Text.UTF8Encoding($true)" |
 | `[tech]` | 기술 팁 | "PowerShell 7+는 기본 UTF-8" |
+
+## Workcase Relations 타입
+
+| Relation | 방향 | 용도 | 예시 |
+|----------|------|------|------|
+| `uses` | → concept, code | 기술/도구 활용 | `uses [[Docker]] (컨테이너 배포)` |
+| `implemented_in` | → code (05.) | 코드로 구현됨 | `implemented_in [[social-analytics-extractor]]` |
+| `learned_from` | → reference, concept | 논문/문서에서 배움 | `learned_from [[RPG 논문 시리즈 리뷰]]` |
+| `applied_in` | → code, project | 결과 적용 | `applied_in [[_Vault Conventions]]` |
+| `led_to` | → workcase | 다음 작업 | `led_to [[playwright-sns-collector]]` |
+| `part_of` | → project, hub | 소속 | `part_of [[SNS 수집 자동화]]` |

@@ -58,7 +58,7 @@ Docker 이미지 풋프린트:
 
 ## Relations
 
-- constrains [[runtime|런타임 (Runtime)]] (풋프린트가 런타임 선택의 제약 조건이 됨)
+- constrains [[런타임 (Runtime)|런타임 (Runtime)]] (풋프린트가 런타임 선택의 제약 조건이 됨)
 - relates_to [[engine|엔진 (Engine)]] (엔진 종류에 따라 풋프린트가 크게 달라짐)
 - important_for [[embedded-systems]] (임베디드 환경에서 풋프린트는 핵심 설계 제약)
 

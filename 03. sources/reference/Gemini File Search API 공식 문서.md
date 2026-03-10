@@ -219,8 +219,8 @@ client.file_search_stores.delete(name='fileSearchStores/xxx', config={'force': T
 ## 🔗 관련 개념
 
 - [[벡터 시맨틱 검색]] - 로컬 vecsearch와 비교
-- [[context-engineering]] - RAG 컨텍스트 주입 전략
-- [[memory-systems]] - 메모리 계층 설계
+- [[컨텍스트 엔지니어링 (Context Engineering)]] - RAG 컨텍스트 주입 전략
+- [[메모리 시스템 (Memory Systems)]] - 메모리 계층 설계
 
 ---
 

@@ -109,7 +109,7 @@ for i in random_indices {
 
 ## 관련 개념
 
-- [[data-structure]]
+- [[데이터 구조 (Data Structure)]]
 - [[array]]
 - [[linked-list]]
 - [[VRAM]]

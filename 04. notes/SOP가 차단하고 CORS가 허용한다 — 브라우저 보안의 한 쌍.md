@@ -73,7 +73,7 @@ CORS 에러의 흔한 오해: "프론트엔드 코드를 고치면 된다"
 - derived_from [[Same-Origin Policy (동일 출처 정책)]] (브라우저가 cross-origin 접근을 기본 차단하는 정책)
 - derived_from [[CORS (Cross-Origin Resource Sharing)]] (서버가 허용 출처를 헤더로 선언하는 예외 메커니즘)
 - connects_to [[iframe (Inline Frame)]] (SOP가 적용되어 cross-origin iframe 내부 DOM 접근이 차단되는 대표 사례)
-- connects_to [[웹 기초]] (웹 보안의 기본 구조)
+- connects_to [[웹 기초 (Web Fundamentals)]] (웹 보안의 기본 구조)
 
 ---
 

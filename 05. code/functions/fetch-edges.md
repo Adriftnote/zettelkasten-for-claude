@@ -5,7 +5,7 @@ permalink: 05.-code/functions/fetch-edges
 level: low
 category: data/sns/analytics
 semantic: fetch meta tofu unified table content edges
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 - graphql
@@ -33,6 +33,6 @@ async function fetchEdges(range: 'LIFETIME' | 'LAST_90D'): Promise<object[]>
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈 — collectMeta 내부 클로저)
 - calls [[call-graph-ql]] (line 458)
 - called_by [[collect-meta]] (내부 fallback 체인에서 3회 호출)

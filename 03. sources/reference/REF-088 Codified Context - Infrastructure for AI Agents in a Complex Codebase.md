@@ -75,10 +75,10 @@ LLM 기반 코딩 에이전트는 세션 간 persistent memory가 없어 매번 
 
 ## 🔗 관련 개념
 
-- [[context-engineering]] - (이 논문이 제안하는 3계층 구조가 컨텍스트 엔지니어링의 구체적 실천 사례)
+- [[컨텍스트 엔지니어링 (Context Engineering)]] - (이 논문이 제안하는 3계층 구조가 컨텍스트 엔지니어링의 구체적 실천 사례)
 - [[Multi-Agent Patterns]] - (19개 전문 에이전트 + trigger table 라우팅이 멀티에이전트 오케스트레이션 패턴)
 - [[AI 에이전트 지식 전달 패턴]] - (hot/warm/cold memory 분류가 지식 전달 패턴의 실증적 구현)
-- [[memory-systems]] - (세션 간 persistent memory 부재 문제를 인프라로 해결)
+- [[메모리 시스템 (Memory Systems)]] - (세션 간 persistent memory 부재 문제를 인프라로 해결)
 
 ---
 

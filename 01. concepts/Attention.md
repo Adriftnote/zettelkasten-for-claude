@@ -89,7 +89,7 @@ V: 책의 실제 내용 (가져올 정보)
 | 문제 | 원인 | 해결책 |
 |------|------|--------|
 | O(n²) 복잡도 | 모든 토큰 쌍 비교 | Sparse Attention |
-| [[VRAM]] 사용량 | K, V 저장 필요 | [[kv-cache-optimization\|KV-Cache]] |
+| [[VRAM]] 사용량 | K, V 저장 필요 | [[kv-cache-optimization|KV-Cache]] |
 | 긴 컨텍스트 한계 | 메모리 폭발 | 슬라이딩 윈도우 |
 
 ## Relations

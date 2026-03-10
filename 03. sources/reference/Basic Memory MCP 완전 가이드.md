@@ -110,8 +110,8 @@ build_context(url="memory://concepts/*", timeframe="7d")
 
 ## 🔗 관련 개념
 
-- [[Basic Memory Hub]] - 허브 노트
-- [[context-engineering]] - 컨텍스트 최적화
+- [[Basic Memory 허브 (Basic Memory Hub)]] - 허브 노트
+- [[컨텍스트 엔지니어링 (Context Engineering)]] - 컨텍스트 최적화
 
 ---
 

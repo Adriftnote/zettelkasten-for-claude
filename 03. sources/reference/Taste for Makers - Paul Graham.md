@@ -69,8 +69,8 @@ Paul Graham은 "좋은 디자인"이 분야를 막론하고 공통 원칙을 가
 
 ## 🔗 관련 개념
 
-- [[architectures]] - 소프트웨어 설계 원칙과 겹치는 미학적 판단
-- [[context-engineering]] - "올바른 문제를 푸는 것"의 엔지니어링 버전
+- [[아키텍처 (Architectures)]] - 소프트웨어 설계 원칙과 겹치는 미학적 판단
+- [[컨텍스트 엔지니어링 (Context Engineering)]] - "올바른 문제를 푸는 것"의 엔지니어링 버전
 
 ---
 

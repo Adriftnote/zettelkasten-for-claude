@@ -273,7 +273,7 @@ JavaScript   TypeScript   Java   Rust
 
 ## Relations
 
-- hub [[programming-languages]] - 이 노트가 속한 허브
+- hub [[프로그래밍 언어 비교 (Programming Languages)]] - 이 노트가 속한 허브
 - explains [[typescript]], [[javascript]], [[java]] - 세 언어 비교
 - derived_from [[JavaScript의 동적 타입 문제]], [[Java의 정적 타입 시스템]], [[웹 플랫폼의 제약]] - 여러 사실을 조합한 도출
 - relates_to [[transpilation]] - TypeScript의 변환 방식

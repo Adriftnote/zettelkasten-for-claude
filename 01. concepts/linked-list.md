@@ -200,7 +200,7 @@ queue.pop_front();  // 더 효율적
 
 ## 관련 개념
 
-- [[data-structure]] - 전체 자료구조
+- [[데이터 구조 (Data Structure)]] - 전체 자료구조
 - [[array]] - 배열과의 비교
 - [[RAM]] - 메모리 접근 구조
 - [[Cache]] - 캐시 비친화성 이해

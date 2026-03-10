@@ -317,7 +317,7 @@ impl Widget for TextBox {
 - **part_of**: [[Rust Programming Language Overview|The Rust Programming Language]]
 - **requires**: [[rust-type-system|Rust - Type System]]
 - **related**: [[trait-system|Rust - Trait System]]
-- **uses**: [[polymorphism|Polymorphism Concepts]]
+- **uses**: [[다형성 (Polymorphism)|Polymorphism Concepts]]
 - **alternative_to**: [[class-based-oop|Class-Based OOP]]
 
 ---

@@ -61,7 +61,7 @@ txiki.js가 "WinterTC 표준을 지향한다"는 것은:
 
 ## Relations
 
-- standardizes [[runtime|런타임 (Runtime)]] (서버 사이드 JS 런타임의 API를 표준화)
+- standardizes [[런타임 (Runtime)|런타임 (Runtime)]] (서버 사이드 JS 런타임의 API를 표준화)
 - standardizes [[javascript|JavaScript]] (JS 런타임 간 Web API 호환성 규격)
 - relates_to [[engine|엔진 (Engine)]] (엔진과 무관하게 API 수준의 표준을 정의)
 - similar_to [[ecmascript]] (TC39가 언어 규격이라면, TC55는 런타임 API 규격)

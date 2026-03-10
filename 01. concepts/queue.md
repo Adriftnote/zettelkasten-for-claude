@@ -184,6 +184,6 @@ fn main() {
 
 ## 관련 개념
 
-- [[data-structure]] - 자료구조 개요
+- [[데이터 구조 (Data Structure)]] - 자료구조 개요
 - [[stack]] - LIFO 자료구조
 - [[array]] - 배열 기반 구현

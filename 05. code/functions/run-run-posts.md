@@ -5,7 +5,7 @@ permalink: functions/run-run-posts
 level: low
 category: data/sns/analytics
 semantic: orchestrate all platform collection and webhook dispatch
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 - playwright
@@ -28,12 +28,12 @@ async function run(): Promise<void>
 - [impl] `allRecords`에 성공한 플랫폼 레코드 누적 → `sendToWebhook` 일괄 전송 #pattern
 - [impl] `results` 배열로 플랫폼별 성공/실패 + 수집 건수 추적 → 실행 완료 후 요약 출력 #pattern
 - [return] void — 에러는 `run().catch(console.error)`로 최상위 캐치
-- [usage] `node run-posts.js` 실행 시 자동 호출 (`run().catch(console.error)`)
+- [usage] `node collect-posts.js` 실행 시 자동 호출 (`run().catch(console.error)`)
 - [note] 단일 `page` 객체로 전 플랫폼 순차 처리 — 플랫폼 간 탭/컨텍스트 공유 #pattern
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈)
 - calls [[get-captured-at]] (line 512)
 - calls [[collect-you-tube]] (line 532)
 - calls [[collect-naver-tv]] (line 543)

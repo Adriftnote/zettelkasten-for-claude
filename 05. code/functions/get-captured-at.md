@@ -5,7 +5,7 @@ permalink: 05.-code/functions/get-captured-at
 level: low
 category: data/sns/analytics
 semantic: generate kst hourly timestamp
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 ---
@@ -29,5 +29,5 @@ function getCapturedAt(): string
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈)
 - called_by [[run]] (line 512)

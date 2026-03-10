@@ -166,7 +166,7 @@ MSC 분류: 18 - Category theory; homological algebra
 
 - related_to [[Knowledge Graph (지식 그래프)]]
 - example_of [[Middleware (미들웨어)]] - 함수 합성의 실용적 예시
-- applied_in [[Functional Programming]]
+- applied_in [[함수형 프로그래밍 (Functional Programming)]]
 - foundation_of [[Type Theory]]
 - discussed_in [[Type System과 Category Theory]] - 타입 시스템과의 관계 대화
 

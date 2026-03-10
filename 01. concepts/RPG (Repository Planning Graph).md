@@ -84,9 +84,9 @@ login() [노드5: 함수]
 ## Relations
 
 - part_of [[Knowledge Graph (지식 그래프)]] (코드 특화 버전)
-- relates_to [[code-granularity]] (계층 구조 표현)
+- relates_to [[코드 수준 계층 (Code Granularity)]] (계층 구조 표현)
 - relates_to [[의존성 (Dependency)]] (의존성 관계 표현)
-- connects_to [[context-engineering]] (컨텍스트 윈도우 한계 해결)
+- connects_to [[컨텍스트 엔지니어링 (Context Engineering)]] (컨텍스트 윈도우 한계 해결)
 - connects_to [[Hybrid Search]] (의미론적 검색 활용)
 - enables [[Code Generation]] (코드 생성 가능케 함)
 - enables [[Code Understanding]] (코드 이해 가능케 함)

@@ -168,7 +168,7 @@ AutoGPT/BabyAGI (자율 에이전트)
 ## Relations
 
 - proposed_in "ReAct: Synergizing Reasoning and Acting in Language Models" (2022, Google/Princeton)
-- extends [[Chain-of-Thought]] (추론에 행동 추가)
+- extends [[Chain of Thought (CoT)]] (추론에 행동 추가)
 - foundation_of [[agent-architecture-guide]] (에이전트 아키텍처의 기초)
 - enables [[tool-discovery-pattern]] (도구 사용 패턴)
-- hub [[ai-ml-concepts]] (AI/ML 개념 허브)
+- hub [[AI-ML 개념 (AI-ML Concepts)]] (AI/ML 개념 허브)

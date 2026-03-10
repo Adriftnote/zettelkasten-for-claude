@@ -129,10 +129,10 @@ Intake(순차) → Clarify(조건부) → Structure(순차) → Tag+Link(병렬)
 
 ## 🔗 관련 개념
 
-- [[memory-systems]] - Knowledge Base 자동 학습은 메모리 시스템 설계의 구체적 구현 사례
-- [[context-engineering]] - get_context_prompt()는 컨텍스트 엔지니어링의 실전 패턴
+- [[메모리 시스템 (Memory Systems)]] - Knowledge Base 자동 학습은 메모리 시스템 설계의 구체적 구현 사례
+- [[컨텍스트 엔지니어링 (Context Engineering)]] - get_context_prompt()는 컨텍스트 엔지니어링의 실전 패턴
 - [[Task 분해 Hub]] - Skill Orchestration 파이프라인은 순차/병렬/조건부 분해의 코드 구현
-- [[mcp-tool-patterns]] - Refinement Mode의 multi-turn 패턴은 MCP 도구 상호작용에 참고
+- [[MCP Tool 패턴 (MCP Tool Patterns)]] - Refinement Mode의 multi-turn 패턴은 MCP 도구 상호작용에 참고
 
 ---
 

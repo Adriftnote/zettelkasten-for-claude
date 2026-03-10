@@ -49,6 +49,6 @@ Q1 → Q2 → Q3    (항상 직렬)
 ## Relations
 
 - specializes [[QDMR (Question Decomposition Meaning Representation)]] (QDMR의 특수 케이스)
-- relates_to [[Task Decomposition]] (task 분해에도 동일 패턴)
+- relates_to [[Task 분해 (Task Decomposition)]] (task 분해에도 동일 패턴)
 - contrasts_with [[병렬 분해 (Parallel Decomposition)]] (직렬 vs 병렬)
 - modeled_as [[Path Graph (경로 그래프)]] (그래프 이론 대응)

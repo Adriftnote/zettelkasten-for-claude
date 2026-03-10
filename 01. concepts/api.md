@@ -46,7 +46,7 @@ print(weather['temperature'])
 
 ## 🔗 추상화와의 관계
 
-API는 [[abstraction|추상화]]의 **결과물**입니다.
+API는 [[추상화 (Abstraction)|추상화]]의 **결과물**입니다.
 
 | 구분 | 추상화 | API |
 |------|--------|-----|
@@ -62,7 +62,7 @@ API는 [[abstraction|추상화]]의 **결과물**입니다.
 
 ## Relations
 
-- result_of [[abstraction]]
+- result_of [[추상화 (Abstraction)]]
 - provides_interface [[library]]
 - provides_interface [[framework]]
 - part_of [[sdk]]

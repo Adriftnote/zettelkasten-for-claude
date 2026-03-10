@@ -67,6 +67,6 @@ const results = numbers
 ## Relations
 
 - different_from [[선언형 프로그래밍 (Declarative Programming)]] (How vs What)
-- organized_by [[프로그래밍 패러다임]] (패러다임 허브)
+- organized_by [[프로그래밍 패러다임 (Programming Paradigms)]] (패러다임 허브)
 - relates_to [[범용 프로그래밍 언어 (General-Purpose Language)]] (GPL의 주된 패러다임)
 - relates_to [[객체지향 프로그래밍 (OOP)]] (명령형의 하위 패러다임)

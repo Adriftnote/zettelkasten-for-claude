@@ -206,13 +206,13 @@ let cli = Cli::parse();  // 끝!
 ### 관련 개념
 - [[source-code]] - 사람이 작성한 코드
 - [[machine-language]] - CPU가 이해하는 언어
-- [[data-structure]] - 파싱 결과로 만들어지는 구조
+- [[데이터 구조 (Data Structure)]] - 파싱 결과로 만들어지는 구조
 
 ## Relations
 
 - related_to [[compiler]]
 - related_to [[interpreter]]
-- produces [[data-structure]]
+- produces [[데이터 구조 (Data Structure)]]
 - input_is [[source-code]]
 
 ---

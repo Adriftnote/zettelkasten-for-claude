@@ -944,8 +944,8 @@ const tools = {
 ### 볼트 내 자체 문서
 | 문서 | 역할 |
 |------|------|
-| [[03. sources/reviews/basic-memory-db-schema\|Basic Memory DB 스키마]] | LTM 실제 구현 (entity/relation/observation) |
-| [[AgeMem-paper-review\|AgeMem 논문 리뷰]] | STM/LTM 도구 상세 |
+| [[03. sources/reviews/basic-memory-db-schema|Basic Memory DB 스키마]] | LTM 실제 구현 (entity/relation/observation) |
+| [[AgeMem-paper-review|AgeMem 논문 리뷰]] | STM/LTM 도구 상세 |
 | [[KGGen - Knowledge Graph Generation Framework]] | 트리플 추출 방법론 |
 
 ### 자체 정의 개념

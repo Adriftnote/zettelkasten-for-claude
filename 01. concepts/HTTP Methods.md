@@ -881,7 +881,7 @@ F12 → Network 탭
 - uses [[Endpoint]]
 - uses [[Payload]]
 - part_of [[Web Communication]]
-- part_of [[API (Application Programming Interface)]]
+- part_of [[api]]
 
 ---
 

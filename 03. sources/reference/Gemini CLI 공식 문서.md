@@ -183,7 +183,7 @@ gemini extensions install https://github.com/tanaikech/FileSearchStore-extension
 ## 🔗 관련 개념
 
 - [[Gemini File Search API 공식 문서]] - File Search API 상세
-- [[MCP]] - Model Context Protocol
+- [[MCP (Model Context Protocol)]] - Model Context Protocol
 - [[Claude Code]] - 경쟁 CLI 도구
 
 ---

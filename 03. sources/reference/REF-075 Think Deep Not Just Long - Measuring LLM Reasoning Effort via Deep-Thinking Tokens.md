@@ -73,7 +73,7 @@ Input → LLM 생성 (n개 샘플)
 ## 🔗 관련 개념
 
 - [[Token Optimization Strategy]] - (DTR은 토큰 길이 대신 깊이로 최적화하는 새로운 축 제시)
-- [[Chain-of-Thought (CoT)]] - (CoT 길이 vs 품질의 역스케일링 문제를 DTR로 해결)
+- [[Chain of Thought (CoT)]] - (CoT 길이 vs 품질의 역스케일링 문제를 DTR로 해결)
 - [[Dep-Search- Dependency-Aware Reasoning with Persistent Memory]] - (추론 과정의 구조적 분석이라는 공통 관심사)
 
 ---

@@ -68,4 +68,4 @@ SELECT name FROM users WHERE age > 20;
 - different_from [[명령형 프로그래밍 (Imperative Programming)]] (How vs What)
 - relates_to [[DSL (Domain-Specific Language)]] (DSL의 주된 패러다임)
 - relates_to [[함수형 프로그래밍 (Functional Programming)]] (선언형의 하위 패러다임)
-- organized_by [[프로그래밍 패러다임]] (패러다임 허브)
+- organized_by [[프로그래밍 패러다임 (Programming Paradigms)]] (패러다임 허브)

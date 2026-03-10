@@ -80,9 +80,9 @@ h1 {
 
 ## Relations
 
-- used_by [[html]]
+- used_by [[HTML (HyperText Markup Language)]]
 - similar_to [[javascript]]
-- relates_to [[iframe]]
+- relates_to [[iframe (Inline Frame)]]
 
 ---
 

@@ -647,7 +647,7 @@ X-RateLimit-Remaining: 0
 - used_by [[Web Communication]]
 - part_of [[Endpoint]]
 - part_of [[Payload]]
-- part_of [[API (Application Programming Interface)]]
+- part_of [[api]]
 
 ## 📖 참고 자료
 

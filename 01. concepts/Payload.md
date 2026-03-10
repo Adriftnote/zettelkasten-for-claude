@@ -631,7 +631,7 @@ Content-Type: image/jpeg
 ## Relations
 
 - used_by [[Endpoint]]
-- part_of [[API (Application Programming Interface)]]
+- part_of [[api]]
 - used_by [[HTTP Methods]]
 - used_by [[Web Communication]]
 

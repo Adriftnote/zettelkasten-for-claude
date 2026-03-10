@@ -303,7 +303,7 @@ struct Good {
 ## 관련 개념
 
 - [[computer-memory-hierarchy]] - 메모리 계층 구조 전체
-- [[data-structure]] - 자료구조 개요
+- [[데이터 구조 (Data Structure)]] - 자료구조 개요
 - [[Cache]] - CPU 캐시와 성능
 - [[RAM]] - RAM 소개
 

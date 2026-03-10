@@ -34,10 +34,10 @@ source_facts:
 
 ## Relations
 
-- derived_from [[Context Engineering]] (컨텍스트 윈도우 제한에서 도출)
+- derived_from [[컨텍스트 엔지니어링 (Context Engineering)]] (컨텍스트 윈도우 제한에서 도출)
 - derived_from [[Lost-in-Middle 현상]] (중간 망각 현상에서 도출)
 - mitigates [[Lost-in-Middle 현상]] (문제 완화 전략)
-- part_of [[Context Engineering]] (컨텍스트 엔지니어링의 구성요소)
+- part_of [[컨텍스트 엔지니어링 (Context Engineering)]] (컨텍스트 엔지니어링의 구성요소)
 
 ---
 

@@ -409,7 +409,7 @@ PowerShell 5.x의 설계 실수:
 
 ## Relations
 
-- derived_from [[encoding-systems]] (인코딩 시스템 허브에서 도출)
+- derived_from [[문자 인코딩 시스템 (Encoding Systems)]] (인코딩 시스템 허브에서 도출)
 - derived_from [[03. sources/work-cases/powershell-korean-encoding-fix]] (실무 문제에서 학습 시작)
 - mentions [[BOM (Byte Order Mark)]], [[Unicode]], [[UTF-8]], [[UTF-16]], [[UTF-32]]
 - mentions [[Bit]], [[Byte]], [[Endianness]], [[CP949]], [[ASCII]]

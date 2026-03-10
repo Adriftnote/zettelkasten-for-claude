@@ -78,8 +78,8 @@ iframe은 **페이지 안에 또 다른 페이지를 넣는** HTML 태그입니�
 
 ## Relations
 
-- part_of [[html]]
-- relates_to [[css]]
+- part_of [[HTML (HyperText Markup Language)]]
+- relates_to [[CSS (Cascading Style Sheets)]]
 - relates_to [[javascript]]
 
 ---

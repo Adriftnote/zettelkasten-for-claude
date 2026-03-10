@@ -225,4 +225,4 @@ memory.db의 relation 테이블을 KGGen의 동사 정규화 관점에서 전수
 - derived_from [[KGGen 이해 - 명사 통합과 동사 관계]] (동사 정규화 원칙 적용)
 - relates_to [[Knowledge Graph (지식 그래프)]] (KG 품질 분석)
 - relates_to [[Entity Resolution (엔티티 해결)]] (다음 단계 연결)
-- relates_to [[Basic Memory Hub]] (분석 대상 시스템)
+- relates_to [[Basic Memory 허브 (Basic Memory Hub)]] (분석 대상 시스템)

@@ -64,7 +64,7 @@ difficulty: 중급
 
 ## Relations
 
-- part_of [[runtime|런타임 (Runtime)]] (런타임의 시스템 접근 계층)
+- part_of [[런타임 (Runtime)|런타임 (Runtime)]] (런타임의 시스템 접근 계층)
 - complemented_by [[engine|엔진 (Engine)]] (엔진의 순수 연산 능력을 시스템 레벨로 확장)
 - implements [[추상화 (Abstraction)]] (OS별 차이를 하나의 인터페이스로 추상화)
 - enables [[javascript|JavaScript]] (JS에서 파일/네트워크 등 시스템 자원에 접근 가능하게 함)

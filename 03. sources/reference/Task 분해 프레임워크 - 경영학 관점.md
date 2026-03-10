@@ -20,11 +20,11 @@ Thompson의 상호의존성 유형과 Simon의 Near-Decomposability 이론을 AI
 
 ## 🛠️ Thompson의 상호의존성 유형 (1967)
 
-| 유형 | 특성 | 조정 방법 | Agent 패턴 |
-|------|------|----------|-----------|
-| **Pooled** | 독립 작업, 결과만 합침 | Standardization | 병렬 subagent |
-| **Sequential** | A출력→B입력 | Planning | 순차 실행 |
-| **Reciprocal** | A↔B 양방향 의존 | Mutual Adjustment | **분리 안 함** |
+| 유형             | 특성            | 조정 방법             | Agent 패턴    |
+| -------------- | ------------- | ----------------- | ----------- |
+| **Pooled**     | 독립 작업, 결과만 합침 | Standardization   | 병렬 subagent |
+| **Sequential** | A출력→B입력       | Planning          | 순차 실행       |
+| **Reciprocal** | A↔B 양방향 의존    | Mutual Adjustment | **분리 안 함**  |
 
 > **핵심**: Reciprocal 의존성이 있으면 분리하지 마라
 

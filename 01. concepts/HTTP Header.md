@@ -79,7 +79,7 @@ Cache-Control: max-age=3600
 | `Content-Type` | 본문 데이터 형식 (JSON, HTML, 이미지 등) |
 | `Content-Length` | 본문 크기 (바이트) |
 | `Set-Cookie` | 클라이언트에 쿠키 저장 지시 |
-| `Access-Control-Allow-Origin` | [[CORS (Cross-Origin Resource Sharing)\|CORS]] 허용 출처 |
+| `Access-Control-Allow-Origin` | [[CORS (Cross-Origin Resource Sharing)|CORS]] 허용 출처 |
 | `Cache-Control` | 캐싱 정책 |
 
 ### 실제 예시: fetch 요청
@@ -144,7 +144,7 @@ curl -v https://example.com
 
 ## Relations
 
-- used_by [[cors]]
+- used_by [[CORS (Cross-Origin Resource Sharing)]]
 - part_of [[http]]
 - used_by [[rest-api]]
 - relates_to [[cookie]]

@@ -163,4 +163,4 @@ CPU ←──── 버스 ────→ 메모리
 - uses [[Boolean Algebra (불 대수)]] - 논리 회로의 기초
 - related_to [[RAM]] - 메모리 구성 요소
 - related_to [[Cache]] - 병목 해결책
-- hub [[computing-history]] - 컴퓨팅 역사 허브
+- hub [[컴퓨팅 역사 (Computing History)]] - 컴퓨팅 역사 허브

@@ -5,7 +5,7 @@ permalink: 05.-code/functions/collect-meta
 level: low
 category: data/sns/analytics
 semantic: collect meta facebook instagram post view counts
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 - playwright
@@ -39,7 +39,7 @@ async function collectMeta(page: Page, capturedAt: string): Promise<object[]>
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈)
 - called_by [[run]] (line 565)
 - contains [[call-graph-ql]]
 - contains [[fetch-edges]]

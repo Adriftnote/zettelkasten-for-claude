@@ -13,7 +13,7 @@ tags:
 
 # run-channel-collector
 
-채널 일별 요약 데이터 수집 (run.js)
+채널 일별 요약 데이터 수집 (collect-channels.js)
 
 ## 📖 개요
 
@@ -33,28 +33,10 @@ Facebook, X, Naver Blog 3개 플랫폼의 채널 레벨 일별 통계(조회수,
 - [deps] playwright, path, fetch (Node 내장) #import
 - [note] Facebook GraphQL doc_id: 25139519128986465(views), 24296175803410872(interactions), 24470603935939530(followers) #context
 - [note] X Bearer 토큰은 공개 토큰 (모든 X 웹앱 공유) #context
-
-## Call Graph (rpg-extract)
-
-```
-run (line 92)
-├── normalizeForWebhook (line 346)
-├── sendToWebhook (line 347)
-├── [FB] callGraphQL (line 140) — page.evaluate 내부
-└── [Naver] findPrevButton (line 303)
-     └── extractCurrentDay (line 311)
-```
-
-## 주요 상수
-
-| 상수 | 값 | 설명 |
-|------|---|------|
-| WEBHOOK_URL | `http://192.168.0.9:5678/webhook/social-analytics` | n8n webhook |
-| USER_DATA_DIR | `./playwright-data` | 세션 저장 경로 |
-| EXTENSION_PATH | `../social-analytics-extractor` | 확장프로그램 (Extension 로딩용) |
+- [note] 파일명 변경: run.js → collect-channels.js (2026-03-10) #context
 
 ## Relations
-
-- part_of [[playwright-sns-collector]] (소속 모듈)
+- part_of [[collect-channels]] (소속 모듈)
+- part_of [[playwright-sns-collector]] (상위 모듈 그룹)
 - implements [[social-analytics-extractor]] (동일 수집 로직, Playwright 버전)
-- calls [[n8n-webhook-workflow]] (webhook POST)
+- data_flows_to [[n8n webhook]] (daily-channel-summary)

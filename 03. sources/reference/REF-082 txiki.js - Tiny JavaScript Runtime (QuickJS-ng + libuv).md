@@ -91,7 +91,7 @@ tjs compile app.js    # → 단일 바이너리
 
 ## 🔗 관련 개념
 
-- [[runtime|런타임 (Runtime)]] - (txiki.js는 QuickJS-ng+libuv 조합의 경량 JS 런타임 구현체)
+- [[런타임 (Runtime)|런타임 (Runtime)]] - (txiki.js는 QuickJS-ng+libuv 조합의 경량 JS 런타임 구현체)
 - [[javascript|JavaScript]] - (JS 언어의 대안적 실행 환경 — V8 독점에서 벗어난 QuickJS 기반 접근)
 - [[engine|엔진 (Engine)]] - (QuickJS-ng는 JS 코드를 파싱/실행하는 엔진 역할)
 - [[platform-layer|플랫폼 레이어 (Platform Layer)]] - (libuv는 OS와의 비동기 I/O를 중계하는 플랫폼 레이어)

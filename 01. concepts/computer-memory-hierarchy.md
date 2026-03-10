@@ -303,7 +303,7 @@ for j in 0..1000 {
 
 ## 🔗 관련 개념
 
-- [[data-structure]] - 메모리 배치 전략
+- [[데이터 구조 (Data Structure)]] - 메모리 배치 전략
 - [[RAM]] - 작업 메모리
 - [[Cache]] - 고속 임시 저장소
 - [[VRAM]] - GPU 전용 메모리
@@ -316,7 +316,7 @@ for j in 0..1000 {
 - includes [[RAM]]
 - includes [[VRAM]]
 - includes [[gpu]]
-- affects [[data-structure]]
+- affects [[데이터 구조 (Data Structure)]]
 - related_to [[performance-optimization]]
 - analogous_to [[시스템1-2와 기억 재구성]]
 

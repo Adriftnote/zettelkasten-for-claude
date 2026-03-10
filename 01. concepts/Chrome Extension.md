@@ -72,8 +72,8 @@ my-extension/
 
 | 구성 요소 | 실행 위치 | 역할 |
 |-----------|----------|------|
-| [[Content Script\|Content Script]] | 웹 페이지 | DOM 읽기/수정 |
-| [[Background Script (Service Worker)\|Background Script]] | Extension 환경 | API 호출, 이벤트 처리 |
+| [[Content Script|Content Script]] | 웹 페이지 | DOM 읽기/수정 |
+| [[Background Script (Service Worker)|Background Script]] | Extension 환경 | API 호출, 이벤트 처리 |
 | Popup | 팝업 창 | 사용자 인터페이스 |
 
 **메시지 통신 흐름**:

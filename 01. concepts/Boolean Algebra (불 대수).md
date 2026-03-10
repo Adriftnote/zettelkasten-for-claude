@@ -202,4 +202,4 @@ permission & EXEC;   // 0b000 (EXEC 권한 없음)
 - foundation_of [[Von Neumann Architecture (폰 노이만 구조)]] - 논리 회로의 기초
 - foundation_of [[Turing Machine (튜링 머신)]] - 상태 전이의 논리적 기초
 - related_to [[Bit]] - 0과 1의 의미
-- hub [[computing-history]] - 컴퓨팅 역사 허브
+- hub [[컴퓨팅 역사 (Computing History)]] - 컴퓨팅 역사 허브

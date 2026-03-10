@@ -67,7 +67,7 @@ import numpy   # 남이 만듦
 - relates_to [[module]] (모듈 간 의존성)
 - relates_to [[library]] (라이브러리는 외부 의존성)
 - relates_to [[package]] (패키지 간 의존성)
-- relates_to [[code-granularity]] (규모에 따라 관리 방식 달라짐)
+- relates_to [[코드 수준 계층 (Code Granularity)]] (규모에 따라 관리 방식 달라짐)
 - tracked_by [[RPG (Repository Planning Graph)]] (RPG가 자동 추적)
 
 ---

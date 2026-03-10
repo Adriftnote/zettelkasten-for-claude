@@ -5,7 +5,7 @@ permalink: 05.-code/functions/collect-tik-tok
 level: low
 category: data/sns/analytics
 semantic: collect tiktok post view counts via api interception
-path: C:/claude-workspace/working/projects/playwright-test/run-posts.js
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 tags:
 - javascript
 - playwright
@@ -35,5 +35,5 @@ async function collectTikTok(page: Page, capturedAt: string): Promise<object[]>
 
 ## Relations
 
-- part_of [[run-posts]] (소속 모듈)
+- part_of [[collect-posts]] (소속 모듈)
 - called_by [[run]] (line 576)

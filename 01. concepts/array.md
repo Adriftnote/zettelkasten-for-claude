@@ -106,7 +106,7 @@ println!("matrix[0][1] = {}", matrix[0][1]); // 2
 
 ## 관련 개념
 
-- [[data-structure]] - 자료구조의 기본 개념
+- [[데이터 구조 (Data Structure)]] - 자료구조의 기본 개념
 - [[computer-memory-hierarchy]] - 메모리 구조 및 캐시
 - [[VRAM]] - 그래픽 메모리와 배열의 활용
 - [[gpu]] - GPU의 병렬 배열 처리

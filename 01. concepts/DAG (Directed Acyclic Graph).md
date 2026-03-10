@@ -53,7 +53,7 @@ DAG는 세 가지 성질을 동시에 만족하는 그래프입니다. Directed(
 ## Relations
 
 - used_by [[QDMR (Question Decomposition Meaning Representation)]] (의존성 구조로 사용)
-- used_by [[Task Decomposition]] (task 간 의존성 표현)
+- used_by [[Task 분해 (Task Decomposition)]] (task 간 의존성 표현)
 - subsumes [[Path Graph (경로 그래프)]] (선형 체인은 DAG의 특수 케이스)
 - enables [[위상 정렬 (Topological Sort)]] (실행 순서 자동 도출)
 - relates_to [[의존성 (Dependency)]] (의존 관계를 구조화)

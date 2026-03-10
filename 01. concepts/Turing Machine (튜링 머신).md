@@ -137,4 +137,4 @@ Python, JavaScript, C, Java...
 - foundation_of [[Von Neumann Architecture (폰 노이만 구조)]] - 실제 구현의 기초
 - related_to [[Turing Test (튜링 테스트)]] - 같은 인물의 다른 업적
 - related_to [[Boolean Algebra (불 대수)]] - 논리 연산의 수학적 기초
-- hub [[computing-history]] - 컴퓨팅 역사 허브
+- hub [[컴퓨팅 역사 (Computing History)]] - 컴퓨팅 역사 허브

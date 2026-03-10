@@ -148,7 +148,7 @@ class User:
 - relates_to [[객체지향 프로그래밍 (OOP)]] (Rich Model에 OOP 활용)
 - relates_to [[캡슐화 (Encapsulation)]] (Aggregate로 경계 캡슐화)
 - relates_to [[추상화 (Abstraction)]] (Repository로 저장소 추상화)
-- used_by [[Clean Architecture]] (DDD 개념 활용)
+- used_by [[클린 아키텍처 (Clean Architecture)]] (DDD 개념 활용)
 - contrasts_with [[CRUD]] (단순 CRUD vs 도메인 중심)
 
 ---

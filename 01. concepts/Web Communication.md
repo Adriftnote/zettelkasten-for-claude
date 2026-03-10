@@ -238,9 +238,9 @@ fetch('/api/login', {...})
 
 | 개념 | 역할 | 예시 |
 |------|------|------|
-| [[Endpoint\|Endpoint]] | 어디로 보낼지 | `POST /api/login` |
-| [[Payload\|Payload]] | 무엇을 보낼지 | `{username, password}` |
-| [[Encoding\|Encoding]] | 어떻게 변환할지 | UTF-8로 문자 인코딩 |
+| [[Endpoint|Endpoint]] | 어디로 보낼지 | `POST /api/login` |
+| [[Payload|Payload]] | 무엇을 보낼지 | `{username, password}` |
+| [[Encoding|Encoding]] | 어떻게 변환할지 | UTF-8로 문자 인코딩 |
 | **HTTP Method** | 어떤 동작인지 | POST (데이터 생성) |
 | **Headers** | 메타데이터 | Content-Type, Cookie |
 | **Status Code** | 결과 상태 | 200 (성공), 404 (없음) |

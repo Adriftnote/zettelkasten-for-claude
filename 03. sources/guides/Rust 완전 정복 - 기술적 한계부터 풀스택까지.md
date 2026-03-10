@@ -387,7 +387,7 @@ AI가 코드 생성을 도와주면:
 - derived_from [[Rust 언어의 기술적 범위와 실제 사용성에 대한 질문들]] - 원본 FAQ 노트
 - hub [[rust-language]] - Rust 종합 허브
 - relates_to [[Java vs JavaScript vs TypeScript - 완전 다른 언어들]] - 언어 비교
-- connects_to [[programming-languages]] - 프로그래밍 언어 허브
+- connects_to [[프로그래밍 언어 비교 (Programming Languages)]] - 프로그래밍 언어 허브
 
 ---
 

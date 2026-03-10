@@ -84,4 +84,4 @@ function getPrice(price, discount) {
 - different_from [[명령형 프로그래밍 (Imperative Programming)]] (상태 변경 vs 함수 조합)
 - different_from [[객체지향 프로그래밍 (OOP)]] (객체+메서드 vs 함수+데이터)
 - relates_to [[DSL (Domain-Specific Language)]] (DSL도 선언형 경향)
-- organized_by [[프로그래밍 패러다임]] (패러다임 허브)
+- organized_by [[프로그래밍 패러다임 (Programming Paradigms)]] (패러다임 허브)
