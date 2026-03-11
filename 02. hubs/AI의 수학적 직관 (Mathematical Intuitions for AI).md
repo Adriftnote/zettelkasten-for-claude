@@ -1,7 +1,7 @@
 ---
 title: AI의 수학적 직관 Hub
 type: hub
-permalink: hubs/mathematical-intuitions-for-ai
+permalink: hubs/mathematical-intuitions-for-ai-1
 tags:
 - hub
 - 선형대수

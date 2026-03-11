@@ -61,3 +61,9 @@ Playwright를 이용하여 5개 플랫폼(YouTube, 네이버TV, 네이버 블로
 - contains [[collect-channels]]
 - contains [[setup]]
 - contains [[verify-integrity]]
+
+
+## SNS 게시물별 조회수 추적
+# SNS 게시물별 조회수 추적
+
+Playwright를 이용하여 6개 플랫폼(YouTube, 네이버TV, 네이버 블로그, Meta, TikTok, Meta Ads) 게시물 조회수와 광고 성과를 수집하고 n8n webhook으로 전송하는 스냅샷 수집기. 수집 실패 시 Gmail 이메일 알림.

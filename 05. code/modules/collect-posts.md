@@ -1,78 +1,105 @@
 ---
 title: collect-posts
-type: note
-permalink: 05.-code/modules/collect-posts
+type: module
+permalink: modules/collect-posts
 tags:
 - javascript
 - playwright
 - sns
 - webhook
+- youtube
+- naver-tv
+- naver-blog
+- meta
+- tiktok
+- meta-ads
+level: high
+category: data/sns/post-snapshot
+semantic: collect post view snapshots
+path: C:/claude-workspace/working/projects/playwright-test/collect-posts.js
 ---
 
 # collect-posts
 
-5개 SNS 플랫폼(YouTube, 네이버TV, 네이버 블로그, Meta, TikTok) 게시물 조회수를 Playwright로 수집하여 n8n webhook으로 전송하는 메인 모듈.
+YouTube, 네이버TV, 네이버 블로그, Meta(Facebook+Instagram), TikTok, Meta Ads 6개 플랫폼의 게시물별 조회수를 1시간 주기로 스냅샷 수집하여 n8n webhook으로 전송하는 모듈. 수집 실패 시 이메일 알림 전송.
 
 ## 개요
 
-Playwright 퍼시스턴트 컨텍스트를 사용하여 로그인 세션을 유지하며, 각 플랫폼의 크리에이터 스튜디오 내부 API(직접 호출 또는 응답 가로채기)를 통해 게시물별 조회수를 추출한다. 수집된 레코드는 `{platform, post_id, post_title, view_count, captured_at}` 구조로 일괄 webhook 전송한다.
+Playwright 퍼시스턴트 컨텍스트로 로그인 세션을 유지하며, 각 플랫폼 스튜디오/내부 API에서 최근 게시물의 조회수를 추출한다. capturedAt은 시간 단위 반올림(KST YYYY-MM-DDTHH:00:00)하여 시간대별 성장 곡선 분석용 데이터를 축적한다. allRecords(조회수)와 adRecords(광고 성과)를 각각 별도 webhook으로 전송한다.
 
 ## Observations
 
-- [impl] Playwright 퍼시스턴트 컨텍스트(`playwright-data/` 디렉토리)로 세션 쿠키 재사용 — 매 실행마다 로그인 불필요 #pattern
-- [impl] 플랫폼별 수집 전략: 네이버TV/Meta = 직접 API fetch, YouTube/TikTok = `page.on('response')` 가로채기, 네이버 블로그 = iframe 내 API 호출 #algo
-- [impl] YouTube: `videos/upload`(동영상)와 `videos/short`(Shorts) 탭 순차 수집, `#navigate-after` 버튼으로 페이징(최대 20페이지), 중복 post_id 제거 #algo
-- [impl] TikTok: item_list API 응답 가로채기, 응답 없을 시 DOM fallback(`a[href*="/video/"]` 텍스트 파싱) #algo
-- [impl] 네이버 블로그: `daily_total`(post_id='daily_total') 전체 조회수 레코드 + 개별 게시물 레코드 동시 수집 #pattern
-- [impl] Meta: `callGraphQL`/`fetchEdges`는 `collectMeta` 내부 `page.evaluate` 클로저 — 인라인 함수, 별도 모듈 레벨 함수 아님. doc_id `34106016262374963` 사용 #pattern
-- [impl] Meta: LIFETIME 범위로 전체 게시물 조회, 0건이면 LAST_90D fallback #algo
-- [impl] `captured_at`은 KST 기준 시간 단위 반올림 ISO 문자열 — 동일 시간대 레코드 식별용 #pattern
-- [impl] `YOUTUBE_CHANNEL_ID = 'UCWpvotHqOrqnaT_cielUzRQ'` 상수 하드코딩 (line 193) #context
+- [impl] YouTube: studio.youtube.com API → channelId 추출 → /youtubei/v1/analytics_data/join 호출 → 게시물별 VIEWS #algo
+- [impl] Naver TV: tv.naver.com 내부 API → channelNo 추출 → /api/clipmeta 호출 → 클립별 viewCount #algo
+- [impl] Naver Blog: blog.naver.com → blog.stat.naver.com/blog/rank/content → 게시물 순위별 조회수 #algo
+- [impl] Meta: page.evaluate → fb_dtsg + pageId → GraphQL fetchEdges → tofu_unified_table → 게시물별 views #algo
+- [impl] TikTok: tiktok.com/creator → /api/post/list API → 게시물별 playCount #algo
+- [impl] Meta Ads: page.evaluate → access_token + act_id → am_tabular API → 광고별 8개 성과 메트릭 (EAV) #algo
+- [impl] getCapturedAt(): KST 시간 단위 반올림 → "YYYY-MM-DDTHH:00:00" #pattern
+- [impl] 실패 알림: results에서 success:false 필터 → ALERT_WEBHOOK_URL로 subject/html 전송 → n8n → Gmail #pattern
 - [deps] `playwright.chromium`, `path` (Node.js 내장) #import
-- [usage] `node collect-posts.js` — Task Scheduler 1시간 주기 자동 실행 #usage
-- [note] n8n webhook이 Split Out 노드로 500 응답 반환하더라도 `"code":0` 포함 시 정상 처리로 간주 #caveat
-- [note] 각 플랫폼 수집은 독립 try-catch — 일부 실패해도 나머지 수집 + webhook 전송 계속 #pattern
-- [note] 파일명 변경: run-posts.js → collect-posts.js (2026-03-10) #context
+- [usage] `node collect-posts.js` — scheduler.js가 1시간 주기 실행 #usage
+- [note] 각 플랫폼은 독립적 try/catch — 하나 실패해도 나머지 계속 수집 #context
+- [note] allRecords(조회수)와 adRecords(광고 EAV)는 별도 webhook으로 전송 #context
+- [note] ALERT_WEBHOOK_URL: collect-alert → n8n(xkq4OyyRpC6fkjBl) → Gmail #context
+- [note] Meta Ads capturedAt은 시간 단위(YYYY-MM-DDTHH:00:00), collect-channels의 일별(YYYY-MM-DD)과 구분 #context
 
 ## 플랫폼별 수집 전략
 
-| 플랫폼 | 접근 방식 | 엔드포인트 | 비고 |
-|--------|----------|----------|------|
-| 네이버TV | page.evaluate → fetch | apis.naver.com creator-studio-web | channelId URL/HTML 자동 추출 |
-| 네이버 블로그 | iframe frame → fetch | blog.stat.naver.com cvContentPc | daily_total + 개별 게시물 수집 |
-| YouTube | response 가로채기 | studio.youtube.com list_creator_videos | 동영상+Shorts 탭 분리, 페이징 지원 |
-| TikTok | response 가로채기 + DOM fallback | /creator/manage/item_list/v1 | API 없을 시 a[href*="/video/"] 파싱 |
-| Meta | page.evaluate → fetch (인라인 클로저) | business.facebook.com/api/graphql/ | doc_id 34106016262374963, LIFETIME→LAST_90D fallback |
+| 플랫폼 | 접근 방식 | 수집 데이터 |
+|--------|---------|-----------| 
+| YouTube | studio.youtube.com → analytics_data API | 게시물별 views (최근 3개) |
+| Naver TV | tv.naver.com → clipmeta API | 클립별 viewCount (최근 3개) |
+| Naver Blog | blog.stat → rank/content API | 게시물별 views (상위 목록) |
+| Meta | page.evaluate → GraphQL tofu_unified_table | 게시물별 views (최근) |
+| TikTok | creator → /api/post/list | 게시물별 playCount (최근 3개) |
+| Meta Ads | adsmanager → am_tabular API | 광고별 8개 메트릭 EAV |
 
 ## 레코드 스키마
 
 ```js
+// post_view_snapshots (allRecords)
 {
-  platform: 'youtube' | 'naver_tv' | 'naver_blog' | 'meta' | 'tiktok',
+  platform: string,          // "youtube" | "naver_tv" | "naver_blog" | "meta" | "tiktok"
   post_id: string,
   post_title: string,
   view_count: number,
-  captured_at: string    // KST 시간 단위 반올림 ISO (e.g., "2026-03-09T15:00:00")
+  captured_at: string        // "YYYY-MM-DDTHH:00:00" (시간 단위)
+}
+
+// ad_metrics_atomic (adRecords)
+{
+  captured_at: string,       // "YYYY-MM-DDTHH:00:00" (시간 단위)
+  platform: 'meta',
+  ad_id: string,
+  ad_name: string,
+  metric_type: string,       // "impressions", "cpc", etc.
+  value: number
 }
 ```
 
 ## Relations
-
 - part_of [[SNS 게시물별 조회수 추적]] (소속 프로젝트)
 - contains [[get-captured-at]]
 - contains [[send-to-webhook]]
+- contains [[collect-you-tube]]
 - contains [[collect-naver-tv]]
 - contains [[collect-naver-blog]]
-- contains [[collect-you-tube]]
-- contains [[collect-tik-tok]]
 - contains [[collect-meta]]
+- contains [[collect-tik-tok]]
+- contains [[collect-meta-ads]]
+- contains [[call-graph-ql]]
+- contains [[fetch-edges]]
 - contains [[run]]
-  - run calls [[get-captured-at]] (line 511)
-  - run calls [[collect-you-tube]] (line 531)
-  - run calls [[collect-naver-tv]] (line 542)
-  - run calls [[collect-naver-blog]] (line 553)
-  - run calls [[collect-meta]] (line 564)
-  - run calls [[collect-tik-tok]] (line 575)
-  - run calls [[send-to-webhook]] (line 588)
-- data_flows_to [[n8n webhook]] (post-view-snapshots)
+  - fetch-edges calls [[call-graph-ql]] (line 460)
+  - run calls [[get-captured-at]] (line 628)
+  - run calls [[collect-you-tube]] (line 649)
+  - run calls [[collect-naver-tv]] (line 660)
+  - run calls [[collect-naver-blog]] (line 671)
+  - run calls [[collect-meta]] (line 682)
+  - run calls [[collect-tik-tok]] (line 693)
+  - run calls [[collect-meta-ads]] (line 704)
+  - run calls [[send-to-webhook]] (line 717)
+- data_flows_to [[n8n webhook]] (post-view-snapshots, ad-metrics-atomic, collect-alert)
 - depends_on [[playwright]]
+- part_of [[playwright-sns-collector]] (상위 모듈 그룹)
