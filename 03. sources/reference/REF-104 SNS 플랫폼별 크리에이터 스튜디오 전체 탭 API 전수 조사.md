@@ -75,7 +75,7 @@ YouTube Studio(11탭), TikTok Creator Center(7탭), NaverTV Creator Studio(5탭)
 | `web-cookie-privacy/config`         | 57   | 공통(7탭)      | 쿠키 정책 설정                                           | -         |
 | `mention/recent/contact/list/v1`    | 9    | 댓글          | 최근 멘션 연락처                                          | -         |
 
-**`aweme/v2/data/insight/` 시계열 상세**:
+**`aweme/v2/data/insight/` 시계열 상세 (19개 배열)**:
 
 | 배열 | 포인트 | 내용 |
 |---|---|---|
@@ -84,8 +84,20 @@ YouTube Studio(11탭), TikTok Creator Center(7탭), NaverTV Creator Studio(5탭)
 | `like_history` | 16일 | 일별 좋아요 |
 | `comment_history` | 16일 | 일별 댓글 |
 | `share_history` | 16일 | 일별 공유 |
-| `follower_num_history` | 16일 | 일별 팔로워 수 |
+| `follower_num_history` | 16일 | 일별 팔로워 수 (누적) |
 | `reached_audience_history` | 16일 | 일별 도달 사용자 수 |
+| `net_follower_history` | 16일 | 일별 순 팔로워 증감 |
+| `video_vv_history_7d` | 7일 | 7일 영상별 조회수 |
+| `video_vv_history_48_hours` | 48h | 48시간 영상별 조회수 |
+| `video_like_history_7d` | 7일 | 7일 영상별 좋아요 |
+| `video_comment_history_7d` | 7일 | 7일 영상별 댓글 |
+| `video_shares_history_7d` | 7일 | 7일 영상별 공유 |
+| `video_favorites_history_7d` | 7일 | 7일 영상별 즐겨찾기 |
+| `video_new_followers_history_7d` | 7일 | 7일 영상으로 신규 팔로워 |
+| `video_finish_rate_history_7d` | 7일 | 7일 영상 완시청률 |
+| `follower_active_history_days` | 요일 | 팔로워 요일별 활성 분포 |
+| `follower_active_history_hours` | 시간대 | 팔로워 시간대별 활성 분포 |
+| `previous_video_vv_history_7d` | 7일 | 이전 7일 조회수 (비교용) |
 
 ### Meta Ads Manager (22개 API, 3탭 순회)
 
@@ -133,7 +145,7 @@ YouTube Studio(11탭), TikTok Creator Center(7탭), NaverTV Creator Studio(5탭)
 
 **조사 탭**: 대시보드 → 통계 → 수익 → 콘텐츠 → 댓글 (inspect-navertv-stats.js)
 
-### Naver Blog (16개 API, 14탭 순회 — 2개 도메인)
+### Naver Blog (14개 API, 14탭 순회 — 2개 도메인)
 
 네이버 블로그는 **두 개의 독립된 시스템**으로 구성:
 - **블로그 관리** (`admin.blog.naver.com`) — 통계가 `blog.stat.naver.com` iframe으로 로드
@@ -180,19 +192,7 @@ YouTube Studio(11탭), TikTok Creator Center(7탭), NaverTV Creator Studio(5탭)
 - `blog.stat.naver.com/api/blog/` — 블로그 통계 (iframe 전용, frame.evaluate 필요)
 - `creator-advisor.naver.com/api/v6/` — Creator Advisor REST API (response 인터셉트 가능)
 
-#### 블로그 관리 iframe API (blog.stat.naver.com)
-
-| API | 필드수 | 출현 탭 | 데이터 내용 | 현재 수집 |
-| --- | --- | --- | --- | --- |
-| `api/blog/rank/cvContentPc` | ~6 | 통계-조회수 | 날짜별 게시물 조회수 랭킹 (title + cv배열) | - |
-
-**조사 탭**: 통계-오늘 → 통계-방문분석 → 통계-조회수 → 통계-공감수 → 통계-유입분석 → 글관리 → 댓글관리 → 메뉴관리 → 블로그정보
-
-**한계**: 관리 페이지 9탭 모두 `blog.stat.naver.com` iframe 내부에서 API를 호출하므로 `page.on('response')` 인터셉트로는 캡처 불가. `frame.evaluate()` 직접 호출이 필요 (inspect-naver-blog4.js에서 검증).
-
-**API 도메인 구분**:
-- `creator-advisor.naver.com/api/v6/` — Creator Advisor REST API (response 인터셉트 가능)
-- `blog.stat.naver.com/api/blog/` — 블로그 통계 API (iframe 전용, frame.evaluate 필요)
+**조사 탭 (관리)**: 통계-오늘 → 통계-방문분석 → 통계-조회수 → 통계-공감수 → 통계-유입분석 → 글관리 → 댓글관리 → 메뉴관리 → 블로그정보
 
 ### Meta Business Suite (1개 API, 7탭 순회)
 
