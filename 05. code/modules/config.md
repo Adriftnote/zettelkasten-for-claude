@@ -1,49 +1,44 @@
 ---
 title: config
-type: module
+type: note
 permalink: modules/config
 level: high
-category: tools/knowledge-management/core
-semantic: manage configuration
-path: basic_memory/config.py
+category: code/modules
+semantic: module
+path: internal/config/config.go
 tags:
-- python
-- pydantic
-- configuration
+- module
+- go
+- yaml
+- config
 ---
 
-# config
+## 역할
+platform_config.yaml 파싱 + PlatformConfig 구조체 제공
 
-basic-memory 설정 관리 모듈. BasicMemoryConfig, ConfigManager, ProjectConfig를 제공.
+## 경로
+`internal/config/config.go`
 
-## 개요
+## 구조체
+- `PlatformConfig` — 플랫폼별 메타데이터 (테이블명, 컬럼, 지표, QueryMode)
+- `TitleSource` — 제목 소스 설정 (Inline 여부, JOIN 테이블/컬럼)
+- `MetricMapping` — 지표 매핑 (DB 컬럼 → 표시 이름)
+- `Config` — 전체 설정 (Platforms map)
 
-Pydantic Settings 기반 설정 클래스(BasicMemoryConfig)로 DB 백엔드(SQLite/Postgres), 동기화 옵션, 포맷터 등을 관리한다.
-ConfigManager는 `~/.basic-memory/config.json` 파일을 읽어 프로젝트별 경로 매핑을 처리하며,
-ProjectConfig dataclass는 개별 프로젝트의 이름-경로 쌍을 표현한다.
-
-## Observations
-
-- [impl] BasicMemoryConfig는 pydantic-settings BaseSettings 상속, env prefix "BASIC_MEMORY_" #pydantic
-- [impl] DatabaseBackend enum으로 SQLite/Postgres 전환 지원 #dual-backend
-- [impl] ConfigManager는 config.json을 CRUD하며 프로젝트 목록 관리 #config-file
-- [impl] ProjectConfig dataclass로 프로젝트 이름-경로 쌍 표현 #dataclass
-- [deps] pydantic-settings, pathlib, platformdirs #import
-- [note] Windows에서 `~/.basic-memory/` → `C:\Users\{user}\.basic-memory\` #platform
-
-## 주요 설정 항목
-
-| 설정 | 기본값 | 용도 |
-|------|--------|------|
-| `database_backend` | `sqlite` | DB 백엔드 선택 |
-| `database_path` | `~/.basic-memory/memory.db` | SQLite DB 경로 |
-| `database_url` | None | Postgres 연결 URL |
-| `sync_changes` | True | 파일 변경 자동 감시 |
-| `cloud_mode_enabled` | False | 클라우드 모드 |
+## 함수
+- `Load` — YAML 파일 로드 → Config 구조체
+- `ByKey` — 플랫폼 키로 PlatformConfig 조회
+- `ByCategory` — 카테고리(organic/ads)별 플랫폼 목록
+- `PrimaryMetric` — 플랫폼의 주요 지표 반환
 
 ## Relations
+- part_of [[MOT 실시간 대시보드]]
+- contains [[load]]
+- contains [[by-key]]
+- contains [[by-category]]
+- contains [[primary-metric]]
 
-- part_of [[basic-memory]] (루트 설정 모듈)
-- contains [[basic-memory-config]] (설정 클래스)
-- contains [[config-manager]] (설정 파일 관리)
-- depends_on [[pydantic-settings]] (설정 프레임워크)
+## Observations
+- [impl] goccy/go-yaml 사용 (gopkg.in/yaml.v3 대신) #deps
+- [impl] QueryMode 필드로 쿼리 전략 선택: snapshot_diff, snapshot_cumulative, pre_aggregated, ads_campaign #pattern
+- [impl] TitleSource.Inline=true이면 스냅샷 테이블에 title 존재 (별도 JOIN 불필요) #pattern
