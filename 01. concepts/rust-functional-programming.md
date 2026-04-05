@@ -242,13 +242,13 @@ contents
 - [[Rust Programming Language Overview]] - Rust의 핵심 개념
 
 ### used_in
-- [[Rust Concurrency]] - 스레드와 async에서 클로저 활용
-- [[Rust Collections]] - 컬렉션의 이터레이터 메서드
-- [[Rust Projects]] - 실제 프로젝트에서의 함수형 패턴 적용
+- [[rust-concurrency]] - 스레드와 async에서 클로저 활용
+- [[rust-collections]] - 컬렉션의 이터레이터 메서드
+- [[rust-projects]] - 실제 프로젝트에서의 함수형 패턴 적용
 
 ### related_to
-- [[Rust Type System]] - Fn traits와 제네릭 타입
-- [[Rust Memory Management]] - 캡처 모드와 소유권
+- [[rust-type-system]] - Fn traits와 제네릭 타입
+- [[rust-memory-management]] - 캡처 모드와 소유권
 
 ---
 

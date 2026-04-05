@@ -49,4 +49,4 @@ function extractTokens() {
 ## Relations
 
 - part_of [[facebook-extractor]] (소속 모듈)
-- data_flows_to [[call-graphql-fb]] (토큰 → API 호출)
+- data_flows_to [[call-graphql-x]] (토큰 → API 호출)

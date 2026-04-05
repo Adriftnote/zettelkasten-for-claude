@@ -137,9 +137,9 @@ type Job = Box<dyn FnOnce() + Send + 'static>;
 ## Relations
 
 - **part_of** [[The Rust Programming Language]] - Rust 공식 가이드의 실습 프로젝트들
-- **demonstrates** [[Rust - Memory Management]] - 소유권, 빌림, 스마트 포인터 실습
-- **demonstrates** [[Rust - Concurrency]] - 스레드, 채널, 뮤텍스 실습
-- **demonstrates** [[Rust - Error Handling]] - Result 타입과 에러 처리 전파
+- **demonstrates** [[rust-memory-management]] - 소유권, 빌림, 스마트 포인터 실습
+- **demonstrates** [[rust-concurrency]] - 스레드, 채널, 뮤텍스 실습
+- **demonstrates** [[rust-error-handling]] - Result 타입과 에러 처리 전파
 
 ---
 

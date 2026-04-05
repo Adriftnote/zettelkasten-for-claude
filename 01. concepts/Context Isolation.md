@@ -80,7 +80,7 @@ style_agent_context = {"style_guide": [...], "target_files": [...]}
 
 ## Relations
 
-- enables [[multi-agent-patterns]] - 멀티에이전트 아키텍처의 핵심 원칙
+- enables [[Multi-Agent Patterns]] - 멀티에이전트 아키텍처의 핵심 원칙
 - mitigates [[context-confusion]] - 컨텍스트 혼란 방지
 - mitigates [[context-distraction]] - 컨텍스트 산만 방지
 - relates_to [[progressive-disclosure]] - 점진적 정보 공개와 유사한 원칙

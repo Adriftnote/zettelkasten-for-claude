@@ -64,7 +64,7 @@ MCP 안에서 CLI를 실행하는 하이브리드 패턴이 가장 효과적:
 
 ## 🔗 관련 개념
 
-- [[MCP CLI Polymorphism]] - (MCP와 CLI를 동일 인터페이스로 추상화하는 패턴)
+- [[mcp-cli-polymorphism]] - (MCP와 CLI를 동일 인터페이스로 추상화하는 패턴)
 - [[MCP (Model Context Protocol)]] - (MCP 프로토콜 자체의 개념 정의)
 - [[MCP Tool 패턴 (MCP Tool Patterns)]] - (MCP 도구 사용 패턴 허브)
 

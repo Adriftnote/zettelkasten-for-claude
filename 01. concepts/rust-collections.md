@@ -186,8 +186,8 @@ map.insert(key, 20);  // 문제없음
 
 ### Used In
 
-- [[Rust - Memory Management]]
-- [[Rust - Functional Programming]]
+- [[rust-memory-management]]
+- [[rust-functional-programming]]
 
 ### Part Of
 

@@ -62,7 +62,7 @@ LangChain이 코딩 에이전트용 스킬을 공개하여 Claude Code의 LangCh
 
 - [[Superpowers - Claude Code 개발 워크플로우 프레임워크]] - (동일하게 스킬 기반으로 코딩 에이전트 성능을 높이는 프레임워크)
 - [[Claude Code - Anthropic 공식 CLI 에이전트]] - (스킬이 적용되는 대상 에이전트)
-- [[Codified Context - Infrastructure for AI Agents in a Complex Codebase]] - (에이전트에게 코드베이스 맥락을 체계적으로 전달하는 인프라 접근)
+- [[REF-088 Codified Context - Infrastructure for AI Agents in a Complex Codebase]] - (에이전트에게 코드베이스 맥락을 체계적으로 전달하는 인프라 접근)
 
 ---
 

@@ -128,6 +128,6 @@ class TemporalKnowledgeGraph:
 
 ## Relations
 
-- solves [[vector-store-limitations]] (벡터 스토어의 시간 유효성 문제 해결)
+- solves [[Vector Store Limitations]] (벡터 스토어의 시간 유효성 문제 해결)
 - relates_to [[hybrid-search-architecture]] (하이브리드 아키텍처의 구성 요소)
 - relates_to [[knowledge-refinement-pipeline]] (지식 정제에 활용)

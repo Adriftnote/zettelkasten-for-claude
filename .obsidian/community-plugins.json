@@ -5,6 +5,6 @@
   "qmd-as-md-obsidian",
   "obsidian-pandoc",
   "execute-code",
-  "claudian",
-  "obsidian-git"
+  "obsidian-git",
+  "claudian"
 ]

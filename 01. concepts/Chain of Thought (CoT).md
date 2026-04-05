@@ -61,4 +61,4 @@ A: 커피 3잔 = 4,500 × 3 = 13,500원
 - enables [[Chain of Spreadsheet (CoS)]] (CoT의 스프레드시트 특화 버전)
 - extends [[ReAct Paradigm]] (CoT에 행동을 추가한 확장)
 - measured_by [[Deep-Thinking Ratio (DTR)]] (CoT의 "깊이" 품질을 측정하는 지표)
-- relates_to [[Token Optimization Strategy]] (CoT 토큰 효율화 전략과 연관)
+- relates_to [[token-optimization-strategy]] (CoT 토큰 효율화 전략과 연관)

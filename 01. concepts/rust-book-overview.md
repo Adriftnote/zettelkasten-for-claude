@@ -40,23 +40,23 @@ Rust 학습은 **건축 프로젝트**와 같습니다:
 
 이 책은 13개의 핵심 개념 영역으로 구성됩니다:
 
-1. **[[Rust - Memory Management]]** - Ownership, Borrowing, Lifetimes, Smart Pointers
-2. **[[Rust - Type System]]** - Types, Structs, Enums, Generics, Traits
-3. **[[Rust - Error Handling]]** - panic!, Result, ? operator
-4. **[[Rust - Concurrency]]** - Threads, Channels, Mutex, Async
-5. **[[Rust - Functional Programming]]** - Closures, Iterators
-6. **[[Rust - Collections]]** - Vec, String, HashMap
-7. **[[Rust - Control Flow]]** - match, if let, Pattern Matching
-8. **[[Rust - Code Organization]]** - Modules, Cargo, Workspaces
-9. **[[Rust - Testing]]** - Unit Tests, Integration Tests, TDD
-10. **[[Rust - Macros]]** - Declarative, Procedural Macros
-11. **[[Rust - Unsafe]]** - Raw Pointers, FFI
-12. **[[Rust - OOP]]** - Trait Objects, State Pattern
-13. **[[Rust - Projects]]** - Guessing Game, minigrep, Web Server
+1. **[[rust-memory-management]]** - Ownership, Borrowing, Lifetimes, Smart Pointers
+2. **[[rust-type-system]]** - Types, Structs, Enums, Generics, Traits
+3. **[[rust-error-handling]]** - panic!, Result, ? operator
+4. **[[rust-concurrency]]** - Threads, Channels, Mutex, Async
+5. **[[rust-functional-programming]]** - Closures, Iterators
+6. **[[rust-collections]]** - Vec, String, HashMap
+7. **[[rust-control-flow]]** - match, if let, Pattern Matching
+8. **[[rust-code-organization]]** - Modules, Cargo, Workspaces
+9. **[[rust-testing]]** - Unit Tests, Integration Tests, TDD
+10. **[[rust-macros]]** - Declarative, Procedural Macros
+11. **[[rust-unsafe]]** - Raw Pointers, FFI
+12. **[[rust-oop]]** - Trait Objects, State Pattern
+13. **[[rust-projects]]** - Guessing Game, minigrep, Web Server
 
 ## 학습 경로
 
-- [[Rust - Learning Paths|학습 경로 가이드]] - 초급/중급/고급 순서
+- [[rust-learning-paths|학습 경로 가이드]] - 초급/중급/고급 순서
 
 ## 핵심 주제
 

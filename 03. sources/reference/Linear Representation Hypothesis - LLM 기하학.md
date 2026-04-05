@@ -90,7 +90,7 @@ Causal Inner Product: ⟨γ̄, γ̄'⟩_C = γ̄ᵀ Cov(γ)⁻¹ γ̄'
 - [[Linear Representation Hypothesis]] - 이 논문의 핵심 가설
 - [[Mechanistic Interpretability]] - LLM 내부 메커니즘 해석 분야
 - [[Steering Vector]] - 모델 출력 제어 기법
-- [[Emergence of Linear Truth Encodings]] - 진리값의 선형 인코딩 (companion paper)
+- [[Emergence of Linear Truth Encodings in LMs]] - 진리값의 선형 인코딩 (companion paper)
 
 ---
 

@@ -30,24 +30,24 @@ permalink: 00.-index/broken-wikilink-report
 
 Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 가능.
 
-- [x] `01. concepts/Attention.md` L92: `[[kv-cache-optimization\|KV-Cache]]` -> `[[kv-cache-optimization|...]]`
-- [x] `01. concepts/Chrome Extension.md` L75: `[[Content Script\|Content Script]]` -> `[[Content Script|...]]`
-- [x] `01. concepts/Chrome Extension.md` L76: `[[Background Script (Service Worker)\|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
+- [x] `01. concepts/Attention.md` L92: `[[kv-cache-optimization|KV-Cache]]` -> `[[kv-cache-optimization|...]]`
+- [x] `01. concepts/Chrome Extension.md` L75: `[[Content Script|Content Script]]` -> `[[Content Script|...]]`
+- [x] `01. concepts/Chrome Extension.md` L76: `[[Background Script (Service Worker)|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
 - [x] `01. concepts/compiler.md` L52: `[[01. concepts/파서 (Parser)\|파서]]` -> `[[01. concepts/파서 (Parser)|...]]`
-- [x] `01. concepts/CORS (Cross-Origin Resource Sharing).md` L73: `[[Background Script (Service Worker)\|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
-- [x] `01. concepts/HTTP Header.md` L82: `[[CORS (Cross-Origin Resource Sharing)\|CORS]]` -> `[[CORS (Cross-Origin Resource Sharing)|...]]`
-- [x] `01. concepts/Web Communication.md` L241: `[[Endpoint\|Endpoint]]` -> `[[Endpoint|...]]`
-- [x] `01. concepts/Web Communication.md` L242: `[[Payload\|Payload]]` -> `[[Payload|...]]`
+- [x] `01. concepts/CORS (Cross-Origin Resource Sharing).md` L73: `[[Background Script (Service Worker)|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
+- [x] `01. concepts/HTTP Header.md` L82: `[[CORS (Cross-Origin Resource Sharing)|CORS]]` -> `[[CORS (Cross-Origin Resource Sharing)|...]]`
+- [x] `01. concepts/Web Communication.md` L241: `[[Endpoint|Endpoint]]` -> `[[Endpoint|...]]`
+- [x] `01. concepts/Web Communication.md` L242: `[[Payload|Payload]]` -> `[[Payload|...]]`
 - [x] `01. concepts/Web Communication.md` L243: `[[Encoding\|Encoding]]` -> `[[Encoding|...]]`
-- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L90: `[[Background Script (Service Worker)\|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
-- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L93: `[[DOM (Document Object Model)\|DOM]]` -> `[[DOM (Document Object Model)|...]]`
-- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L172: `[[DOM (Document Object Model)\|DOM]]` -> `[[DOM (Document Object Model)|...]]`
-- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L172: `[[JavaScript (JS)\|JavaScript]]` -> `[[JavaScript (JS)|...]]`
-- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L173: `[[CORS (Cross-Origin Resource Sharing)\|CORS]]` -> `[[CORS (Cross-Origin Resource Sharing)|...]]`
-- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L173: `[[Same-Origin Policy (동일 출처 정책)\|Same-Origin Policy]]` -> `[[Same-Origin Policy (동일 출처 정책)|...]]`
-- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L174: `[[Background Script (Service Worker)\|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
+- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L90: `[[Background Script (Service Worker)|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
+- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L93: `[[DOM (Document Object Model)|DOM]]` -> `[[DOM (Document Object Model)|...]]`
+- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L172: `[[DOM (Document Object Model)|DOM]]` -> `[[DOM (Document Object Model)|...]]`
+- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L172: `[[JavaScript (JS)|JavaScript]]` -> `[[JavaScript (JS)|...]]`
+- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L173: `[[CORS (Cross-Origin Resource Sharing)|CORS]]` -> `[[CORS (Cross-Origin Resource Sharing)|...]]`
+- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L173: `[[Same-Origin Policy (동일 출처 정책)|Same-Origin Policy]]` -> `[[Same-Origin Policy (동일 출처 정책)|...]]`
+- [x] `03. sources/workcases/Chrome Extension 동작 원리 정리.md` L174: `[[Background Script (Service Worker)|Background Script]]` -> `[[Background Script (Service Worker)|...]]`
 - [x] `04. notes/Three-Layer Memory Architecture.md` L947: `[[03. sources/reviews/basic-memory-db-schema\|Basic Memory DB 스키마]]` -> `[[03. sources/reviews/basic-memory-db-schema|...]]`
-- [x] `04. notes/Three-Layer Memory Architecture.md` L948: `[[AgeMem-paper-review\|AgeMem 논문 리뷰]]` -> `[[AgeMem-paper-review|...]]`
+- [x] `04. notes/Three-Layer Memory Architecture.md` L948: `[[AgeMem-paper-review|AgeMem 논문 리뷰]]` -> `[[AgeMem-paper-review|...]]`
 
 ## [B] Missing Notes (Review Required)
 
@@ -212,7 +212,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `03. sources/reference/RPG 논문 시리즈 리뷰.md` L186
 - [ ] `03. sources/reference/RPG-Encoder 논문 리뷰.md` L87
 
-### `[[Rust - Memory Management]]` (5x)
+### `[[rust-memory-management]]` (5x)
 
 - [ ] `01. concepts/rust-book-overview.md` L43
 - [ ] `01. concepts/rust-collections.md` L189
@@ -264,7 +264,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `01. concepts/Semantic Lifting (의미 상승).md` L70
 - [ ] `03. sources/reference/RPG 논문 시리즈 리뷰.md` L185
 
-### `[[Rust - Functional Programming]]` (4x)
+### `[[rust-functional-programming]]` (4x)
 
 - [ ] `01. concepts/rust-book-overview.md` L47
 - [ ] `01. concepts/rust-collections.md` L190
@@ -320,7 +320,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `03. sources/workcases/vecsearch 벡터 시맨틱 검색 구현.md` L360
 - [ ] `05. code/modules/vecsearch.md` L139
 
-### `[[Token Optimization Strategy]]` (3x)
+### `[[token-optimization-strategy]]` (3x)
 
 - [ ] `01. concepts/Chain of Thought (CoT).md` L64
 - [ ] `01. concepts/Deep-Thinking Ratio (DTR).md` L85
@@ -362,13 +362,13 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `02. hubs/추상화와 설계 원칙 (Abstraction Principles).md` L30
 - [ ] `04. notes/추상화는 3단 구조로 반복된다.md` L58
 
-### `[[Rust - Error Handling]]` (3x)
+### `[[rust-error-handling]]` (3x)
 
 - [ ] `01. concepts/rust-book-overview.md` L45
 - [ ] `01. concepts/rust-projects.md` L142
 - [ ] `02. hubs/카테고리 이론 (Category Theory).md` L231
 
-### `[[Rust - Concurrency]]` (3x)
+### `[[rust-concurrency]]` (3x)
 
 - [ ] `01. concepts/rust-book-overview.md` L46
 - [ ] `01. concepts/rust-projects.md` L141
@@ -443,7 +443,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `01. concepts/Atomic File Modification.md` L206
 - [ ] `01. concepts/Race Condition.md` L193
 
-### `[[content-script]]` (2x)
+### `[[Content Script]]` (2x)
 
 - [ ] `01. concepts/Background Script (Service Worker).md` L90
 - [x] `01. concepts/CORS (Cross-Origin Resource Sharing).md` L79
@@ -473,7 +473,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `01. concepts/Concept Note.md` L47
 - [ ] `03. sources/reference/A-Mem - LLM 에이전트를 위한 자율 메모리 시스템 (Agentic Memory).md` L170
 
-### `[[Basic Memory]]` (2x)
+### `[[basic-memory]]` (2x)
 
 - [ ] `01. concepts/Concept Note.md` L49
 - [ ] `03. sources/reference/A-Mem - LLM 에이전트를 위한 자율 메모리 시스템 (Agentic Memory).md` L173
@@ -523,27 +523,27 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `01. concepts/RPG (Repository Planning Graph).md` L90
 - [ ] `02. hubs/AI-ML 개념 (AI-ML Concepts).md` L36
 
-### `[[Rust - Type System]]` (2x)
+### `[[rust-type-system]]` (2x)
 
 - [ ] `01. concepts/rust-book-overview.md` L44
 - [ ] `02. hubs/카테고리 이론 (Category Theory).md` L230
 
-### `[[Rust - Collections]]` (2x)
+### `[[rust-collections]]` (2x)
 
 - [ ] `01. concepts/rust-book-overview.md` L48
 - [ ] `02. hubs/카테고리 이론 (Category Theory).md` L232
 
-### `[[Rust - OOP]]` (2x)
+### `[[rust-oop]]` (2x)
 
 - [ ] `01. concepts/rust-book-overview.md` L54
 - [ ] `01. concepts/rust-type-system.md` L424
 
-### `[[Rust - Learning Paths]]` (2x)
+### `[[rust-learning-paths]]` (2x)
 
 - [ ] `01. concepts/rust-book-overview.md` L59
 - [ ] `02. hubs/카테고리 이론 (Category Theory).md` L235
 
-### `[[Rust Projects]]` (2x)
+### `[[rust-projects]]` (2x)
 
 - [ ] `01. concepts/rust-error-handling.md` L472
 - [ ] `01. concepts/rust-functional-programming.md` L247
@@ -563,7 +563,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `02. hubs/00.index.md` L49
 - [ ] `02. hubs/00.index.md` L103
 
-### `[[MCP CLI Polymorphism]]` (2x)
+### `[[mcp-cli-polymorphism]]` (2x)
 
 - [ ] `02. hubs/추상화와 설계 원칙 (Abstraction Principles).md` L32
 - [ ] `03. sources/reference/REF-069 MCP is Dead Long Live the CLI - MCP vs CLI 비교.md` L67
@@ -578,7 +578,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `03. sources/reference/Basic Memory MCP 완전 가이드.md` L29
 - [ ] `03. sources/workcases/RPG 구조 설계.md` L181
 
-### `[[Basic Memory Hub]]` (2x)
+### `[[basic-memory]]` (2x)
 
 - [ ] `03. sources/reference/Basic Memory MCP 완전 가이드.md` L113
 - [ ] `04. notes/Relation Table 전수조사 - KG 품질 분석.md` L228
@@ -588,7 +588,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `03. sources/reference/Claude C Compiler.md` L86
 - [ ] `03. sources/reference/Claude Code - Anthropic 공식 CLI 에이전트.md` L84
 
-### `[[선형 표현 가설 (Linear Representation Hypothesis)]]` (2x)
+### `[[Linear Representation Hypothesis]]` (2x)
 
 - [ ] `03. sources/reference/Emergence of Linear Truth Encodings in LMs.md` L112
 - [ ] `03. sources/reference/Linear Representation Hypothesis - LLM 기하학.md` L90
@@ -678,7 +678,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 - [ ] `04. notes/context-positioning-strategy.md` L37
 - [ ] `04. notes/context-positioning-strategy.md` L40
 
-### `[[Lost-in-Middle 현상]]` (2x)
+### `[[lost-in-middle]]` (2x)
 
 - [ ] `04. notes/context-positioning-strategy.md` L38
 - [ ] `04. notes/context-positioning-strategy.md` L39
@@ -734,7 +734,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/AI 에이전트 지식 전달 패턴.md` L66
 
-### `[[Skills]]` (1x)
+### `[[SKILL]]` (1x)
 
 - [ ] `01. concepts/AI 에이전트 지식 전달 패턴.md` L69
 
@@ -742,11 +742,11 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/AST (Abstract Syntax Tree).md` L73
 
-### `[[chrome-extension]]` (1x)
+### `[[Chrome Extension]]` (1x)
 
 - [ ] `01. concepts/Background Script (Service Worker).md` L89
 
-### `[[Functional Programming]]` (1x)
+### `[[rust-functional-programming]]` (1x)
 
 - [ ] `01. concepts/Category Theory (카테고리 이론).md` L169
 
@@ -774,7 +774,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/Concept Note.md` L48
 
-### `[[multi-agent-patterns]]` (1x)
+### `[[Multi-Agent Patterns]]` (1x)
 
 - [ ] `01. concepts/Context Isolation.md` L83
 
@@ -782,7 +782,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/Context Management Levels.md` L109
 
-### `[[KV-Cache Optimization]]` (1x)
+### `[[kv-cache-optimization]]` (1x)
 
 - [ ] `01. concepts/Context Management Levels.md` L133
 
@@ -790,7 +790,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/Context Management Levels.md` L134
 
-### `[[http-header]]` (1x)
+### `[[HTTP Header]]` (1x)
 
 - [x] `01. concepts/CORS (Cross-Origin Resource Sharing).md` L77
 
@@ -874,7 +874,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/MCP (Model Context Protocol).md` L66
 
-### `[[context-isolation]]` (1x)
+### `[[Context Isolation]]` (1x)
 
 - [ ] `01. concepts/Multi-Agent Patterns.md` L102
 
@@ -934,27 +934,27 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/ReAct Paradigm.md` L171
 
-### `[[Rust - Control Flow]]` (1x)
+### `[[rust-control-flow]]` (1x)
 
 - [ ] `01. concepts/rust-book-overview.md` L49
 
-### `[[Rust - Code Organization]]` (1x)
+### `[[rust-code-organization]]` (1x)
 
 - [ ] `01. concepts/rust-book-overview.md` L50
 
-### `[[Rust - Testing]]` (1x)
+### `[[rust-testing]]` (1x)
 
 - [ ] `01. concepts/rust-book-overview.md` L51
 
-### `[[Rust - Macros]]` (1x)
+### `[[rust-macros]]` (1x)
 
 - [ ] `01. concepts/rust-book-overview.md` L52
 
-### `[[Rust - Unsafe]]` (1x)
+### `[[rust-unsafe]]` (1x)
 
 - [ ] `01. concepts/rust-book-overview.md` L53
 
-### `[[Rust - Projects]]` (1x)
+### `[[rust-projects]]` (1x)
 
 - [ ] `01. concepts/rust-book-overview.md` L55
 
@@ -1014,7 +1014,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/rust-error-handling.md` L469
 
-### `[[Rust Testing]]` (1x)
+### `[[rust-testing]]` (1x)
 
 - [ ] `01. concepts/rust-error-handling.md` L470
 
@@ -1026,19 +1026,19 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/rust-error-handling.md` L473
 
-### `[[Rust Concurrency]]` (1x)
+### `[[rust-concurrency]]` (1x)
 
 - [ ] `01. concepts/rust-functional-programming.md` L245
 
-### `[[Rust Collections]]` (1x)
+### `[[rust-collections]]` (1x)
 
 - [ ] `01. concepts/rust-functional-programming.md` L246
 
-### `[[Rust Type System]]` (1x)
+### `[[rust-type-system]]` (1x)
 
 - [ ] `01. concepts/rust-functional-programming.md` L250
 
-### `[[Rust Memory Management]]` (1x)
+### `[[rust-memory-management]]` (1x)
 
 - [ ] `01. concepts/rust-functional-programming.md` L251
 
@@ -1142,7 +1142,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/TDZ (Temporal Dead Zone).md` L149
 
-### `[[vector-store-limitations]]` (1x)
+### `[[Vector Store Limitations]]` (1x)
 
 - [ ] `01. concepts/Temporal Knowledge Graph.md` L131
 
@@ -1158,7 +1158,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `01. concepts/Turing Test (튜링 테스트).md` L189
 
-### `[[temporal-knowledge-graph]]` (1x)
+### `[[Temporal Knowledge Graph]]` (1x)
 
 - [ ] `01. concepts/Vector Store Limitations.md` L102
 
@@ -1210,7 +1210,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `02. hubs/AI-ML 개념 (AI-ML Concepts).md` L31
 
-### `[[Agent Architecture]]` (1x)
+### `[[agent-architecture-guide]]` (1x)
 
 - [ ] `02. hubs/AI-ML 개념 (AI-ML Concepts).md` L38
 
@@ -1226,7 +1226,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `02. hubs/Basic Memory 허브 (Basic Memory Hub).md` L33
 
-### `[[Knowledge Refinement Pipeline]]` (1x)
+### `[[knowledge-refinement-pipeline]]` (1x)
 
 - [ ] `02. hubs/Basic Memory 허브 (Basic Memory Hub).md` L34
 
@@ -1330,7 +1330,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `02. hubs/카테고리 이론 (Category Theory).md` L239
 
-### `[[three-layer-memory-architecture]]` (1x)
+### `[[Three-Layer Memory Architecture]]` (1x)
 
 - [ ] `02. hubs/컨텍스트-메모리 통합 (Context-Memory Integration).md` L47
 
@@ -1498,7 +1498,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `03. sources/reference/LikeC4 - 코드 기반 아키텍처 다이어그램 도구.md` L77
 
-### `[[Emergence of Linear Truth Encodings]]` (1x)
+### `[[Emergence of Linear Truth Encodings in LMs]]` (1x)
 
 - [ ] `03. sources/reference/Linear Representation Hypothesis - LLM 기하학.md` L93
 
@@ -1602,7 +1602,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `03. sources/reference/REF-074 EMPO² - Exploratory Memory-Augmented On- and Off-Policy Optimization.md` L88
 
-### `[[Chain-of-Thought (CoT)]]` (1x)
+### `[[Chain of Thought (CoT)]]` (1x)
 
 - [ ] `03. sources/reference/REF-075 Think Deep Not Just Long - Measuring LLM Reasoning Effort via Deep-Thinking Tokens.md` L76
 
@@ -1734,7 +1734,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `04. notes/시스템1-2와 기억 재구성.md` L45
 
-### `[[Context Poisoning]]` (1x)
+### `[[context-poisoning]]` (1x)
 
 - [ ] `04. notes/자가 생성 메모리의 파라미터 내재화는 왜곡을 영구화한다.md` L67
 
@@ -1754,7 +1754,7 @@ Pipe alias (`|`) 앞에 `\`가 붙어서 링크가 깨진 경우. 자동 수정 
 
 - [ ] `04. notes/category-theory/01-chapter-roadmap.md` L111
 
-### `[[call-graphql-fb]]` (1x)
+### `[[call-graphql-x]]` (1x)
 
 - [ ] `05. code/functions/extract-tokens-fb.md` L52
 

@@ -76,7 +76,7 @@ date: 2026-02-24
 
 ## 산출물
 - [[REF-058 Fast KV Compaction via Attention Matching]] — 논문 레퍼런스
-- [[Memory.md Compaction 전략 - Attention Matching에서 배운 것]] — workcase 업데이트 (실전 결과 반영)
+- [[Memory Compaction 전략 - Attention Matching에서 배운 것]] — workcase 업데이트 (실전 결과 반영)
 - MEMORY.md compacted (71→56줄) + frequency 섹션 제거
 - CLAUDE.md 3-tier compacted (128→84줄)
 - /reference 스킬 업데이트 (REF-NNN 넘버링 규칙)
