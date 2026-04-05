@@ -29,6 +29,7 @@ permalink: hubs/ai-ml-concepts
   - extends [[Contextual Retrieval]] (1b. 문맥 정보를 추가로 고려)
 - organizes [[Attention]] (2. 트랜스포머의 핵심. 입력 요소 간 관련성 학습)
   - part_of [[어텐션 점수 계산]] (2a. Query, Key, Value를 이용한 가중치 생성)
+  - extends [[트랜스포머 깊이 혼합 (Transformer Depth Mixing)]] (2b. 시퀀스 어텐션을 깊이 방향으로 확장 — 레이어 간 선택적 정보 전달)
 - organizes [[Knowledge Graph (지식 그래프)]] (3. 개체와 관계를 그래프 구조로 표현)
   - part_of [[Triple (트리플)]] (3a. 주어-서술어-목적어 형식의 기본 단위)
   - part_of [[Entity Resolution (엔티티 해결)]] (3b. 동일 개체의 중복 식별 및 통합)
@@ -50,7 +51,8 @@ permalink: hubs/ai-ml-concepts
     └─ [1b] Contextual Retrieval
 
 [2] Attention (핵심 메커니즘)
-    └─ 트랜스포머 아키텍처
+    ├─ [2a] 어텐션 점수 계산 (QKV)
+    └─ [2b] 깊이 혼합 (Depth Mixing) ← 깊이 방향 확장
 
 [3] Knowledge Graph (지식 표현)
     ├─ [3a] Triple (기본 단위)
