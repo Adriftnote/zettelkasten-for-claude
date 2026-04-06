@@ -56,6 +56,6 @@ tags:
 - connects_to [[메모리 시스템 (Memory Systems)]] (Memory 계층 구조와 관리 전략)
 - connects_to [[최적화 패턴 (Optimization Patterns)]] (최적화 전략과 패턴)
 - connects_to [[아키텍처 (Architectures)]] (시스템 아키텍처 설계)
-- references [[03. sources/architectures/Three-Layer Memory Architecture]] (3계층 메모리 아키텍처)
-
-- references [[03. sources/reviews/AgeMem-paper-review]] (Age Memory 논문 리뷰)
+- references [[Three-Layer Memory Architecture]] (3���층 메모리 아키텍처)
+- references [[AgeMem-paper-review]] (Age Memory 논�� 리뷰)
+- references [[REF-134 LLM Wiki — LLM으로 개인 지식베이스를 점진적으로 구축하는 패턴]] (Karpathy의 3-layer 패턴: raw sources→wiki→schema가 three-layer-memory와 동형)

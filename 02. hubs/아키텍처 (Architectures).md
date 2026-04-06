@@ -36,6 +36,7 @@ permalink: hubs/architectures
 - connects_to [[MCP Tool 패턴 (MCP Tool Patterns)]] (도구 패턴 구현 수준)
 - connects_to [[컨텍스트 엔지니어링 (Context Engineering)]] (컨텍스트 설계)
 - connects_to [[최적화 패턴 (Optimization Patterns)]] (성능 최적화)
+- references [[REF-134 LLM Wiki — LLM으로 개인 지식베이스를 점진적으로 구축하는 패턴]] (LLM이 위키를 점진적으로 구축하는 3-layer 지식 아키텍처 패턴)
 
 ---
 
