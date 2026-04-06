@@ -44,7 +44,7 @@ tags:
 - organizes [[context-clash]] (1d. 상충 정보 문제와 명시적 충돌 해결)
 - organizes [[lost-in-middle]] (1e. 중간 정보 회수율 저하와 Knowledge Cache 해결책)
   - part_of [[anchored-iterative-summarization]] (1e1. 앵커 기반 요약 기법)
-- organizes [[three-layer-memory-architecture]] (2. AI 메모리의 물리적 계층)
+- organizes [[Three-Layer Memory Architecture]] (2. AI 메모리의 물리적 계층)
   - part_of [[working-memory]] (2a. 컨텍스트 윈도우, VRAM)
     - part_of [[knowledge-cache]] (2a1. Fast Path, 핵심 트리플만)
   - part_of [[short-term-memory]] (2b. 단기기억, SQLite orchestration.db)

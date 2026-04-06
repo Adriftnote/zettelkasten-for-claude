@@ -74,9 +74,9 @@ Access-Control-Allow-Headers: Content-Type
 
 ## Relations
 
-- implements [[http-header]]
+- implements [[HTTP Header]]
 - extends [[same-origin-policy]]
-- relates_to [[content-script]]
+- relates_to [[Content Script]]
 - relates_to [[Background Script (Service Worker)]]
 - relates_to [[iframe (Inline Frame)]]
 

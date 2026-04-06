@@ -170,7 +170,7 @@ Rutgers University 연구팀이 Zettelkasten 방법론에서 영감받아 만든
 - [[Zettelkasten]] - A-Mem의 영감 원천, 원자적 노트 + 유연한 링킹 + 지속적 진화
 - [[RAG (Retrieval-Augmented Generation)]] - A-Mem은 Agentic RAG보다 근본적 수준에서 agency 구현
 - [[MemGPT]] - 캐시 아키텍처 기반 메모리, A-Mem 대비 F1 192% 낮음
-- [[Basic Memory]] - 우리가 사용하는 Obsidian 기반 메모리, A-Mem과 컨셉 유사
+- [[basic-memory]] - 우리가 사용하는 Obsidian 기반 메모리, A-Mem과 컨셉 유사
 - [[Compound Engineering Plugin]] - Knowledge Capture 단계와 결합 가능성
 
 ---

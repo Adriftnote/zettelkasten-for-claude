@@ -420,10 +420,10 @@ Scalars/Compounds
 ## 🔄 Relations
 
 - part_of [[Rust Language (러스트 언어)]] (언어의 핵심 특징)
-- relates_to [[Rust - Memory Management]] (메모리 안전성과 함께 동작)
-- prerequisite_for [[Rust - OOP]] (객체 지향 패턴의 기초)
+- relates_to [[rust-memory-management]] (메모리 안전성과 함께 동작)
+- prerequisite_for [[rust-oop]] (객체 지향 패턴의 기초)
 - prerequisite_for [[Rust - Generics and Traits]] (고급 제네릭 학습 필수)
-- relates_to [[Rust - Functional Programming]] (함수형 프로그래밍 개념 활용)
+- relates_to [[rust-functional-programming]] (함수형 프로그래밍 개념 활용)
 
 ---
 

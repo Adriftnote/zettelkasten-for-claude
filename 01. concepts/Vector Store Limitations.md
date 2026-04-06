@@ -99,6 +99,6 @@ vector_store.add({
 
 ## Relations
 
-- contrasts_with [[temporal-knowledge-graph]] - 시간 유효성 지원하는 대안
+- contrasts_with [[Temporal Knowledge Graph]] - 시간 유효성 지원하는 대안
 - relates_to [[hybrid-search-architecture]] - 하이브리드 접근법
 - relates_to [[knowledge-refinement-pipeline]] - 지식 정제 파이프라인

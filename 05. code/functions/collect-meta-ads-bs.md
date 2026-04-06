@@ -42,6 +42,6 @@ async function collectMetaAdsBS(page: Page, capturedAt: string): Promise<object[
 
 - part_of [[collect-posts]] (소속 모듈)
 - called_by [[run]] (line 671)
-- replaces [[collect-meta-ads]] (am_tabular → BS content_ads로 교체, 2026-03-12)
+- replaces [[collect-meta-ads-bs]] (am_tabular → BS content_ads로 교체, 2026-03-12)
 - relates_to [[collect-meta]] (동일 API 패턴, callerID만 다름)
 - relates_to [[REF-101 Meta BS time_range 동작 원리 — VIEW는 항상 LIFETIME 누적]] (VIEW=LIFETIME 실증 근거)

@@ -130,7 +130,7 @@ Clear + Build 전략의 성공은 **어떻게 저장하느냐**에 달려 있습
 
 ## Relations
 
-- extends [[KV-Cache Optimization]] - KV-Cache 기술 기반
+- extends [[kv-cache-optimization]] - KV-Cache 기술 기반
 - implements [[Context Quality Management Guide]] - 실용 가이드
 - uses [[Three-Layer Memory Architecture]] - 메모리 구조
 - relates_to [[Cache]] - 캐시 개념

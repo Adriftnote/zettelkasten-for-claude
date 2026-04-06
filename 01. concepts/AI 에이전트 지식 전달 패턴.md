@@ -66,7 +66,7 @@ AI 에이전트는 학습 데이터 이후의 새로운 프레임워크, API 변
 - solves [[Model Knowledge Cutoff]] (문제 해결)
 - relates_to [[RAG]] (유사 개념)
 - applies_to [[Claude Code]] (적용처)
-- different_from [[Skills]] (대비되는 접근)
+- different_from [[SKILL]] (대비되는 접근)
 
 ---
 

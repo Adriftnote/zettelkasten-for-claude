@@ -82,5 +82,5 @@ DTR은 "높을수록 좋다"가 아니다. **비교 대상**에 따라 해석이
 
 - measures [[Chain of Thought (CoT)]] (CoT의 추론 "깊이" 품질을 정량화)
 - uses [[Neural Network Layer Depth]] (레이어별 수렴 패턴을 관찰하여 측정)
-- relates_to [[Token Optimization Strategy]] (토큰 길이가 아닌 깊이 축의 최적화)
+- relates_to [[token-optimization-strategy]] (토큰 길이가 아닌 깊이 축의 최적화)
 - originated_from [[REF-075 Think Deep Not Just Long - Measuring LLM Reasoning Effort via Deep-Thinking Tokens]] (원본 논문)

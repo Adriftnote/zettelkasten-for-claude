@@ -92,7 +92,7 @@ Playwright 퍼시스턴트 컨텍스트로 로그인 세션을 유지하며, `pa
 - [impl] 실패 알림: results에서 success:false 필터 → ALERT_WEBHOOK_URL로 subject/html 전송 → n8n → Gmail #pattern
 - [deps] `playwright.chromium`, `path` (Node.js 내장) #import
 - [usage] `node collect-channels.js` — scheduler.js가 1시간 주기 실행 #usage
-- [note] ALERT_WEBHOOK_URL: collect-alert → n8n 워크플로우(xkq4OyyRpC6fkjBl) → Gmail(jwb5ense@gmail.com) #context
+- [note] ALERT_WEBHOOK_URL: collect-alert → n8n 워크플로우(xkq4OyyRpC6fkjBl) → Gmail(alerts@example.com) #context
 - [note] AD_WEBHOOK_URL: ad-metrics-atomic → 100건씩 배치 전송, n8n 500 반환하지만 데이터 저장됨 #context
 - [note] Meta Ads captured_at은 date-only(YYYY-MM-DD)로 hourly(YYYY-MM-DDTHH:00:00)와 구분 #context
 

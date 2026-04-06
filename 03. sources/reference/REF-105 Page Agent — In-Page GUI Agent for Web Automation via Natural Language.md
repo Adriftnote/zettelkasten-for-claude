@@ -84,7 +84,7 @@ await agent.execute('Click the login button');
 ## 🔗 관련 개념
 
 - [[AI Agency (AI 에이전시)]] - (Page Agent는 "도구로서의 에이전트" 사례 — 웹페이지 안에서 사용자 의도를 실행하는 자동화 도구)
-- [[Knowledge Agent Architecture]] - (에이전트가 구조화된 정보(DOM)를 기반으로 추론하고 행동하는 패턴이 유사)
+- [[knowledge-agent-architecture]] - (에이전트가 구조화된 정보(DOM)를 기반으로 추론하고 행동하는 패턴이 유사)
 - [[Multi-Agent Patterns]] - (멀티탭 확장은 여러 에이전트가 탭별로 분산 작업하는 패턴)
 
 ---

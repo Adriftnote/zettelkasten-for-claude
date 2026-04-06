@@ -86,8 +86,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 ## Relations
 
-- part_of [[chrome-extension]]
-- relates_to [[content-script]]
+- part_of [[Chrome Extension]]
+- relates_to [[Content Script]]
 - relates_to [[CORS (Cross-Origin Resource Sharing)]]
 - implements [[api]]
 

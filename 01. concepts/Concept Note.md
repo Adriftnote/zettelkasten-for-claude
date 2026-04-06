@@ -46,4 +46,4 @@ API는 서로 다른 소프트웨어가 상호작용하는 방법입니다.
 
 - part_of [[Zettelkasten]] (지식관리 방법론의 노트 유형)
 - similar_to [[Atomic Note]] (하나의 아이디어를 담는다는 점에서 유사)
-- used_by [[Basic Memory]] (Obsidian 플러그인에서 활용)
+- used_by [[basic-memory]] (Obsidian 플러그인에서 활용)

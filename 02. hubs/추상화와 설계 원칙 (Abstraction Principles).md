@@ -29,7 +29,7 @@ tags:
 
 - organizes [[추상화 패턴 (Abstraction Pattern)]] (1. 원리 — "무엇을 감추는가")
   - extends [[ORM (Object-Relational Mapping)]] (1a. DB 영역 추상화)
-  - extends [[MCP CLI Polymorphism]] (1b. CLI 영역 추상화)
+  - extends [[mcp-cli-polymorphism]] (1b. CLI 영역 추상화)
 - organizes [[Dependency Inversion Principle (DIP)]] (2. 의존 방향 역전 — "누가 누구에게 의존하는가")
   - extends [[Strategy Pattern]] (2a. DIP를 구현하는 대표 패턴)
 - organizes [[Inversion of Control (제어의 역전)]] (3. 호출 주도권 역전 — "누가 누구를 호출하는가")

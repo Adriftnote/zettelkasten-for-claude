@@ -36,7 +36,7 @@ permalink: hubs/ai-ml-concepts
   - extends [[RPG (Repository Planning Graph)]] (3c. 코드 특화 지식 그래프. 의미론+위상으로 검색 가능한 코드 표현)
 - organizes [[Hybrid Search]] (4. BM25 + 시맨틱 검색의 결합으로 최적 결과 도출)
 - organizes [[ReAct Paradigm]] (5. Reasoning + Acting 결합. 생각→행동→관찰 루프)
-  - extends [[Agent Architecture]] (5a. 에이전트 아키텍처 설계)
+  - extends [[agent-architecture-guide]] (5a. 에이전트 아키텍처 설계)
 - connects_to [[아키텍처 (Architectures)]] (하이브리드 검색 아키텍처 구현)
 - connects_to [[컨텍스트 엔지니어링 (Context Engineering)]] (LLM 컨텍스트와 Attention의 관계)
 - connects_to [[문자 인코딩 시스템 (Encoding Systems)]] (텍스트 표현의 기초로 검색 구현)

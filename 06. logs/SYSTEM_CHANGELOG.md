@@ -30,7 +30,7 @@ date: 2026-02-24
 ## 2026-02-24 시스템 프롬프트 3-tier Compaction
 
 → **LOG-004**: [[LOG-004 시스템 프롬프트 3-tier Compaction]]
-→ **워크케이스**: [[Memory.md Compaction 전략 - Attention Matching에서 배운 것]]
+→ **워크케이스**: [[Memory Compaction 전략 - Attention Matching에서 배운 것]]
 
 - 논문 리뷰 → REF-NNN 넘버링 도입 → 3-tier compaction 실전 적용 → frequency.json 폐지
 - 시스템 프롬프트 199→140줄 (-30%), 정보 손실 0

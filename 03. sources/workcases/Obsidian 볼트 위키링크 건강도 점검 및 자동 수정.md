@@ -55,7 +55,7 @@ tags:
 Markdown 테이블 안에서 파이프(`|`)가 테이블 구분자로 해석되는 것을 피하려고 `\|`로 이스케이프한 것이 원인. Obsidian은 `[[target|alias]]`에서 `|`를 alias 구분자로 인식하는데, `\`가 끼면 전체가 깨짐.
 
 ```
-❌ [[CORS (Cross-Origin Resource Sharing)\|CORS]]
+❌ [[CORS (Cross-Origin Resource Sharing)|CORS]]
 ✅ [[CORS (Cross-Origin Resource Sharing)|CORS]]
 ```
 

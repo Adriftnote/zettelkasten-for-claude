@@ -47,4 +47,4 @@ REF-058 작성 (Fast KV Compaction via Attention Matching 논문)
 
 ## Relations
 - learned_from [[REF-058 Fast KV Compaction via Attention Matching]] (논문에서 compaction 원칙 도출)
-- led_to [[Memory.md Compaction 전략 - Attention Matching에서 배운 것]] (실전 적용 결과를 workcase로 정리)
+- led_to [[Memory Compaction 전략 - Attention Matching에서 배운 것]] (실전 적용 결과를 workcase로 정리)

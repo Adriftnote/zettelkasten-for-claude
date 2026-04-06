@@ -99,6 +99,6 @@ Execution Layer (실제 작업 수행)
 
 ## Relations
 
-- requires [[context-isolation]] - 멀티에이전트의 핵심 목적
+- requires [[Context Isolation]] - 멀티에이전트의 핵심 목적
 - relates_to [[tool-hub-philosophy]] - 도구 관리 전략과 연계
 - relates_to [[progressive-disclosure]] - 정보 공개 전략
