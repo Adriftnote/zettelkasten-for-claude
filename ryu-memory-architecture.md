@@ -1,3 +1,9 @@
+---
+title: ryu-memory-architecture
+type: note
+permalink: zettelkasten/ryu-memory-architecture
+---
+
 # ryu-memory Architecture Guide
 
 ## 전체 구조

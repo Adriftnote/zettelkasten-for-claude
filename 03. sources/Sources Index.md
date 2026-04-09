@@ -9,7 +9,7 @@ tags:
 
 # Sources Index
 
-> 205 entries, last updated 2026-04-06
+> 209 entries, last updated 2026-04-09
 > LLM 전용 인덱스. 인제스트/쿼리 시 관련 소스 탐색 및 중복 확인용.
 
 ## Reference (132)
@@ -150,6 +150,10 @@ tags:
 - [[REF-132 cq — Stack Overflow for Agents (Mozilla.ai)]] — (제목 참조)
 - [[REF-133 Anatomy of the .claude Folder — Claude Code 설정 구조 해부]] — (제목 참조)
 - [[REF-134 LLM Wiki — LLM으로 개인 지식베이스를 점진적으로 구축하는 패턴]] — Karpathy의 LLM 위키 패턴: RAG 대비 점진적 축적, 3-layer 아키텍처
+- [[REF-135 S3 Files and the Changing Face of S3]] — AWS S3 진화: 파일/오브젝트 시맨틱 수렴, stage-and-commit 경계 설계
+- [[REF-136 paper2code — 논문을 인용 추적 가능한 코드로 자동 변환하는 Claude Code 스킬]] — 논문→코드 자동 변환, Citation Anchoring + Ambiguity Audit
+- [[REF-137 Building syntaqlite with AI — 8년간 미뤘던 프로젝트를 AI로 3개월 만에 완성한 경험기]] — AI 코딩 회고: 구현 힘 배수 vs 설계 위험 대체제, Local vs Global correctness
+- [[REF-138 SQLite의 진화 — 프로덕션급 데이터베이스로의 성장]] — SQLite 최신 기능: JSON, FTS5, WAL, STRICT, Generated Columns
 
 ## Workcases (65)
 

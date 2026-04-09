@@ -1,3 +1,9 @@
+---
+title: vault-naming-convention
+type: note
+permalink: zettelkasten/vault-naming-convention
+---
+
 # Vault Naming Convention
 
 볼트 파일명 및 링크 작성 규칙. 2026-03-21 팀 합의.
