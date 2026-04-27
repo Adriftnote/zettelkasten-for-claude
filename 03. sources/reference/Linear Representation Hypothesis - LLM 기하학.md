@@ -18,7 +18,7 @@ date: 2026-02-06
 
 LLM의 표현 공간에서 고수준 개념이 선형적으로 인코딩된다는 가설을 형식화하고, Causal Inner Product로 embedding/unembedding 공간을 통합한 논문.
 
-## 📖 핵심 아이디어
+## 📖 핵심 아이디어0
 
 Linear Representation Hypothesis(LRH)는 "성별", "시제", "언어" 같은 고수준 개념이 LLM 내부에서 선형 부분공간(linear subspace)으로 표현된다는 가설이다. 이 논문은 counterfactual pairs를 사용해 LRH를 세 가지 관점(Subspace, Measurement, Intervention)으로 형식화하고, 이들을 통합하는 Causal Inner Product를 제안한다. 핵심 통찰은 인과적으로 분리 가능한 개념들이 이 내적 공간에서 직교한다는 것이다.
 

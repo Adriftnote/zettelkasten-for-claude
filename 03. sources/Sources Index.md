@@ -9,10 +9,10 @@ tags:
 
 # Sources Index
 
-> 209 entries, last updated 2026-04-09
+> 212 entries, last updated 2026-04-27
 > LLM 전용 인덱스. 인제스트/쿼리 시 관련 소스 탐색 및 중복 확인용.
 
-## Reference (132)
+## Reference (133)
 
 ### 번호 없는 레퍼런스 (초기 수집)
 - [[3D 소프트웨어 AI 통합 현황 (2025-2026)]] — (제목 참조)
@@ -154,8 +154,9 @@ tags:
 - [[REF-136 paper2code — 논문을 인용 추적 가능한 코드로 자동 변환하는 Claude Code 스킬]] — 논문→코드 자동 변환, Citation Anchoring + Ambiguity Audit
 - [[REF-137 Building syntaqlite with AI — 8년간 미뤘던 프로젝트를 AI로 3개월 만에 완성한 경험기]] — AI 코딩 회고: 구현 힘 배수 vs 설계 위험 대체제, Local vs Global correctness
 - [[REF-138 SQLite의 진화 — 프로덕션급 데이터베이스로의 성장]] — SQLite 최신 기능: JSON, FTS5, WAL, STRICT, Generated Columns
+- [[REF-139 gaarf — Google Ads API Report Fetcher (GAQL → SQL DB 자동 적재)]] — GAQL → SQLAlchemy(MariaDB) 자동 적재, 인증 3요소(dev token+OAuth+login_customer_id), 캠페인 메타데이터 카탈로그
 
-## Workcases (65)
+## Workcases (67)
 
 - [[011-chrome-extension-naver-stats]] — (제목 참조)
 - [[012-platform-data-extraction-comparison]] — (제목 참조)
@@ -222,6 +223,8 @@ tags:
 - [[초기 노트의 범위 과잉이 하류 노트로 전파된다]] — (제목 참조)
 - [[커스텀 에이전트 MCP 접근 제한 - 플러그인 vs 수동등록]] — (제목 참조)
 - [[컴파일러와 프로그래밍 언어 계보 이해]] — (제목 참조)
+- [[MariaDB 뷰의 LAG() 필터 pushdown 실패 — 물리 테이블 직접 조회로 1300배 개선]] — LAG() 뷰는 WHERE pushdown 불가, precompute 테이블 직접 조회로 MOT 대시보드 29s→22ms
+- [[MOT 대시보드 플랫폼 값 ENUM 통일 — URL 덮어쓰기 버그에서 전수조사까지 하루 풀스택 경험]] — platform 3종 혼재 + 뷰 CONCAT 오염 + URL 3주체 쓰기 충돌을 ENUM 5단계 마이그레이션으로 해결. 실수 7건 회고 포함
 
 ## Guides (7)
 

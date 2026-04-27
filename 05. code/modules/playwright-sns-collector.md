@@ -50,23 +50,24 @@ playwright-test/
 | API 호출 | content script 컨텍스트  | page.evaluate() 컨텍스트     |
 | 배포     | 확장프로그램 설치 필요         | Node.js만 있으면 실행          |
 | 속도     | 수동 3~5분              | 자동 ~19초                  |
+|        |                      |                          |
 
 ## 수집 대상 플랫폼
 ### collect-channels.js (채널 일별 요약 → daily_channel_summary)
-| 플랫폼 | API 방식 | 데이터 |
-|--------|---------|--------|
-| Facebook | GraphQL doc_id 3종 병렬 | views, interactions, followers (7일) |
-| X | AccountOverviewQuery GraphQL | impressions, engagements, follows (7일) |
-| Naver Blog | admin.blog iframe DOM 파싱 | views, likes, comments, neighbors (7일) |
+| 플랫폼        | API 방식                       | 데이터                                    |
+| ---------- | ---------------------------- | -------------------------------------- |
+| Facebook   | GraphQL doc_id 3종 병렬         | views, interactions, followers (7일)    |
+| X          | AccountOverviewQuery GraphQL | impressions, engagements, follows (7일) |
+| Naver Blog | admin.blog iframe DOM 파싱     | views, likes, comments, neighbors (7일) |
 
 ### collect-posts.js (게시물별 스냅샷 → post_view_snapshots)
-| 플랫폼 | 현재 API 방식 | 데이터 |
-|--------|---------|--------|
-| YouTube | `list_creator_videos` API 가로채기 | 동영상+Shorts 전체 (페이지네이션) — viewCount, likeCount, commentCount만 |
-| 네이버TV | apis.naver.com clips API | 최근 10개 클립 totalPlayCount |
-| 네이버 블로그 | blog.stat.naver.com cvContentPc API (rank 상위 10개만) | 오늘 게시물별 조회수 |
-| Meta | GraphQL LIFETIME + count 500 | FB+IG 통합 게시물 views |
-| TikTok | `/creator/manage/item_list/v1` 가로채기 | 최근 게시물 play_count |
+| 플랫폼     | 현재 API 방식                                          | 데이터                                                          |
+| ------- | -------------------------------------------------- | ------------------------------------------------------------ |
+| YouTube | `list_creator_videos` API 가로채기                     | 동영상+Shorts 전체 (페이지네이션) — viewCount, likeCount, commentCount만 |
+| 네이버TV   | apis.naver.com clips API                           | 최근 10개 클립 totalPlayCount                                     |
+| 네이버 블로그 | blog.stat.naver.com cvContentPc API (rank 상위 10개만) | 오늘 게시물별 조회수                                                  |
+| Meta    | GraphQL LIFETIME + count 500                       | FB+IG 통합 게시물 views                                           |
+| TikTok  | `/creator/manage/item_list/v1` 가로채기                | 최근 게시물 play_count                                            |
 
 ## 수집기 개선 탐색 (2026-03-25)
 

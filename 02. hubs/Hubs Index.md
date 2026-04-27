@@ -9,7 +9,7 @@ tags:
 
 # Hubs Index
 
-> 25 entries, last updated 2026-04-06
+> 26 entries, last updated 2026-04-27
 > LLM 전용 인덱스. 인제스트 시 관련 hub 탐색용.
 
 - [[AI-ML 개념 (AI-ML Concepts)]] — 인공지능과 머신러닝의 기초 개념들을 체계적으로 정리. 검색 알고리즘, 어텐션 메커니즘, 지식 표현 방법을 루만식 인덱싱으로 관리합니다.
@@ -37,3 +37,4 @@ tags:
 - [[프로그래밍 기초 (Programming Basics)]] — 소스 코드가 실행 가능한 프로그램이 되기까지의 여정. 컴파일러, 인터프리터, 런타임의 역할을 이해하면 프로그래밍의 본질이 보인다.
 - [[프로그래밍 언어 비교 (Programming Languages)]] — 프로그래밍 언어들의 특성, 분류, 그리고 흔한 혼동을 정리한 허브. 특히 Java vs JavaScript 혼동과 TypeScript의 역할을 다룹니다.
 - [[프로그래밍 패러다임 (Programming Paradigms)]] — 프로그래밍의 사고방식을 분류하는 허브. "어떻게 생각하고 코드를 구성하는가"에 대한 근본적 접근법들을 정리합니다.
+- [[광고 데이터 파이프라인 (Advertising Data Pipeline)]] — 광고 플랫폼(Google Ads/Meta/Instagram)에서 캠페인·메트릭·자산을 끌어와 내부 DB로 적재하는 흐름. 공식 API/내부 API/UI 스크래핑 세 접근법과 trade-off를 정리.
